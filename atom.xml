@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>大田斗</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-04-14T15:08:27.509Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>爬虫常用库</title>
+    <link href="http://example.com/2024/04/14/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/"/>
+    <id>http://example.com/2024/04/14/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/</id>
+    <published>2024-04-14T13:43:02.000Z</published>
+    <updated>2024-04-14T15:08:27.509Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-通用库"><a href="#1-通用库" class="headerlink" title="1 通用库"></a>1 通用库</h1><p>1.urllib -网络库(stdlib)。<br>2.requests -网络库。<br>3.grab – 网络库（基于pycurl）。<br>4.pycurl – 网络库（绑定libcurl）。<br>5.urllib3 – Python HTTP库，安全连接池、支持文件post、可用性高。<br>6.httplib2 – 网络库。<br>7.RoboBrowser – 一个简单的、极具Python风格的Python库，无需独立的浏览器即可浏览网页。<br>8.MechanicalSoup -一个与网站自动交互Python库。<br>9.mechanize -有状态、可编程的Web浏览库。<br>10.socket – 底层网络接口(stdlib)。<br>11.Unirest for Python – Unirest是一套可用于多种语言的轻量级的HTTP库。<br>12.hyper – Python的HTTP&#x2F;2客户端。<br>13.PySocks – SocksiPy 更新并积极维护的版本，包括错误修复和一些其他的特征。作为 socket 模块的直接替换。</p><h1 id="2-网络爬虫框架"><a href="#2-网络爬虫框架" class="headerlink" title="2 网络爬虫框架"></a>2 网络爬虫框架</h1><p>grab – 网络爬虫框架（基于 pycurl&#x2F;multicur）。<br>scrapy – 网络爬虫框架（基于 twisted），不支持 Python3。<br>pyspider – 一个强大的爬虫系统。<br>cola – 一个分布式爬虫框架。<br>portia – 基于 Scrapy 的可视化爬虫。<br>restkit – Python 的 HTTP 资源工具包。它可以让你轻松地访问 HTTP 资源，并围绕它建立的对象。<br>demiurge – 基于PyQuery的爬虫微框架。</p><h1 id="3-HTML-XML-解析器"><a href="#3-HTML-XML-解析器" class="headerlink" title="3 HTML&#x2F;XML 解析器"></a>3 HTML&#x2F;XML 解析器</h1><h2 id="3-1-通用"><a href="#3-1-通用" class="headerlink" title="3.1 通用"></a>3.1 通用</h2><p>lxml – C 语言编写高效 HTML&#x2F; XML 处理库。支持 XPath。<br>cssselect – 解析 DOM 树和 CSS 选择器。<br>pyquery – 解析 DOM 树和 jQuery 选择器。<br>BeautifulSoup – 低效 HTML&#x2F; XML 处理库，纯 Python 实现。<br>html5lib – 根据 WHATWG 规范生成 HTML&#x2F; XML 文档的 DOM。该规范被用在现在所有的浏览器上。<br>feedparser – 解析 RSS&#x2F;ATOM feeds。<br>MarkupSafe – 为 XML&#x2F;HTML&#x2F;XHTML 提供了安全转义的字符串。<br>xmltodict – 一个可以让你在处理 XML 时感觉像在处理 JSON 一样的 Python 模块。<br>xhtml2pdf – 将 HTML&#x2F;CSS 转换为 PDF。<br>untangle – 轻松实现将XML文件转换为Python对象。</p><h2 id="3-2-清理"><a href="#3-2-清理" class="headerlink" title="3.2 清理"></a>3.2 清理</h2><p>Bleach – 清理 HTML（需要 html5lib）。<br>sanitize – 为混乱的数据世界带来清明。</p><h1 id="4-文本处理"><a href="#4-文本处理" class="headerlink" title="4 文本处理"></a>4 文本处理</h1><p>difflib – （Python 标准库）帮助进行差异化比较。<br>Levenshtein – 快速计算Levenshtein距离和字符串相似度。<br>fuzzywuzzy – 模糊字符串匹配。<br>esmre – 正则表达式加速器。<br>ftfy – 自动整理 Unicode 文本，减少碎片化。</p><h1 id="5-自然语言处理"><a href="#5-自然语言处理" class="headerlink" title="5 自然语言处理"></a>5 自然语言处理</h1><p>NLTK -编写 Python 程序来处理人类语言数据的最好平台。<br>Pattern – Python 的网络挖掘模块。他有自然语言处理工具，机器学习以及其它。<br>TextBlob – 为深入自然语言处理任务提供了一致的 API。是基于 NLTK 以及 Pattern 的巨人之肩上发展的。<br>jieba – 中文分词工具。<br>SnowNLP – 中文文本处理库。<br>loso – 另一个中文分词库。</p><h1 id="6-浏览器自动化与仿真"><a href="#6-浏览器自动化与仿真" class="headerlink" title="6 浏览器自动化与仿真"></a>6 浏览器自动化与仿真</h1><p>selenium – 自动化真正的浏览器（Chrome 浏览器，火狐浏览器，Opera 浏览器，IE 浏览器）。<br>Ghost.py – 对 PyQt 的 webkit 的封装（需要 PyQT）。<br>Spynner – 对 PyQt 的 webkit 的封装（需要 PyQT）。<br>Splinter – 通用 API 浏览器模拟器（selenium web 驱动，Django 客户端，Zope）。</p><h1 id="7-多重处理"><a href="#7-多重处理" class="headerlink" title="7 多重处理"></a>7 多重处理</h1><p>threading – Python 标准库的线程运行。对于 I&#x2F;O 密集型任务很有效。对于 CPU 绑定的任务没用，因为 python GIL。<br>multiprocessing – 标准的 Python 库运行多进程。<br>celery – 基于分布式消息传递的异步任务队列&#x2F;作业队列。<br>concurrent-futures – concurrent-futures 模块为调用异步执行提供了一个高层次的接口。</p><h1 id="8-异步网络编程"><a href="#8-异步网络编程" class="headerlink" title="8 异步网络编程"></a>8 异步网络编程</h1><p>asyncio – （在 Python 3.4 +版本以上的 Python 标准库）异步 I&#x2F;O，时间循环，协同程序和任务。<br>Twisted – 基于事件驱动的网络引擎框架。<br>Tornado – 一个网络框架和异步网络库。<br>pulsar – Python 事件驱动的并发框架。<br>diesel – Python 的基于绿色事件的 I&#x2F;O 框架。<br>gevent – 一个使用 greenlet 的基于协程的 Python 网络库。<br>eventlet – 有 WSGI 支持的异步框架。<br>Tomorrow – 异步代码的奇妙的修饰语法。</p><h1 id="9-队列"><a href="#9-队列" class="headerlink" title="9 队列"></a>9 队列</h1><p>celery – 基于分布式消息传递的异步任务队列&#x2F;作业队列。<br>huey – 小型多线程任务队列。<br>mrq – Mr. Queue – 使用 redis &amp; Gevent 的 Python 分布式工作任务队列。<br>RQ – 基于 Redis 的轻量级任务队列管理器。<br>simpleq – 一个简单的，可无限扩展，基于 Amazon SQS 的队列。<br>python-gearman – Gearman 的 Python API。</p><h1 id="10-云计算"><a href="#10-云计算" class="headerlink" title="10 云计算"></a>10 云计算</h1><p>picloud – 云端执行 Python 代码。<br>dominoup.com – 云端执行 R，Python 和 matlab 代码</p><h1 id="11-网页内容提取"><a href="#11-网页内容提取" class="headerlink" title="11 网页内容提取"></a>11 网页内容提取</h1><p>HTML 页面的文本和元数据<br>newspaper – 用 Python 进行新闻提取、文章提取和内容策展。<br>html2text – 将 HTML 转为 Markdown 格式文本。<br>python-goose – HTML 内容&#x2F;文章提取器。<br>lassie – 人性化的网页内容检索工具</p><h1 id="12-WebSocket"><a href="#12-WebSocket" class="headerlink" title="12 WebSocket"></a>12 WebSocket</h1><p>Crossbar – 开源的应用消息传递路由器（Python 实现的用于 Autobahn 的 WebSocket 和 WAMP）。<br>AutobahnPython – 提供了 WebSocket 协议和 WAMP 协议的 Python 实现并且开源。<br>WebSocket-for-Python – Python 2和3以及 PyPy 的 WebSocket 客户端和服务器库。</p><h1 id="13-DNS-解析"><a href="#13-DNS-解析" class="headerlink" title="13 DNS 解析"></a>13 DNS 解析</h1><p>dnsyo – 在全球超过1500个的 DNS 服务器上检查你的 DNS。<br>pycares – c-ares 的接口。c-ares 是进行 DNS 请求和异步名称决议的 C 语言库。</p><h1 id="14-计算机视觉"><a href="#14-计算机视觉" class="headerlink" title="14 计算机视觉"></a>14 计算机视觉</h1><p>OpenCV – 开源计算机视觉库。<br>SimpleCV – 用于照相机、图像处理、特征提取、格式转换的简介，可读性强的接口（基于 OpenCV）。<br>mahotas – 快速计算机图像处理算法（完全使用 C++ 实现），完全基于 numpy 的数组作为它的数据类型。</p><h1 id="15-Web-开发"><a href="#15-Web-开发" class="headerlink" title="15 Web 开发"></a>15 Web 开发</h1><h2 id="15-1-Django"><a href="#15-1-Django" class="headerlink" title="15.1 Django"></a>15.1 Django</h2><p>Django 是一个开源的 Web 应用框架，由 Python 写成，支持许多数据库引擎，可以让 Web 开发变得迅速和可扩展，并会不断的版本更新以匹配 Python 最新版本，如果是新手程序员，可以从这个框架入手。</p><h2 id="15-2-Flask"><a href="#15-2-Flask" class="headerlink" title="15.2 Flask"></a>15.2 Flask</h2><p>Flask 是一个轻量级的 Web 应用框架, 使用 Python 编写。基于 WerkzeugWSGI 工具箱和 Jinja2模板引擎。使用 BSD 授权。<br>Flask 也被称为 “microframework” ，因为它使用简单的核心，用 extension 增加其他功能。Flask 没有默认使用的数据库、窗体验证工具。然而，Flask 保留了扩增的弹性，可以用 Flask-extension 加入这些功 能：ORM、窗体验证工具、文件上传、各种开放式身份验证技术。</p><h2 id="15-3-Web2py"><a href="#15-3-Web2py" class="headerlink" title="15.3 Web2py"></a>15.3 Web2py</h2><p>Web2py 是一个用 Python 语言编写的免费的开源 Web 框架，旨在敏捷快速的开发 Web 应用，具有快速、可扩展、安全以及可移植的数据库驱动的应用，遵循 LGPLv3开源协议。</p><p>Web2py 提供一站式的解决方案，整个开发过程都可以在浏览器上进行，提供了 Web 版的在线开发，HTML 模版编写，静态文件的上传，数据库的编写的功能。其它的还有日志功能，以及一个自动化的 admin 接口。</p><h2 id="15-4-Tornado"><a href="#15-4-Tornado" class="headerlink" title="15.4 Tornado"></a>15.4 Tornado</h2><p>ornado 即是一个 Web server（对此本文不作详述），同时又是一个类 web.py 的 micro-framework，作为框架 Tornado 的思想主要来源于 Web.py，大家在 Web.py 的网站首页也可以看到 Tornado 的大佬 Bret Taylor 的这么一段话（他这里说的 FriendFeed 用的框架跟 Tornado 可以看作是一个东西）</p><h2 id="15-5-CherryPy"><a href="#15-5-CherryPy" class="headerlink" title="15.5 CherryPy"></a>15.5 CherryPy</h2><p>CherryPy是一种用于Python的、简单而非常有用的Web框架，其主要作用是以尽可能少的操作将Web服务器与Python代码连接，其功能包括内置的分析功能、灵活的插件系统以及一次运行多个HTTP服务器的功能，可与运行在最新版本的Python、Jython、Android上。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;1-通用库&quot;&gt;&lt;a href=&quot;#1-通用库&quot; class=&quot;headerlink&quot; title=&quot;1 通用库&quot;&gt;&lt;/a&gt;1 通用库&lt;/h1&gt;&lt;p&gt;1.urllib -网络库(stdlib)。&lt;br&gt;2.requests -网络库。&lt;br&gt;3.grab – 网络库</summary>
+      
+    
+    
+    
+    <category term="爬虫框架" scheme="http://example.com/categories/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="爬虫程序设计" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="爬虫常用库" scheme="http://example.com/tags/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/"/>
+    
+  </entry>
+  
+</feed>
