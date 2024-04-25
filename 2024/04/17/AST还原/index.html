@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AST还原 | 苏子部落阁</title>
+  <meta name="keywords" content=" JS逆向 , AST还原 ">
+  <meta name="description" content="AST还原 | 苏子部落阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="title: JS逆向date: 2024-04-14 22:13:01type: “categories” title: 网络安全date: 2024-04-14 22:13:01type: “categories” title: 安全工具集date: 2024-04-14 22:13:01type: “categories” title: Android逆向date: 2024-04-14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="爬虫框架">
+<meta property="og:url" content="http://suzi007.github.io/categories/index.html">
+<meta property="og:site_name" content="苏子部落阁">
+<meta property="og:description" content="title: JS逆向date: 2024-04-14 22:13:01type: “categories” title: 网络安全date: 2024-04-14 22:13:01type: “categories” title: 安全工具集date: 2024-04-14 22:13:01type: “categories” title: Android逆向date: 2024-04-14">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-14T14:13:01.000Z">
+<meta property="article:modified_time" content="2024-04-17T07:25:11.261Z">
+<meta property="article:author" content="苏子">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="苏子部落阁" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>苏子</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/suzi007"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/38-70-66-40"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/u014455876?type=blog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:dacker1993@gmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=510909959&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(3)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络安全">
+            <i class="fold iconfont icon-right"></i>
+            网络安全
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;安全工具集">
+            
+            安全工具集
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="JS逆向">
+            <i class="fold iconfont icon-right"></i>
+            JS逆向
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="JS逆向&lt;---&gt;逆向工具">
+            
+            逆向工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="爬虫框架">
+            
+            爬虫框架
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="3">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://pythondjango.cn/">大江狗</a></li>
+            
+            <li><a target="_blank" href="https://chat18.aichatos.xyz/">AIChatOS</a></li>
+            
+            <li><a target="_blank" href="https://astexplorer.net/">ASTExplorer</a></li>
+            
+            <li><a target="_blank" href="https://spiderapi.cn/">虫术</a></li>
+            
+            <li><a target="_blank" href="https://metaso.cn/">秘塔搜索</a></li>
+            
+            <li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Learn">MDN</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>安全工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫常用库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫程序设计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AST还原</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS逆向</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/KaliTool/"
+           data-tag="网络安全,安全工具"
+           data-author="" >
+            <span class="post-title" title="KaliTool">KaliTool</span>
+            <span class="post-date" title="2024-04-17 15:26:29">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All JS逆向 逆向工具 "
+           href="/2024/04/17/AST%E8%BF%98%E5%8E%9F/"
+           data-tag="JS逆向,AST还原"
+           data-author="" >
+            <span class="post-title" title="AST还原">AST还原</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 爬虫框架 "
+           href="/2024/04/14/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/"
+           data-tag="爬虫程序设计,爬虫常用库"
+           data-author="" >
+            <span class="post-title" title="爬虫常用库">爬虫常用库</span>
+            <span class="post-date" title="2024-04-14 21:43:02">2024/04/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-AST还原" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">AST还原</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="JS逆向">JS逆向</a> > 
+            
+            <a  data-rel="JS逆向&lt;---&gt;逆向工具">逆向工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">JS逆向</a>
+            
+            <a class="color1">AST还原</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-04-25 22:45:49'>2024-04-17 15:11</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99"><span class="toc-text">1 学习网站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%9F%BA%E6%9C%AC%E7%BB%84%E4%BB%B6"><span class="toc-text">2 基本组件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-parser"><span class="toc-text">2.1 parser</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-generator"><span class="toc-text">2.2 generator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-traverse"><span class="toc-text">2.3 traverse</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="toc-text">3 基本属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Path"><span class="toc-text">3.1 Path</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Scope"><span class="toc-text">3.2 Scope</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-node"><span class="toc-text">3.3 node</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-types-%E7%B1%BB%E5%9E%8B"><span class="toc-text">3.4 types 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B%E5%AF%B9%E7%85%A7"><span class="toc-text">3.5 节点类型对照</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E6%A1%86%E6%9E%B6"><span class="toc-text">4 基础使用框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">5 常用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E6%89%A7%E8%A1%8C-path"><span class="toc-text">5.1 执行 path</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E5%A4%9A%E4%B8%AA%E8%8A%82%E7%82%B9%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="toc-text">5.2 多个节点组合查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%E5%88%A0%E9%99%A4%E6%97%A0%E7%94%A8%E7%9A%84%E7%A9%BA%E8%AF%AD%E5%8F%A5"><span class="toc-text">5.3 删除无用的空语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-%E5%88%A0%E9%99%A4%E6%97%A0%E7%94%A8%E8%8A%82%E7%82%B9"><span class="toc-text">5.4 删除无用节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-%E6%9F%A5%E7%9C%8B%E4%BD%9C%E7%94%A8%E5%9F%9F-scope"><span class="toc-text">5.5 查看作用域 scope</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-%E5%90%8C%E4%B8%80%E8%8A%82%E7%82%B9%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%87%BD%E6%95%B0"><span class="toc-text">5.6 同一节点使用多个函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7-%E5%88%A0%E9%99%A4%E6%9C%AA%E4%BD%BF%E7%94%A8%E7%9A%84-function%E3%80%81var%E3%80%81let%E3%80%81const"><span class="toc-text">5.7 删除未使用的 function、var、let、const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-8-a-%E2%80%98bb%E2%80%99-%E8%BD%AC%E6%8D%A2%E4%B8%BA-a-bb"><span class="toc-text">5.8 a[‘bb’] 转换为 a.bb</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-学习网站"><a href="#1-学习网站" class="headerlink" title="1 学习网站"></a>1 学习网站</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blogz.gitee.io/ast/">AST explorer 国内镜像</a></li>
+<li><a target="_blank" rel="noopener" href="https://astexplorer.net/">AST explorer</a> ，一个在线解析 AST 的网站。</li>
+<li><a target="_blank" rel="noopener" href="https://obfuscator.io/">ob 混淆工具官网</a>，可以用它的 demo 检测下自己的 AST 水准</li>
+<li><a target="_blank" rel="noopener" href="http://tool.yuanrenxue.com/">猿人学爬虫工具合集</a></li>
+</ul>
+<h1 id="2-基本组件"><a href="#2-基本组件" class="headerlink" title="2 基本组件"></a>2 基本组件</h1><h2 id="2-1-parser"><a href="#2-1-parser" class="headerlink" title="2.1 parser"></a>2.1 parser</h2><blockquote>
+<p>描述：将 js 代码转换为抽象语法树<br>用法：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> parse = <span class="built_in">require</span>(<span class="string">&quot;@babel/parser&quot;</span>).<span class="property">parse</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> traverse = <span class="built_in">require</span>(<span class="string">&quot;@babel/traverse&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-generator"><a href="#2-2-generator" class="headerlink" title="2.2 generator"></a>2.2 generator</h2><blockquote>
+<p>描述：将抽象语法树还原为 JS 代码<br>用法：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> generate = <span class="built_in">require</span>(<span class="string">&quot;@babel/generator&quot;</span>).<span class="property">default</span></span><br><span class="line"><span class="title function_">generate</span>(ast).<span class="property">code</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-traverse"><a href="#2-3-traverse" class="headerlink" title="2.3 traverse"></a>2.3 traverse</h2><blockquote>
+<p>描述：遍历 node 节点<br>用法：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">traverse</span>(ast,&#123;</span><br><span class="line">	<span class="title class_">StringInditify</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//方式二 enter 和 exit的区别</span></span><br><span class="line"><span class="title function_">traverse</span>(ast,&#123;</span><br><span class="line">	<span class="title class_">StringInditify</span>: &#123;</span><br><span class="line">		<span class="attr">exit</span>: <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-基本属性"><a href="#3-基本属性" class="headerlink" title="3 基本属性"></a>3 基本属性</h1><h2 id="3-1-Path"><a href="#3-1-Path" class="headerlink" title="3.1 Path"></a>3.1 Path</h2><p>属性：</p>
+<ul>
+<li>path.replaceWith 把这个节点替换成另外一个节点， 接收参数为 node</li>
+<li>path.node	获取当前路径对应的节点。</li>
+<li>path.parent	获取当前路径对应节点的父节点。</li>
+<li>path.parentPath	获取当前路径对应节点的父路径。</li>
+<li>path.scope	表示当前 path 下的作用域，这个也是写插件经常会用到的。</li>
+<li>path.container	用于获取当前 path 下的所有兄弟节点(包括自身)。</li>
+<li>path.type	获取当前 path 的节点类型。</li>
+<li>path.key	获取当前 path 的 key 值，key 通常用于 path.get 函数。<br>函数：</li>
+<li>path.get(key)	获取当前路径下指定属性名（key）对应的子路径。例如，path.get(“body”) 获取当前路径下名为 “body” 的子路径。</li>
+<li>path.getSibling(index)	获取当前路径对应节点的兄弟节点的路径。通过指定索引（index）可以获取相应的兄弟路径。</li>
+<li>path.getFunctionParent()	获取当前路径对应节点的最近的函数父节点的路径。</li>
+<li>path.getPrevSibling()	获取当前 path 的前一个兄弟节点，返回的是 path 类型。</li>
+<li>path.getAllPrevSiblings()	获取当前 path 的所有前兄弟节点，返回的是 Array 类型，其元素都是 path 类型。</li>
+<li>path.getNextSibling()	获取当前 path 的后一个兄弟节点，返回的是 path 类型。</li>
+<li>path.getAllNextSiblings()	获取当前 path 的所有后兄弟节点，返回的是 Array 类型，其元素都是 path 类型。</li>
+<li>path.evaluate()	用于计算表达式的值，大家可以参考 constantFold 插件的写法。</li>
+<li>path.findParent()	向上查找满足回调函数特征的 path，即判断上级路径是否包含有 XXX 类型的节点。</li>
+<li>path.find()	功能与 path.findParent 方法一样，只不过从当前 path 开始进行遍历。</li>
+<li>path.getFunctionParent()	获取函数类型父节点，如果不存在，返回 null。</li>
+<li>path.getStatementParent()	获取 Statement 类型父节点，这个基本上都会有返回值，如果当前遍历的是 Program 或者 File 节点，则会报错。</li>
+<li>path.getAncestry()	获取所有的祖先节点，没有实参，返回的是一个 Array 对象。</li>
+<li>path.isAncestor(maybeDescendant)	判断当前遍历的节点是否为实参的祖先节点.</li>
+<li>path.isDescendant(maybeAncestor)	判断当前遍历的节点是否为实参的子孙节点.</li>
+<li>path.traverse(visitor)	遍历当前路径下的所有子节点，并应用指定的 visitor。</li>
+<li>path.replaceWith(node)	用指定的节点替换当前路径对应的节点。</li>
+<li>path.remove()	从 AST 中移除当前路径对应的节点。</li>
+<li>path.insertBefore(nodes)	在当前路径对应节点之前插入一个或多个节点。</li>
+<li>path.insertAfter(nodes)	在当前路径对应节点之后插入一个或多个节点。</li>
+<li>path.toString()	用于将 AST 节点转换回对应的源代码字符串。</li>
+</ul>
+<h2 id="3-2-Scope"><a href="#3-2-Scope" class="headerlink" title="3.2 Scope"></a>3.2 Scope</h2><p>函数：</p>
+<ul>
+<li>scope.block	表示当前作用域下的所有 node，参考上面的 this.block &#x3D; node;</li>
+<li>scope.dump()	输出当前每个变量的作用域信息。调用后直接打印，不需要加打印函数</li>
+<li>scope.crawl()	重构 scope，在某种情况下会报错，不过还是建议在每一个插件的最后一行加上。</li>
+<li>scope.rename(oldName, newName, block)	修改当前作用域下的的指定的变量名，oldname、newname 表示替换前后的变量名，为字符串。注意，oldName 需要有 binding，否则无法重命名。</li>
+<li>scope.traverse(node, opts, state)	遍历当前作用域下的某些(个)插件。和全局的 traverse 用法一样。</li>
+<li>scope.getBinding(name)	获取某个变量的 binding，可以理解为其生命周期。包含引用，修改之类的信息</li>
+</ul>
+<h2 id="3-3-node"><a href="#3-3-node" class="headerlink" title="3.3 node"></a>3.3 node</h2><p>属性：</p>
+<ul>
+<li>path.node.type	获取当前节点的类型。</li>
+<li>path.node.declarations	对于 VariableDeclaration 节点, 获取变量声明列表。</li>
+<li>path.node.init.value	获取某个节点的值。</li>
+<li>delete path.node.init;	删除节点，使用系统的 delete 方法。</li>
+</ul>
+<h2 id="3-4-types-类型"><a href="#3-4-types-类型" class="headerlink" title="3.4 types 类型"></a>3.4 types 类型</h2><h2 id="3-5-节点类型对照"><a href="#3-5-节点类型对照" class="headerlink" title="3.5 节点类型对照"></a>3.5 节点类型对照</h2><ul>
+<li>Program	程序主体	整段代码的主体</li>
+<li>VariableDeclaration	变量声明	声明一个变量，例如 var let const</li>
+<li>FunctionDeclaration	函数声明	声明一个函数，例如 function</li>
+<li>ExpressionStatement	表达式语句	通常是调用一个函数，例如 console.log()</li>
+<li>BlockStatement	块语句	包裹在 {} 块内的代码，例如 if (condition){var a &#x3D; 1;}</li>
+<li>BreakStatement	中断语句	通常指 break</li>
+<li>ContinueStatement	持续语句	通常指 continue</li>
+<li>ReturnStatement	返回语句	通常指 return</li>
+<li>SwitchStatement	Switch 语句	通常指 Switch Case 语句中的 Switch</li>
+<li>IfStatement	If 控制流语句	控制流语句，通常指 if(condition){}else{}</li>
+<li>Identifier	标识符	标识，例如声明变量时 var identi &#x3D; 5 中的 identi</li>
+<li>CallExpression	调用表达式	通常指调用一个函数，例如 console.log()</li>
+<li>BinaryExpression	二进制表达式	通常指运算，例如 1+2</li>
+<li>MemberExpression	成员表达式	通常指调用对象的成员，例如 console 对象的 log 成员</li>
+<li>ArrayExpression	数组表达式	通常指一个数组，例如 [1, 3, 5]</li>
+<li>NewExpression	New 表达式	通常指使用 New 关键词</li>
+<li>AssignmentExpression	赋值表达式	通常指将函数的返回值赋值给变量</li>
+<li>UpdateExpression	更新表达式	通常指更新成员值，例如 i++</li>
+<li>Literal	字面量	字面量</li>
+<li>BooleanLiteral	布尔型字面量	布尔值，例如 true false</li>
+<li>NumericLiteral	数字型字面量	数字，例如 100</li>
+<li>StringLiteral	字符型字面量	字符串，例如 vansenb</li>
+<li>SwitchCase	Case 语句	通常指 Switch 语句中的 Case</li>
+</ul>
+<h1 id="4-基础使用框架"><a href="#4-基础使用框架" class="headerlink" title="4 基础使用框架"></a>4 基础使用框架</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// decrypt.js</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">&#x27;util&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;@babel/parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> traverse = <span class="built_in">require</span>(<span class="string">&#x27;@babel/traverse&#x27;</span>).<span class="property">default</span>;</span><br><span class="line"><span class="keyword">const</span> types = <span class="built_in">require</span>(<span class="string">&#x27;@babel/types&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> generator = <span class="built_in">require</span>(<span class="string">&#x27;@babel/generator&#x27;</span>).<span class="property">default</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 程序启动时间</span></span><br><span class="line"><span class="keyword">var</span> time_start = <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>()</span><br><span class="line"><span class="comment">// 读取文件</span></span><br><span class="line">process.<span class="property">argv</span>.<span class="property">length</span> &gt; <span class="number">2</span> ? encode_file = process.<span class="property">argv</span>[<span class="number">2</span>] : encode_file = <span class="string">&#x27;encode.js&#x27;</span>;</span><br><span class="line">process.<span class="property">argv</span>.<span class="property">length</span> &gt; <span class="number">3</span> ? decode_file = process.<span class="property">argv</span>[<span class="number">3</span>] : decode_file = <span class="string">&#x27;decode.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> jscode = fs.<span class="title function_">readFileSync</span>(encode_file, &#123;<span class="attr">encoding</span>: <span class="string">&#x27;utf-8&#x27;</span>&#125;);</span><br><span class="line"><span class="comment">// 转换为 ast 树</span></span><br><span class="line"><span class="keyword">let</span> ast = parser.<span class="title function_">parse</span>(jscode);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> visitor =</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 此处编写 babel 处理代码、插件代码</span></span><br><span class="line">        <span class="title class_">ASTNodeTypeHere</span>(path, state) &#123;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如</span></span><br><span class="line">        <span class="comment">// Identifier(path, state) &#123;&#125;</span></span><br><span class="line">        <span class="comment">// Identifier(path) &#123;&#125;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用插件，处理待处理 js ast 树</span></span><br><span class="line"><span class="title function_">traverse</span>(ast, visitor);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;AST traverse completed.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成处理后的 js</span></span><br><span class="line"><span class="keyword">let</span> &#123;code&#125; = <span class="title function_">generator</span>(ast);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;AST generator completed.&#x27;</span>)</span><br><span class="line">fs.<span class="title function_">writeFile</span>(decode_file, code, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(util.<span class="title function_">format</span>(<span class="string">&#x27;The javascript code in [%s] has been processed.&#x27;</span>, encode_file))</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(util.<span class="title function_">format</span>(<span class="string">&#x27;The processing result has been saved to [%s].&#x27;</span>, decode_file))</span><br><span class="line"><span class="comment">// 程序结束时间</span></span><br><span class="line"><span class="keyword">var</span> time_end = <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(util.<span class="title function_">format</span>(<span class="string">&#x27;The program runs to completion, time-consuming: %s s&#x27;</span>, (time_end - time_start) / <span class="number">1000</span>))</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-常用技巧"><a href="#5-常用技巧" class="headerlink" title="5 常用技巧"></a>5 常用技巧</h1><h2 id="5-1-执行-path"><a href="#5-1-执行-path" class="headerlink" title="5.1 执行 path"></a>5.1 执行 path</h2><p>使用 <code>path.evaluate()</code> ，返回的 <code>confident</code> 为 <code>true</code> 则表明成功执行，<code>value</code> 为返回值<br>示例：<br>    <code>let &#123; confident, value &#125; = path.evaluate();</code></p>
+<h2 id="5-2-多个节点组合查询"><a href="#5-2-多个节点组合查询" class="headerlink" title="5.2 多个节点组合查询"></a>5.2 多个节点组合查询</h2><p>使用 <code>|</code> 把需要访问的节点组合起来即可，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visitor = &#123;</span><br><span class="line">  <span class="string">&#x27;VariableDeclarator|FunctionDeclaration&#x27;</span>(path) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">traverse</span>(ast, visitor);</span><br></pre></td></tr></table></figure>
+<h2 id="5-3-删除无用的空语句"><a href="#5-3-删除无用的空语句" class="headerlink" title="5.3 删除无用的空语句"></a>5.3 删除无用的空语句</h2><p>删除空语句 <code>;</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visitor =</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&#x27;EmptyStatement&#x27;</span>(path) &#123;</span><br><span class="line">    path.<span class="title function_">remove</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-4-删除无用节点"><a href="#5-4-删除无用节点" class="headerlink" title="5.4 删除无用节点"></a>5.4 删除无用节点</h2><p>&#96;path.remove()</p>
+<h2 id="5-5-查看作用域-scope"><a href="#5-5-查看作用域-scope" class="headerlink" title="5.5 查看作用域 scope"></a>5.5 查看作用域 scope</h2><p><code>path.scope.dump()</code> 即可查看自底向上的作用域</p>
+<h2 id="5-6-同一节点使用多个函数"><a href="#5-6-同一节点使用多个函数" class="headerlink" title="5.6 同一节点使用多个函数"></a>5.6 同一节点使用多个函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">log_a</span>(<span class="params">path</span>) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;This is [a] function -- &#x27;</span> + path.<span class="property">node</span>.<span class="property">init</span>.<span class="property">value</span>); &#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">log_b</span>(<span class="params">path</span>) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;This is [b] function -- &#x27;</span> + path.<span class="property">node</span>.<span class="property">init</span>.<span class="property">value</span>); &#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">log_c</span>(<span class="params">path</span>) &#123; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;This is [c] function -- &#x27;</span> + path.<span class="property">node</span>.<span class="property">init</span>.<span class="property">value</span>); &#125;</span><br><span class="line"><span class="keyword">const</span> visitor =</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&#x27;VariableDeclarator&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;enter&#x27;</span>: [log_a, log_c, log_b]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">traverse</span>(ast, visitor);</span><br></pre></td></tr></table></figure>
+
+<p><strong>请注意！</strong><br><strong>enter 需为数组！函数执行顺序为列表中函数顺序！</strong></p>
+<h2 id="5-7-删除未使用的-function、var、let、const"><a href="#5-7-删除未使用的-function、var、let、const" class="headerlink" title="5.7 删除未使用的 function、var、let、const"></a>5.7 删除未使用的 function、var、let、const</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visitor =</span><br><span class="line">&#123;</span><br><span class="line">  <span class="title class_">VariableDeclarator</span>(path) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; id &#125; = path.<span class="property">node</span>;</span><br><span class="line">    <span class="keyword">let</span> binding = path.<span class="property">scope</span>.<span class="title function_">getBinding</span>(id.<span class="property">name</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (binding.<span class="property">referenced</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    path.<span class="title function_">remove</span>();</span><br><span class="line">    path.<span class="property">scope</span>.<span class="title function_">crawl</span>();</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title class_">FunctionDeclaration</span>(path) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; id &#125; = path.<span class="property">node</span>;</span><br><span class="line">    <span class="comment">// 防止函数中存在变量与函数名相同，且该变量在函数中使用，导致未去除未使用函数</span></span><br><span class="line">    <span class="keyword">let</span> binding = path.<span class="property">scope</span>.<span class="property">parent</span>.<span class="title function_">getBinding</span>(id.<span class="property">name</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (binding.<span class="property">referenced</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    path.<span class="title function_">remove</span>();</span><br><span class="line">    <span class="comment">// 手动更新 scope ，防止影响下个插件使用</span></span><br><span class="line">    path.<span class="property">scope</span>.<span class="title function_">crawl</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-8-a-‘bb’-转换为-a-bb"><a href="#5-8-a-‘bb’-转换为-a-bb" class="headerlink" title="5.8 a[‘bb’] 转换为 a.bb"></a>5.8 a[‘bb’] 转换为 a.bb</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> visitor =</span><br><span class="line">&#123;</span><br><span class="line">    <span class="title class_">MemberExpression</span>(path) &#123;</span><br><span class="line">        <span class="keyword">let</span> &#123; computed &#125; = path.<span class="property">node</span>;</span><br><span class="line">        <span class="comment">// 获取 path property 子路径</span></span><br><span class="line">        <span class="keyword">let</span> property = path.<span class="title function_">get</span>(<span class="string">&#x27;property&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span> (computed &amp;&amp; types.<span class="title function_">isStringLiteral</span>(property)) &#123;</span><br><span class="line">            property.<span class="title function_">replaceWith</span>(types.<span class="title function_">identifier</span>(property.<span class="property">node</span>.<span class="property">value</span>));</span><br><span class="line">            path.<span class="property">node</span>.<span class="property">computed</span>=<span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dacker1993@gmail </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+	<section class="artile-comments gitalk">
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '245e5bd10b84e1893ec9',
+        clientSecret: 'e209952420f6031b8f822035983437e7b95e6848',
+        repo: 'gitalk.github.io',
+        owner: 'suzi007',
+        admin: ['suzi007'],
+        id:'gitalk_20240417151111',
+        labels: 'gitalk'.split(',').filter(l => l),
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')           
+</script>
+
+	</section>
+ 
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 suzi
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 547px;
+    }
+    .nav.fullscreen {
+        margin-left: -547px;
+    }
+    .nav-left {
+        width: 125px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

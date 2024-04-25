@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KaliTool | 苏子部落阁</title>
+  <meta name="keywords" content=" 网络安全 , 安全工具 ">
+  <meta name="description" content="KaliTool | 苏子部落阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="title: JS逆向date: 2024-04-14 22:13:01type: “categories” title: 网络安全date: 2024-04-14 22:13:01type: “categories” title: 安全工具集date: 2024-04-14 22:13:01type: “categories” title: Android逆向date: 2024-04-14">
+<meta property="og:type" content="website">
+<meta property="og:title" content="爬虫框架">
+<meta property="og:url" content="http://suzi007.github.io/categories/index.html">
+<meta property="og:site_name" content="苏子部落阁">
+<meta property="og:description" content="title: JS逆向date: 2024-04-14 22:13:01type: “categories” title: 网络安全date: 2024-04-14 22:13:01type: “categories” title: 安全工具集date: 2024-04-14 22:13:01type: “categories” title: Android逆向date: 2024-04-14">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-14T14:13:01.000Z">
+<meta property="article:modified_time" content="2024-04-17T07:25:11.261Z">
+<meta property="article:author" content="苏子">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="苏子部落阁" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>苏子</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/suzi007"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/38-70-66-40"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/u014455876?type=blog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:dacker1993@gmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=510909959&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(3)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络安全">
+            <i class="fold iconfont icon-right"></i>
+            网络安全
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;安全工具集">
+            
+            安全工具集
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="JS逆向">
+            <i class="fold iconfont icon-right"></i>
+            JS逆向
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="JS逆向&lt;---&gt;逆向工具">
+            
+            逆向工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="爬虫框架">
+            
+            爬虫框架
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="3">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://pythondjango.cn/">大江狗</a></li>
+            
+            <li><a target="_blank" href="https://chat18.aichatos.xyz/">AIChatOS</a></li>
+            
+            <li><a target="_blank" href="https://astexplorer.net/">ASTExplorer</a></li>
+            
+            <li><a target="_blank" href="https://spiderapi.cn/">虫术</a></li>
+            
+            <li><a target="_blank" href="https://metaso.cn/">秘塔搜索</a></li>
+            
+            <li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Learn">MDN</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>安全工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫常用库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫程序设计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AST还原</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS逆向</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/KaliTool/"
+           data-tag="网络安全,安全工具"
+           data-author="" >
+            <span class="post-title" title="KaliTool">KaliTool</span>
+            <span class="post-date" title="2024-04-17 15:26:29">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All JS逆向 逆向工具 "
+           href="/2024/04/17/AST%E8%BF%98%E5%8E%9F/"
+           data-tag="JS逆向,AST还原"
+           data-author="" >
+            <span class="post-title" title="AST还原">AST还原</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 爬虫框架 "
+           href="/2024/04/14/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/"
+           data-tag="爬虫程序设计,爬虫常用库"
+           data-author="" >
+            <span class="post-title" title="爬虫常用库">爬虫常用库</span>
+            <span class="post-date" title="2024-04-14 21:43:02">2024/04/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-安全工具集/KaliTool" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">KaliTool</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络安全">网络安全</a> > 
+            
+            <a  data-rel="网络安全&lt;---&gt;安全工具集">安全工具集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">网络安全</a>
+            
+            <a class="color5">安全工具</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-04-17 15:28:02'>2024-04-17 15:26</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">1 信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-Amap"><span class="toc-text">1.1 Amap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Arp-scan"><span class="toc-text">1.2 Arp-scan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-DMitry"><span class="toc-text">1.3 DMitry</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-Dnmap"><span class="toc-text">1.4   Dnmap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-Dnsenum"><span class="toc-text">1.5 Dnsenum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-Fierce"><span class="toc-text">1.6 Fierce</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-Maltego"><span class="toc-text">1.7 Maltego</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-Nmap"><span class="toc-text">1.8   Nmap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-P-0-f"><span class="toc-text">1.9 P 0 f</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-Recon-NG"><span class="toc-text">1.10 Recon-NG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-Smtp-user-enum"><span class="toc-text">1.11 Smtp-user-enum</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-Snmp-check"><span class="toc-text">1.12 Snmp-check</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-13-Unicornscan"><span class="toc-text">1.13 Unicornscan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-14-Wireshark"><span class="toc-text">1.14 Wireshark</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BA%8C%E3%80%81%E8%84%86%E5%BC%B1%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-text">2 二、脆弱性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-BQSQL"><span class="toc-text">2.1 BQSQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-BED"><span class="toc-text">2.2  BED</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Cisco-auditing-tool"><span class="toc-text">2.3 Cisco-auditing-tool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-Cisco-global-exploiter"><span class="toc-text">2.4 Cisco-global-exploiter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-Cisco-torch"><span class="toc-text">2.5 Cisco-torch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-Copy-router-config"><span class="toc-text">2.6 Copy-router-config</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-Lynis"><span class="toc-text">2.7 Lynis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-Nessus"><span class="toc-text">2.8 Nessus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-OpenVAS"><span class="toc-text">2.9 OpenVAS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-text">3 漏洞利用工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Armitage"><span class="toc-text">3.1 Armitage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Backdoor-Factory"><span class="toc-text">3.2  Backdoor Factory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-BeEF"><span class="toc-text">3.3 BeEF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Metasploit-Framework"><span class="toc-text">3.4 Metasploit Framework</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-Exploitdb"><span class="toc-text">3.5  Exploitdb</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%97%85%E6%8E%A2%E4%B8%8E%E6%AC%BA%E9%AA%97%E5%B7%A5%E5%85%B7"><span class="toc-text">4 嗅探与欺骗工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-Burp-Suite"><span class="toc-text">4.1 Burp Suite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-HexInject"><span class="toc-text">4.2 HexInject</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-Inviteflood"><span class="toc-text">4.3  Inviteflood</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-iSMTP"><span class="toc-text">4.4 iSMTP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-Mitmproxy"><span class="toc-text">4.5 Mitmproxy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-6-SniffJoke"><span class="toc-text">4.6 SniffJoke</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-SSLstrip"><span class="toc-text">4.7 SSLstrip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-WebScarab"><span class="toc-text">4.8 WebScarab</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AF%86%E7%A0%81%E6%94%BB%E5%87%BB%E5%B7%A5%E5%85%B7"><span class="toc-text">5 密码攻击工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-BruteSpray"><span class="toc-text">5.1 BruteSpray</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-Cain-Abel"><span class="toc-text">5.2  Cain&amp;Abel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-Crunch"><span class="toc-text">5.3 Crunch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4-Findmyhash"><span class="toc-text">5.4   Findmyhash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-5-Hash-Identifier"><span class="toc-text">5.5 Hash-Identifier</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-6-Hydra"><span class="toc-text">5.6 Hydra</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-7-John-the-Ripper"><span class="toc-text">5.7 John the Ripper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-8-Medusa"><span class="toc-text">5.8  Medusa</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-9-RainbowCrack"><span class="toc-text">5.9 RainbowCrack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-10-Rtgen"><span class="toc-text">5.10  Rtgen</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-11-Samdump2"><span class="toc-text">5.11 Samdump2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87%E5%B7%A5%E5%85%B7"><span class="toc-text">6 权限提升工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-Meterpreter"><span class="toc-text">6.1  Meterpreter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-SET"><span class="toc-text">6.2 SET</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-Web-%E5%BA%94%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-text">7 Web 应用工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-Arachni"><span class="toc-text">7.1  Arachni</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-BlindElephant"><span class="toc-text">7.2  BlindElephant</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-CutyCapt"><span class="toc-text">7.3 CutyCapt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4-DIRB"><span class="toc-text">7.4 DIRB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-5-Nikto"><span class="toc-text">7.5 Nikto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-6-Paros-Proxy"><span class="toc-text">7.6   Paros Proxy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-7-ProxyStrike"><span class="toc-text">7.7  ProxyStrike</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-8-Vega"><span class="toc-text">7.8  Vega</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-9-Webshag"><span class="toc-text">7.9 Webshag</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-10-WebSploit"><span class="toc-text">7.10 WebSploit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-11-Whatweb"><span class="toc-text">7.11 Whatweb</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E6%97%A0%E7%BA%BF%E6%94%BB%E5%87%BB%E5%B7%A5%E5%85%B7"><span class="toc-text">8 无线攻击工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-Aircrack-ng"><span class="toc-text">8.1 Aircrack-ng</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-Arpspoof"><span class="toc-text">8.2 Arpspoof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3-Easy-Creds"><span class="toc-text">8.3 Easy-Creds</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-4-Gerix-Wifi-Cracker"><span class="toc-text">8.4 Gerix Wifi Cracker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-5-Kismet"><span class="toc-text">8.5 Kismet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-6-Reaver"><span class="toc-text">8.6 Reaver</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-7-Wifte"><span class="toc-text">8.7  Wifte</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E7%BB%B4%E6%8C%81%E8%AE%BF%E9%97%AE%E5%B7%A5%E5%85%B7"><span class="toc-text">9 维持访问工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-Cryptcat"><span class="toc-text">9.1  Cryptcat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-2-Cymothoa"><span class="toc-text">9.2  Cymothoa</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-3-Intersect"><span class="toc-text">9.3  Intersect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-4-NetCat"><span class="toc-text">9.4 NetCat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-5-Weevely"><span class="toc-text">9.5 Weevely</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E5%8F%96%E8%AF%81%E5%B7%A5%E5%85%B7"><span class="toc-text">10 取证工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-Bulk-extractor"><span class="toc-text">10.1 Bulk _ extractor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2-Capstone"><span class="toc-text">10.2 Capstone</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-3-Dumpzilla"><span class="toc-text">10.3  Dumpzilla</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-4-Galeta"><span class="toc-text">10.4 Galeta</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-5-Peepdf"><span class="toc-text">10.5  Peepdf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-6-RegRipper"><span class="toc-text">10.6 RegRipper</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-7-Volatility"><span class="toc-text">10.7 Volatility</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E5%B7%A5%E5%85%B7"><span class="toc-text">11 逆向工程工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-1-DiStorm3"><span class="toc-text">11.1 DiStorm3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-2-Edb-debugger"><span class="toc-text">11.2    Edb-debugger</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-3-Flasm"><span class="toc-text">11.3 Flasm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-4-JavaSnoop"><span class="toc-text">11.4  JavaSnoop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-5-011yDbg"><span class="toc-text">11.5 011yDbg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-6-%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="toc-text">11.6 压力测试工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-7-DHCPig"><span class="toc-text">11.7 DHCPig</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-8-FunkLoad"><span class="toc-text">11.8  FunkLoad</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-9-IAX"><span class="toc-text">11.9  IAX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-10-Inundator"><span class="toc-text">11.10 Inundator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-11-MDK3"><span class="toc-text">11.11   MDK3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-12-Rtpflood"><span class="toc-text">11.12 Rtpflood</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-13-Inviteflood"><span class="toc-text">11.13 Inviteflood</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-14-SlowHTTPTest"><span class="toc-text">11.14 SlowHTTPTest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-15-THC-SSL-DOS"><span class="toc-text">11.15 THC-SSL-DOS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E6%8A%A5%E5%91%8A%E5%B7%A5%E5%85%B7"><span class="toc-text">12 报告工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#12-1-CaseFile"><span class="toc-text">12.1 CaseFile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-2-CherryTree"><span class="toc-text">12.2 CherryTree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-3-Dos2unix"><span class="toc-text">12.3 Dos2unix</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-4-Dradis"><span class="toc-text">12.4 Dradis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-5-MagicTree"><span class="toc-text">12.5  MagicTree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-6-Metagoofil"><span class="toc-text">12.6 Metagoofil</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-信息收集"><a href="#1-信息收集" class="headerlink" title="1 信息收集"></a>1 信息收集</h1><h2 id="1-1-Amap"><a href="#1-1-Amap" class="headerlink" title="1.1 Amap"></a>1.1 Amap</h2><p>   Amap是一个服务扫描工具，它是最早被称为下一代扫描器的软件，可以识别不同的应用程序，即使这些程序运行在一个异常的端口上。Amap最早开始支持UDP协议和IPv6地址空间的扫描，可作为nmap重要的补充工具。同时amap还提供未知应用特征的自动测定功能，让我们可以方便定制扫描结果</p>
+<h2 id="1-2-Arp-scan"><a href="#1-2-Arp-scan" class="headerlink" title="1.2 Arp-scan"></a>1.2 Arp-scan</h2><p>   Arp-scan是一个用来进行系统发现和指纹识别的命令行工具，它可以构建并发送ARP请求到指定的IP地址，并且显示返回的任何响应</p>
+<h2 id="1-3-DMitry"><a href="#1-3-DMitry" class="headerlink" title="1.3 DMitry"></a>1.3 DMitry</h2><p>   DMitry是一个用C语言开发的UNIX&#x2F;（GUN）Linux命令行工具，能够收集目标主机尽可能多的信息，包括主机所在的子域、电子邮件地址、运行时间、TCP端口扫描、whois查询等。</p>
+<h2 id="1-4-Dnmap"><a href="#1-4-Dnmap" class="headerlink" title="1.4   Dnmap"></a>1.4   Dnmap</h2><p>   Dnmap是一个能够在多台客户机上执行分布式nmap扫描的框架，它可以读取包括nmap命令的文件，并把该命令文件发给与之相连的多台客户机，在这些客户机上执行nmap文件中的命令。dnmap框架采用的是客户机&#x2F;服务器模式，服务器发布命令，客户机执行命令，从而实现分布式nmap扫描</p>
+<h2 id="1-5-Dnsenum"><a href="#1-5-Dnsenum" class="headerlink" title="1.5 Dnsenum"></a>1.5 Dnsenum</h2><p>   Dnsenum通过执行多线程Perl脚本来枚举域的DNS信息，从而发现非相邻的IP块</p>
+<h2 id="1-6-Fierce"><a href="#1-6-Fierce" class="headerlink" title="1.6 Fierce"></a>1.6 Fierce</h2><p>   Fierce不是一个IP地址扫描器，也不是一个DDos工具，它不是涉及来扫描整个互联网或执行任何非针对性的攻击的。它是一个Perl脚本，是一个侦察工具，可以对域进行快速扫描，用来定位公司网络内部和外部可能的目标</p>
+<h2 id="1-7-Maltego"><a href="#1-7-Maltego" class="headerlink" title="1.7 Maltego"></a>1.7 Maltego</h2><p>   Maltego是一个独特的平台，用于向组织拥有和运营的环境传递清晰的威胁画面。Maltego的独特优势在于证明单点故障的复杂性和严重性以及网络设备间的信任问题</p>
+<h2 id="1-8-Nmap"><a href="#1-8-Nmap" class="headerlink" title="1.8   Nmap"></a>1.8   Nmap</h2><p>   Nmap是一个免费的、开源的用于网络发现和安全审计的工具，可用于网络资产管理、网络服务升级管理、监控主机或服务正常运行等任务Nmap功能强大，可判断主机是否在线，判断主机运行的操作系统类型和版本，判断主机提供了哪些服务（应用程序名称和版本）、使用了什么类型的过滤器或防火墙，以及其他几十种特性。</p>
+<h2 id="1-9-P-0-f"><a href="#1-9-P-0-f" class="headerlink" title="1.9 P 0 f"></a>1.9 P 0 f</h2><p>   P0f来对主机上的操作系统进行鉴别，即使是在系统上装有性能良好的防火墙的 p0f是一款被动探测工具,能够通过捕获并分析目标主机发出的数据包 NAT、负载均衡、应用代理等,它是一个万能的被动操作系统指纹工具。情况下也没有问题。同时p0f在网络分析方面功能强大,可以用它来分析</p>
+<h2 id="1-10-Recon-NG"><a href="#1-10-Recon-NG" class="headerlink" title="1.10 Recon-NG"></a>1.10 Recon-NG</h2><p>   Recon-NG是由Python编写的一个开源的Web侦查(信息收集)框架, 成数据库，可把查询结果结构化存储在其中，有报告模块，把结果导出为报告。使用它可以自动地收集信息和网络侦查。其命令格式与Metasploit默认集</p>
+<h2 id="1-11-Smtp-user-enum"><a href="#1-11-Smtp-user-enum" class="headerlink" title="1.11 Smtp-user-enum"></a>1.11 Smtp-user-enum</h2><p>   Smtp-user-enum大部分基于类Unix系统的邮件服务,采用操作系统账号作为邮件账号, 因此对于其邮件账号的探测，其实就等同于对操作系统账号的探测，以便进 行后续弱密码口令的破解。smtp-user-enum基于三种方法验证邮件账号是否 存在，同时支持基于字典的批量验证。</p>
+<h2 id="1-12-Snmp-check"><a href="#1-12-Snmp-check" class="headerlink" title="1.12 Snmp-check"></a>1.12 Snmp-check</h2><p>   Snmp-check是一款基于默认或指定团体名,对目标设备进行信息批量查 询的工具,其默认支持Windows、类Unix、网络设备和打印机等。完全依靠 人工来监控大型网络的运行状态,是一种令人崩溃的任务。SNMP协议可以大 大简化系统和网络管理员的工作，实现问题的快速定位和排查。</p>
+<h2 id="1-13-Unicornscan"><a href="#1-13-Unicornscan" class="headerlink" title="1.13 Unicornscan"></a>1.13 Unicornscan</h2><p>   Unicornscan是一款通过尝试连接用户系统(User-Land)分布式TCP&#x2F; IP堆栈获得信息和关联关系的端口扫描器。它是一个新的信息收集引擎,主 要用于安全研究和通讯测试，主要特点是精确、灵活而且高效。</p>
+<h2 id="1-14-Wireshark"><a href="#1-14-Wireshark" class="headerlink" title="1.14 Wireshark"></a>1.14 Wireshark</h2><p>   Wireshark从Ethereal发展而来,是一款网络数据包捕获和分析工具, 它使用WinPcap作为接口,可跳过TCP&#x2F;IP协议栈直接与网卡进行数据包的 交换。</p>
+<h1 id="2-二、脆弱性分析"><a href="#2-二、脆弱性分析" class="headerlink" title="2 二、脆弱性分析"></a>2 二、脆弱性分析</h1><h2 id="2-1-BQSQL"><a href="#2-1-BQSQL" class="headerlink" title="2.1 BQSQL"></a>2.1 BQSQL</h2><p>   BQSQL是一款用Python写的SQL盲注框架,对SQL注入漏洞 攻击非常有效。它是一种半自动工具,自带一个直观的UI用户界 面,允许许多难以触发的SQL注入变得用户化,使设置攻击更容易。BBQSQL用法非常灵活,与数据库无关,不关心数据或数据库,而大 多数SQL注入工具是要具体的数据库或语言建立的。</p>
+<h2 id="2-2-BED"><a href="#2-2-BED" class="headerlink" title="2.2  BED"></a>2.2  BED</h2><p>   BED(Bruteforce Exploit Detector)是一款缓存区漏洞检测 工具。它预置了十一种插件。这些插件针对不同的服务或系统，如 FTP、SMTP、POP等。同时,这些插件内包含了已知的各种攻击载荷。BED通过加载插件,向目标主机发送攻击数据。如果发现目标无法响 应，说明目标可能存在溢出区漏洞。经过多次测试验证，就可以判断 漏洞出现的位置。然后手工执行验证，采用代码审核、反编译等方式， 就可以找出漏洞具体触发机制，从而加以利用</p>
+<h2 id="2-3-Cisco-auditing-tool"><a href="#2-3-Cisco-auditing-tool" class="headerlink" title="2.3 Cisco-auditing-tool"></a>2.3 Cisco-auditing-tool</h2><p>   Cisco-auditing-tool简称CAT,是一款小型的安全审计工具, 可检测出Cisco路由器常见的漏洞,可发现注入默认密码、默认 SNMP字符串和老版本IOS上存在的漏洞。</p>
+<h2 id="2-4-Cisco-global-exploiter"><a href="#2-4-Cisco-global-exploiter" class="headerlink" title="2.4 Cisco-global-exploiter"></a>2.4 Cisco-global-exploiter</h2><p>   Cisco-global-exploiter是一个小型的Perl脚本,是一个针对 思科设备的漏洞利用工具合集,支持对思科设备的14种独立的漏洞 进行测试。</p>
+<h2 id="2-5-Cisco-torch"><a href="#2-5-Cisco-torch" class="headerlink" title="2.5 Cisco-torch"></a>2.5 Cisco-torch</h2><p>   Cisco-torch是一款专门针对思科设备的扫描工具,它具备多种 应用层协议的指纹识别特性，借助与第三方指纹库的比对，可以轻 松识别目标设备及系统类型。同时由于采用了多线程的开发方式， 所以在性能上torch也同样表现突出。另外在密码破解和漏洞利用 方面, torch也具备相应的能力。如果torch破解了设备读写权限的 SNMP Community,还可进一步利用其获取设备的完整配置信息。</p>
+<h2 id="2-6-Copy-router-config"><a href="#2-6-Copy-router-config" class="headerlink" title="2.6 Copy-router-config"></a>2.6 Copy-router-config</h2><p>   Copy-router-config专门针对思科设备而设计,利用SNMP协议 下载和上传思科设备的配置文件。其使用需要tftp服务的配合。</p>
+<h2 id="2-7-Lynis"><a href="#2-7-Lynis" class="headerlink" title="2.7 Lynis"></a>2.7 Lynis</h2><p>   Lynis是个系统安全检查工具,针对Unix和Linux系统而设计, 通过执行一些安全检查发现系统安装的软件以及存在的配置问题。它能生成一份全面的加固建议列表，并由使用者灵活地自行决定实 施哪些加固措施。</p>
+<h2 id="2-8-Nessus"><a href="#2-8-Nessus" class="headerlink" title="2.8 Nessus"></a>2.8 Nessus</h2><p>   Nessus是世界上最流行的漏洞扫描程序,提供完整的电脑漏洞 扫描服务，并随时更新其漏洞数据库，可同时在本机或远端上遥控， 进行系统的漏洞分析扫描。它完整支持SSL,可自定义功能插件。</p>
+<h2 id="2-9-OpenVAS"><a href="#2-9-OpenVAS" class="headerlink" title="2.9 OpenVAS"></a>2.9 OpenVAS</h2><p>   OpenVAS是目前开源世界最重要的漏洞管理产品,它基于各种安 全行业的标准规范，广泛覆盖了已知的漏洞类型。它使用简单方便， 可以自动发现系统中绝大部分已知漏洞，无论对于渗透测试者还是 安全运维工程师，这都是一个不能缺少的强大工具。</p>
+<h1 id="3-漏洞利用工具"><a href="#3-漏洞利用工具" class="headerlink" title="3 漏洞利用工具"></a>3 漏洞利用工具</h1><p>   发现了操作系统、网络和应用服务的漏洞，接下来怎么利用这些漏洞发起攻击呢? Kali提供了许多漏洞利用工具，这些工具有些功能强大，可以利用的漏洞类型很多，甚至可以定制，针对新的漏洞可通过添加脚本的方式扩展其功能，如Metasploit；有些工具则是针对特定的漏洞具有很好的效果。Kali系统提供的漏洞利用工具如下表所示</p>
+<h2 id="3-1-Armitage"><a href="#3-1-Armitage" class="headerlink" title="3.1 Armitage"></a>3.1 Armitage</h2><p>   Armitage是一款Java写的Metasploit图形界面化的攻击软 件,可以用它结合Metasploit中已知的exploit来针对主机存在 的漏洞自动化攻击。通过命令行的方式使用Metasploit难度较高, 需要记忆的命令过多,而Armitage完美地解决了这一问题,用户 只需要简单地点击菜单，就可以实现对目标主机的安全测试和攻 击。Armitage良好的图形展示界面,使得攻击过程更加直观,用 户体验更好。因其操作的简单性,尤其适合Metasploit初学者对 目标系统进行安全测试和攻击。</p>
+<h2 id="3-2-Backdoor-Factory"><a href="#3-2-Backdoor-Factory" class="headerlink" title="3.2  Backdoor Factory"></a>3.2  Backdoor Factory</h2><p>   Backdoor Factory是一款安全测试工具,可以轻松地生成 win32PE后门测试程序,可对可执行文件进行自动化的后门部署。</p>
+<h2 id="3-3-BeEF"><a href="#3-3-BeEF" class="headerlink" title="3.3 BeEF"></a>3.3 BeEF</h2><p>   BeEF(Browser Exploitation Framework)是一款针对浏览 器的渗透测试工具。</p>
+<h2 id="3-4-Metasploit-Framework"><a href="#3-4-Metasploit-Framework" class="headerlink" title="3.4 Metasploit Framework"></a>3.4 Metasploit Framework</h2><p>   Metasploit Framework简称MSF,是一个用Ruby语言写的渗 透测试框架,该框架集成了很多可用的渗透利用工具(Exploit Tools)。用户可以在这个框架下进行一 系列的渗透测试,利用现有的装备(Payload),如Meterpreter 等进一步拿取对方的Shell。Metasploit功能强大,几乎每一个 从事渗透测试的人都会接触到它，是渗透测试的利器。</p>
+<h2 id="3-5-Exploitdb"><a href="#3-5-Exploitdb" class="headerlink" title="3.5  Exploitdb"></a>3.5  Exploitdb</h2><p>   Exploitdb(Exploit Database)是一个由“Offebnsive Security”提供的漏洞利用程序集的数据库,可以用于平时的参 考和使用。它存储了大量的漏洞利用程序，可以帮助安全研究者 和渗透测试工程师更好地进行安全测试工作。</p>
+<h1 id="4-嗅探与欺骗工具"><a href="#4-嗅探与欺骗工具" class="headerlink" title="4 嗅探与欺骗工具"></a>4 嗅探与欺骗工具</h1><h2 id="4-1-Burp-Suite"><a href="#4-1-Burp-Suite" class="headerlink" title="4.1 Burp Suite"></a>4.1 Burp Suite</h2><p>   Burp Suite是Web应用程序测试的最佳工具之一,其功能强大,可 破解登陆表单，执行会话令牌等多种的随机性检查。以执行多种任务,如请求的拦截和修改,扫描web应用程序漏洞,以暴力破解登录表单，执行会话令牌等多种的随机性检查</p>
+<h2 id="4-2-HexInject"><a href="#4-2-HexInject" class="headerlink" title="4.2 HexInject"></a>4.2 HexInject</h2><p>   HexInject是一款进行数据注入的工具,它可以直接向网络注入渗透 人员构造的数据包，也可以篡改网络传输的数据，为了避免修改带来的数 据验证问题，它默认对包进行校验，并重新计算包的大小，从而提高数据 的真实性。</p>
+<h2 id="4-3-Inviteflood"><a href="#4-3-Inviteflood" class="headerlink" title="4.3  Inviteflood"></a>4.3  Inviteflood</h2><p>   Inviteflood攻击的目标是VoIP,它针对VoIP信令协议SIP中的 INVITE会话请求指令发起洪水攻击,被攻击者会瞬间接到大量呼叫请求, 导致类似电话占线的效果,严重时可令IP电话客户端程序崩溃。</p>
+<h2 id="4-4-iSMTP"><a href="#4-4-iSMTP" class="headerlink" title="4.4 iSMTP"></a>4.4 iSMTP</h2><p>   iSMTP是一款SMTP用户枚举和测试工具。</p>
+<h2 id="4-5-Mitmproxy"><a href="#4-5-Mitmproxy" class="headerlink" title="4.5 Mitmproxy"></a>4.5 Mitmproxy</h2><p>   Mitmproxy俗称中间人攻击的神器,是一款有篡改功能的http代理 工具,支持http通信与https通信,既可用于中间人攻击,也可用于 html抓包调试。mitmproxy共有五种代理模式:正向代理模式、反向代理 模式、上行代理模式、透明代理模式和socks5代理模式。</p>
+<h2 id="4-6-SniffJoke"><a href="#4-6-SniffJoke" class="headerlink" title="4.6 SniffJoke"></a>4.6 SniffJoke</h2><p>   SniffJoke是一款网络防嗅探工具。在渗透测试中,通过网络嗅探, 可以获取网络通信主机的各种信息。SniffJoke可以防止嗅探,它能够自 动对用户的网络数据进行附加处理，如发包延时、修改部分包、注入无效 包，使得嗅探工具无法正确读取数据包，并且所有这些附加处理不会影响 数据接收方的处理。</p>
+<h2 id="4-7-SSLstrip"><a href="#4-7-SSLstrip" class="headerlink" title="4.7 SSLstrip"></a>4.7 SSLstrip</h2><p>   SSLstrip也叫https降级攻击,攻击者拦截用户流量后,欺骗用 户与攻击者进行http通信,攻击者与服务器保持正常通信(http或 https),从而获取用户信息。</p>
+<h2 id="4-8-WebScarab"><a href="#4-8-WebScarab" class="headerlink" title="4.8 WebScarab"></a>4.8 WebScarab</h2><p>   WebScarab是由开放式Web应用安全项目(OWASP)组开发的一个用 来分析使用HTTP和HTTPS协议的应用程序框架。WebScarab可以记录它 检测到的会话内容（请求和应答），并允许使用者通过多种形式来查看记 录。可以用它来调试程序中较难处理的漏洞，也可以帮助安全专家发现潜 在的程序漏洞。</p>
+<h1 id="5-密码攻击工具"><a href="#5-密码攻击工具" class="headerlink" title="5 密码攻击工具"></a>5 密码攻击工具</h1><h2 id="5-1-BruteSpray"><a href="#5-1-BruteSpray" class="headerlink" title="5.1 BruteSpray"></a>5.1 BruteSpray</h2><p>   BruteSpray是一个基于Nmap扫描结果的端口爆破工具，它可以载入Nmap的扫描结果（gnmap&#x2F;XML文件），然后对我们指定的端口和IP进行枚举口令爆破，爆破过程可通过自动调用Medusa来进行。</p>
+<h2 id="5-2-Cain-Abel"><a href="#5-2-Cain-Abel" class="headerlink" title="5.2  Cain&amp;Abel"></a>5.2  Cain&amp;Abel</h2><p>   Cain&amp;Abel 是由0xid.it开发的一个针对Microsoft操作系统的免费口令回复工具，号称穷人使用的LC，这是一款网络管理员必备的工具，它可以用来检测Windows，UNIX用户是否使用了不安全的密码。它的功能十分强大，可以进行网络嗅探、网络欺骗、破解加密口令、解码被打乱的口令、显示口令框、显示缓存口令和分析路由协议，甚至还可以监听内网中他人使用V0IP拨打电话。</p>
+<h2 id="5-3-Crunch"><a href="#5-3-Crunch" class="headerlink" title="5.3 Crunch"></a>5.3 Crunch</h2><p>   Crunch是一款密码生成工具，可以按照指定的规则（用户可以指定字符集）生成密码字典。它可以产生所有有可能的组合和排列，其生成的字典字符序列可以输出到屏幕、文件或重定向到另一个程序中。</p>
+<h2 id="5-4-Findmyhash"><a href="#5-4-Findmyhash" class="headerlink" title="5.4   Findmyhash"></a>5.4   Findmyhash</h2><p>   Findmyhash是一款可以破解哈希值的强大脚本，用python语言编写，如果用户希望破解一些难以理解的Hash值，使用Findmyhash脚本可以一键阅读出Hash值内的所有内容。</p>
+<h2 id="5-5-Hash-Identifier"><a href="#5-5-Hash-Identifier" class="headerlink" title="5.5 Hash-Identifier"></a>5.5 Hash-Identifier</h2><p>   Hash-Identifier并不是Hash破解工具，而是用来判断Hash值所使用的加密方法的工具。</p>
+<h2 id="5-6-Hydra"><a href="#5-6-Hydra" class="headerlink" title="5.6 Hydra"></a>5.6 Hydra</h2><p>   Hydra是由THC社区开发的一个在线快速破译密码工具，目的是为研究人员及安全顾问展示如何从远程侵入系统，其密码词库支持超过50种网络协议，包括Telnet、RDP、SSH、FTP、HTTP、HTTPS、SMB等等，还支持多种数据库的密码破译，Hydra-gtk是其图形用户界面版本。</p>
+<h2 id="5-7-John-the-Ripper"><a href="#5-7-John-the-Ripper" class="headerlink" title="5.7 John the Ripper"></a>5.7 John the Ripper</h2><p>   John the Ripper是免费开源软件，是一个快速的密码破解工具，用于在已知密文的情况下尝试破解出明文的破解密码软件，支持目前大多数的加密算法，如DES、MD5等。它支持多种不同类型的系统架构，包括Unix，Linux，Windows，Dos模式、BeOs和openVMS，主要目的是破解不够牢固的Unix。Linux系统密码。</p>
+<h2 id="5-8-Medusa"><a href="#5-8-Medusa" class="headerlink" title="5.8  Medusa"></a>5.8  Medusa</h2><p>   Medusa和Hydra一样是一款在线密码破解工具。优点是Medusa的稳定性较好，但Medusa支持的模块要比Hydra少很多，也不支持RDF服务协议。同时它的表单破解也存在一些问题。</p>
+<h2 id="5-9-RainbowCrack"><a href="#5-9-RainbowCrack" class="headerlink" title="5.9 RainbowCrack"></a>5.9 RainbowCrack</h2><p>   RainbowCrack是一个使用内存时间交换技术加速口令破解过程的口令破解器。它使用了彩虹表也就是一张预先计算好的明文和散列值的对照表。通过预先花费时间创建这样的彩虹表，能够再以后破解口令时节约大量的时间</p>
+<h2 id="5-10-Rtgen"><a href="#5-10-Rtgen" class="headerlink" title="5.10  Rtgen"></a>5.10  Rtgen</h2><p>   Rtgen工具用来生成彩虹表。彩虹表是一个庞大的，针对各种可能的字母组合预先计算好的哈希值的集合，不一定是针对MD5算法的，各种算法的都有，有了它可以快速地破解各种密码。越是复杂的密码，需要的彩虹表就越大，现在主流的彩虹表都是100G以上的。不同的加密方式要用不同的彩虹表。</p>
+<h2 id="5-11-Samdump2"><a href="#5-11-Samdump2" class="headerlink" title="5.11 Samdump2"></a>5.11 Samdump2</h2><p>   Samdump2是一款破解Windows SAM 密码文件的工具。</p>
+<h1 id="6-权限提升工具"><a href="#6-权限提升工具" class="headerlink" title="6 权限提升工具"></a>6 权限提升工具</h1><h2 id="6-1-Meterpreter"><a href="#6-1-Meterpreter" class="headerlink" title="6.1  Meterpreter"></a>6.1  Meterpreter</h2><p>   Meterpreter是一种后渗透工具，它属于一种在运行过程中可通过网络进行功能扩展的动态可扩展型Payload。这种是基于“内存DLL注入”理念实现的，它能够通过创建一个新进程并调用注入的DLL来让目标系统运行注入的DLL文件。在Meterpreter中可以执行Getsystem命令快速提权，Meterpreter会自己尝试用多种方法去提升权限，使得用户只需要运行一条指令就能获得System权限。</p>
+<h2 id="6-2-SET"><a href="#6-2-SET" class="headerlink" title="6.2 SET"></a>6.2 SET</h2><p>   SET是社会工程包，是一个为社会工程设计的开放源码的渗透测试框架。它有许多自定义攻击向量，允许用户快速发起可信攻击。</p>
+<h1 id="7-Web-应用工具"><a href="#7-Web-应用工具" class="headerlink" title="7 Web 应用工具"></a>7 Web 应用工具</h1><h2 id="7-1-Arachni"><a href="#7-1-Arachni" class="headerlink" title="7.1  Arachni"></a>7.1  Arachni</h2><p>   Arachni是一个多功能、模块化、高性能的Ruby框架,旨 在帮助渗透测试人员和管理员评估Web应用程序的安全性。同时 Arachni开源免费,可安装在Windows、Linux以及Mac系统上,并 且可导出评估报告。</p>
+<h2 id="7-2-BlindElephant"><a href="#7-2-BlindElephant" class="headerlink" title="7.2  BlindElephant"></a>7.2  BlindElephant</h2><p>   BlindElephant是一款Web应用程序指纹识别工具。该工具可 以读取目标网站的特定静态文件,计算其对应的哈希值,然后和预 先计算出的哈希值做对比,从而判断目标网站的类型和版本号。目 前,该工具支持15种常见的Web应用程序的几百个版本。同时, 它还提供WordPress和Joomla的各种插件。该工具还允许用户自 已扩展，添加更多的版本支持。</p>
+<h2 id="7-3-CutyCapt"><a href="#7-3-CutyCapt" class="headerlink" title="7.3 CutyCapt"></a>7.3 CutyCapt</h2><p>   CutyCapt是基于Qt实现的跨平台的将HTML网页转化成矢量 图形和位图图像格式的命令行工具(比如,SVG、PDF、PS、PNG、 JPEG、TIFF、GIF等)。</p>
+<h2 id="7-4-DIRB"><a href="#7-4-DIRB" class="headerlink" title="7.4 DIRB"></a>7.4 DIRB</h2><p>   DIRB是一个专门用于爆破目录的工具。</p>
+<h2 id="7-5-Nikto"><a href="#7-5-Nikto" class="headerlink" title="7.5 Nikto"></a>7.5 Nikto</h2><p>   Nikto是一款开源的(GPL)网页服务器扫描器,它可以对网页 服务器进行全面的多种扫描,包含超过3300种有潜在危险的文件&#x2F; CGIs、超过625种服务器版本、超过230种特定服务器问题。</p>
+<h2 id="7-6-Paros-Proxy"><a href="#7-6-Paros-Proxy" class="headerlink" title="7.6   Paros Proxy"></a>7.6   Paros Proxy</h2><p>   Paros Proxy是一个对Web应用程序的漏洞进行评估的代理程 序,它是一个基于Java的Web代理程序,可以评估Web应用程序 的漏洞。它支持动态地编辑&#x2F;查看HTTP&#x2F;HTTPS,从而改变cookies 和表单字段等项目。它包括一个Web通信记录程序、Web圈套程序、 hash计算器,还有一个可以测试常见的Web应用程序攻击的扫描器。该工具检查漏洞形式包括:SQL注入、跨站点脚本攻击、目录遍历等。</p>
+<h2 id="7-7-ProxyStrike"><a href="#7-7-ProxyStrike" class="headerlink" title="7.7  ProxyStrike"></a>7.7  ProxyStrike</h2><p>   ProxyStrike是一款用于web漏洞扫描的工具，需要配置代理使用，带有爬虫模块、请求报告、日志、配置等功能模块</p>
+<h2 id="7-8-Vega"><a href="#7-8-Vega" class="headerlink" title="7.8  Vega"></a>7.8  Vega</h2><p>   Vega是一个开放源代码的Word应用程序安全测试平台, Vega能够帮助验证SQL注入、跨站脚本、敏感信息泄露和其他一些安全漏洞。Vega使用Java编写,有GUI,可以在Linux、OS X和 Windows下运行。</p>
+<h2 id="7-9-Webshag"><a href="#7-9-Webshag" class="headerlink" title="7.9 Webshag"></a>7.9 Webshag</h2><p>   Webshag是一个对Web服务器进行安全审计的跨平台多线程工具。Webshag会收集那些通常对Web服务器有用的功能,比如 Webshag是一个用于对Web服务器进行安全审计的跨平台多线 端口扫描、URL扫描和文件模糊测试。可以通过代理和HTTP身份认 证(基于认证或摘要认证),以HTTP或HTTPS的方式扫描Web服务器。此外Webshag可以凭借IDS规避能力,使请求之间的相关性变得更 复杂。</p>
+<h2 id="7-10-WebSploit"><a href="#7-10-WebSploit" class="headerlink" title="7.10 WebSploit"></a>7.10 WebSploit</h2><p>   WebSploit是一个开源项目,主要用于远程扫描和分析系统漏 洞。使用它可以非常容易和快速发现系统中存在的问题，并用于深 入分析。</p>
+<h2 id="7-11-Whatweb"><a href="#7-11-Whatweb" class="headerlink" title="7.11 Whatweb"></a>7.11 Whatweb</h2><p>   Whatweb是一个基于Ruby语言的开源网站指纹识别软件,正如 它的名字一样,Whatweb能够识别各种关于网站的详细信息,包括: CMS类型、博客平台、中间件、Web框架模块、网站服务器、脚本类型、 JavaScript库、IP、cookie等等。</p>
+<h1 id="8-无线攻击工具"><a href="#8-无线攻击工具" class="headerlink" title="8 无线攻击工具"></a>8 无线攻击工具</h1><h2 id="8-1-Aircrack-ng"><a href="#8-1-Aircrack-ng" class="headerlink" title="8.1 Aircrack-ng"></a>8.1 Aircrack-ng</h2><p>   Aircrack-ng是一个与802.11标准的无线网络分析有关的 安全软件，主要功能有：虚拟管道创建、网络侦测、数据包嗅 探、WEP和WPA&#x2F;WPA2-PSK破解、essid密码列表的保存和管理。Aircrack-ng可以工作在任何支持监听模式的无线网卡上并嗅探 802.11b,802.11b,802.11g的数据。该程序可运行在Linux和 Windows上。</p>
+<h2 id="8-2-Arpspoof"><a href="#8-2-Arpspoof" class="headerlink" title="8.2 Arpspoof"></a>8.2 Arpspoof</h2><p>   Arpspoof是一款专业的ARP断网攻击软件,能够直接欺骗网 关,使得通过网关访问网络的电脑全被欺骗攻击,通过ARP欺骗 达到中间人嗅探和捕获网络数据包的目的，并替换传输中的数据， 方便用户开启ARP断网攻击,抢占网速。</p>
+<h2 id="8-3-Easy-Creds"><a href="#8-3-Easy-Creds" class="headerlink" title="8.3 Easy-Creds"></a>8.3 Easy-Creds</h2><p>   Easy-Creds是一款欺骗嗅探为主的攻击脚本工具,它具备 ARP毒化、DNS毒化等一些嗅探攻击模式。它最亮的地方就是它 的fake AP(欺骗访问点)功能。它比一般自行搭建的fake AP 要稳定得多,而且里面还包含了针对802.1x的攻击模式。</p>
+<h2 id="8-4-Gerix-Wifi-Cracker"><a href="#8-4-Gerix-Wifi-Cracker" class="headerlink" title="8.4 Gerix Wifi Cracker"></a>8.4 Gerix Wifi Cracker</h2><p>   Gerix Wifi Cracker是一个aircrack图形用户界面的无线 网络破解工具，可破解无线网络密码。</p>
+<h2 id="8-5-Kismet"><a href="#8-5-Kismet" class="headerlink" title="8.5 Kismet"></a>8.5 Kismet</h2><p>   Kismet是一款802.11二层无线网络探测器、嗅探器和入侵 检测系统，使用该工具可以检测周围的无线信号，并查看所有可 用的无线接入点,并能嗅出802.11a&#x2F;b&#x2F;g&#x2F;n的流量。</p>
+<h2 id="8-6-Reaver"><a href="#8-6-Reaver" class="headerlink" title="8.6 Reaver"></a>8.6 Reaver</h2><p>   Reaver是一款针对开启Wi-Fi安全防护设定(Wi-Fi Protected Setup,WPS)服务的无线网络的破解工具。</p>
+<h2 id="8-7-Wifte"><a href="#8-7-Wifte" class="headerlink" title="8.7  Wifte"></a>8.7  Wifte</h2><p>   Wifte是一款使用Aircrack-ng工具集来破解无线网络的带 图形用户界面的工具,是一款自动化WEP、WPA以及WPS破解工具, 特点是可以同时攻击多个采用WEP和WPA加密的网络。</p>
+<h1 id="9-维持访问工具"><a href="#9-维持访问工具" class="headerlink" title="9 维持访问工具"></a>9 维持访问工具</h1><h2 id="9-1-Cryptcat"><a href="#9-1-Cryptcat" class="headerlink" title="9.1  Cryptcat"></a>9.1  Cryptcat</h2><p>   Cryptcat是网络工具Netcat的加密版本。Cryptcat支持TCP、UDP两种 网络协议。它可以在两个计算机之间建立指定的连接，并使用特定的密钥对 传输数据进行加密。为了提高加密效果，该工具允许用户在每次连接时使用 自定义的密钥，从而保证数据的安全性。</p>
+<h2 id="9-2-Cymothoa"><a href="#9-2-Cymothoa" class="headerlink" title="9.2  Cymothoa"></a>9.2  Cymothoa</h2><p>   Cymothoa是一款可以将ShellCode注入现有进程(插入进程)的后门工具。借助这种注入手段,它能够把ShellCode伪装成常规程序。它所注入的后门 程序能够与被注入的程序共存,以避免被管理或维护人员怀疑。将ShellCode 注入其他进程，还有另外一个优势就是：即使目标系统的安全防护工具能够 检验可执行程序的完整性，只要它不检查内存，就不能发现后门程序的进程。</p>
+<h2 id="9-3-Intersect"><a href="#9-3-Intersect" class="headerlink" title="9.3  Intersect"></a>9.3  Intersect</h2><p>   Intersect是一款适合在漏洞利用以后使用的能够自动完成多种后期任 务的程序。它能够自动收集密码文件、赋值SSH密钥、收集网络信息,并能 识别杀毒软件和防火墙程序。若要它自动执行后期任务，用户需要创建自己 的脚本文件,脚本中指定需要执行的各种功能。对于Inetersect来说,每个 功能都有对应的执行模块。</p>
+<h2 id="9-4-NetCat"><a href="#9-4-NetCat" class="headerlink" title="9.4 NetCat"></a>9.4 NetCat</h2><p>   NetCat是一个非常简单的Unix工具,可以读、写TCP或UDP网络连接 (Network Connection)。它被设计成一个可靠的后端(Back-End)工具, 能被其他的程序或脚本直接地或容易地驱动。同时，它又是一个功能丰富的 网络调试和开发工具，因为它可以建立用户可能用到的几乎任何类型的连接， 以及一些非常有意思的内建功能。</p>
+<h2 id="9-5-Weevely"><a href="#9-5-Weevely" class="headerlink" title="9.5 Weevely"></a>9.5 Weevely</h2><p>   Weevely是一款针对PHP的webshell的自由软件,可用于模拟一个类似 于Telnet的连接shell, Weevely通常用于Web程序的漏洞利用,隐藏后门 或者使用类似Telnet的方式来代替Web页面式的管理, Weevely生成的服 务器端php代码是经过了base64编码的,所以可以骗过主流的杀毒软件和 IDS,上传服务器端代码后通常可以通过Weevely直接运行。</p>
+<h1 id="10-取证工具"><a href="#10-取证工具" class="headerlink" title="10 取证工具"></a>10 取证工具</h1><h2 id="10-1-Bulk-extractor"><a href="#10-1-Bulk-extractor" class="headerlink" title="10.1 Bulk _ extractor"></a>10.1 Bulk _ extractor</h2><p>   Bulk _ extractor是从数字证据文件中提取诸如电子邮件地址、信 用卡号、URL和其他类型的信息的功能的程序。它是一个有用的取证 调查工具，可以用于许多任务，如恶意软件和入侵调查、身份调查和 网络调查，以及图像分析和密码破解。</p>
+<h2 id="10-2-Capstone"><a href="#10-2-Capstone" class="headerlink" title="10.2 Capstone"></a>10.2 Capstone</h2><p>   Capstone是一款优秀的反汇编框架,支持多种CPU架构,支持多 个平台，提供反汇编指令的语义详情，用一个授权许可便可以为所有 重要编程语言提供捆包等。</p>
+<h2 id="10-3-Dumpzilla"><a href="#10-3-Dumpzilla" class="headerlink" title="10.3  Dumpzilla"></a>10.3  Dumpzilla</h2><p>   Dumpzilla是用Python3开发的,目的是提取Firefox, Iceweasel和Seamonkey浏览器的相关信息进行分析。它在Unix和 Windows 32&#x2F;64位系统下工作,采用命令行界面,所以信息可以通过 管道重定向工具(如grep, awk, cut, sed)进行转储。</p>
+<h2 id="10-4-Galeta"><a href="#10-4-Galeta" class="headerlink" title="10.4 Galeta"></a>10.4 Galeta</h2><p>   Galeta是一个取证工具,用于检查微软公司Internet Explorer 生产的Cookie文件的内容。它解析文件并输出可以在电子表格中加载 的字段。</p>
+<h2 id="10-5-Peepdf"><a href="#10-5-Peepdf" class="headerlink" title="10.5  Peepdf"></a>10.5  Peepdf</h2><p>   Peepdf是一个用Python开发的、集成了多个组件的、用于检测 和分析PDF文件是否有害的取证工具。</p>
+<h2 id="10-6-RegRipper"><a href="#10-6-RegRipper" class="headerlink" title="10.6 RegRipper"></a>10.6 RegRipper</h2><p>   RegRipper是一款用来对Windows操作系统的注册表进行取证的工具。</p>
+<h2 id="10-7-Volatility"><a href="#10-7-Volatility" class="headerlink" title="10.7 Volatility"></a>10.7 Volatility</h2><p>   Volatility是开源的Windows, linux，Mac, Android的内存取 证分析工具、由Python编写成,命令行操作,支持各种操作系统。</p>
+<h1 id="11-逆向工程工具"><a href="#11-逆向工程工具" class="headerlink" title="11 逆向工程工具"></a>11 逆向工程工具</h1><h2 id="11-1-DiStorm3"><a href="#11-1-DiStorm3" class="headerlink" title="11.1 DiStorm3"></a>11.1 DiStorm3</h2><p>   DiStorm3是Kali Linux自带的一款轻量级、容易使用的反汇编 引擎。它可以反汇编生成16位、32位和64位指令。它支持的指令 集包括FPU、MMX、SSE、SSE2、SSE3、SSSE3、SSE4、x86-64、VMX、 AMDs、SVM等。虽然diStorm3采用C语言编写,但可以被Python、 Ruby、Java快速封装。这样,用户可以使用Python、Rudy等脚本语言编写脚本，并引入diStorm33，从而定制自己的反汇编工具。</p>
+<h2 id="11-2-Edb-debugger"><a href="#11-2-Edb-debugger" class="headerlink" title="11.2    Edb-debugger"></a>11.2    Edb-debugger</h2><p>   Edb-debugger是一个跨平台的x86&#x2F;x86-64调试器。它受到 Ollydbg的启发,但是其目标是在x86和x86-64以及多个操作系 统上运行。Linux是目前edb-debugger唯一官方支持的平台,但 FreeBSD,OpenBSD,OSX和Windows端口正在进行不同程度的功能实现。</p>
+<h2 id="11-3-Flasm"><a href="#11-3-Flasm" class="headerlink" title="11.3 Flasm"></a>11.3 Flasm</h2><p>   Flasm可以对Flash的SWF文件进行拆解,包括所有的时间表和 事件。通过反汇编,用户可以了解Flash编译器的工作原理,从而提 高用户的ActionScript技能。用户也可以手动对反汇编代码进行优 化,或者根据需要调整代码,然后利用Flasm将用户的更改应用于原 SWF,替换原始操作</p>
+<h2 id="11-4-JavaSnoop"><a href="#11-4-JavaSnoop" class="headerlink" title="11.4  JavaSnoop"></a>11.4  JavaSnoop</h2><p>   JavaSnoop是一个java应用程序安全测试工具，它允许已拦截的方法,篡改数据和hack运行在计算机上的java应用程序。通常在没 JavaSnoop是一个java应用程序安全测试工具,它允许以拦截的 有源代码的情况下,测试java客户端的安全性是不可预知的。在有源 代码的情况下,可以运行一个简单的java程序,并在远程附加一个调 试器来调试它,单步运行,根据需要改变变量,但对于一个applet来 说要想做到这一点是有点困难的。有时，可能需要修改客户端和服务 器之间的通信，一般的做法是在客户端配置一个代理，在代理上修改 数据。问题的关键是，通信的数据通常不是明文的，可能使用了自定 义的协议、序列化的对象、加密的数据或者多种方式混合应用。这样 要想修改通信过程中的数据是比较困难的。JavaSnoop试图解决这些 问题，它可直接附加到一个运行中的进程，类似于调试器，然后，篡 改方法调用、运行自定义代码或者对系统进行监视。</p>
+<h2 id="11-5-011yDbg"><a href="#11-5-011yDbg" class="headerlink" title="11.5 011yDbg"></a>11.5 011yDbg</h2><p>   011yDbg是一个新的动态追踪工具,将IDA与SoftICE结合起来, Ring 3级调试器,非常容易上手,已代替SoftICE成为当今最为流行 的调试解密工具。同时还支持插件扩展功能，是目前最强大的调试工具。</p>
+<p>   Valgrind是一款用于内存调试、内存泄漏检测以及性能分析的软 件开发工具。</p>
+<h2 id="11-6-压力测试工具"><a href="#11-6-压力测试工具" class="headerlink" title="11.6 压力测试工具"></a>11.6 压力测试工具</h2><h2 id="11-7-DHCPig"><a href="#11-7-DHCPig" class="headerlink" title="11.7 DHCPig"></a>11.7 DHCPig</h2><p>   DHCPig可以发起一个高级的DHCP耗尽攻击。它将消耗局域网内的所 有IP地址以及阻止新客户端获取IP,同时它也防止旧客户端释放IP地址。另外,它会发送无效的ARP去把所有的Windows主机震下线。</p>
+<h2 id="11-8-FunkLoad"><a href="#11-8-FunkLoad" class="headerlink" title="11.8  FunkLoad"></a>11.8  FunkLoad</h2><p>   FunkLoad是一个功能和负载的Web测试仪,主要用于Web项目,对网 站项目进行功能测试、性能测试、负载测试（如音量的测试或寿命测试） 和压力测试。</p>
+<h2 id="11-9-IAX"><a href="#11-9-IAX" class="headerlink" title="11.9  IAX"></a>11.9  IAX</h2><p>   IAX是Inter-Asterisk eXchange的缩写,也就是Asterisk内部交换 协议。iaxflood则是利用IAX设计缺陷而发起洪水式攻击的工具。</p>
+<h2 id="11-10-Inundator"><a href="#11-10-Inundator" class="headerlink" title="11.10 Inundator"></a>11.10 Inundator</h2><p>   Inundator是一个支持多目标的、多线程的、队列驱动的、匿名的、 误用入侵检测系统。</p>
+<h2 id="11-11-MDK3"><a href="#11-11-MDK3" class="headerlink" title="11.11   MDK3"></a>11.11   MDK3</h2><p>   MDK3是一款无线DOS攻击测试工具,能够发起Beacon Flood、 Authentication DoS、Deauthentication&#x2F;Disassociation Amok等模式的 攻击,另外它还具有针对隐藏ESSID的暴力探测模式、802.1X渗透测试、 WIDS干扰等功能。</p>
+<h2 id="11-12-Rtpflood"><a href="#11-12-Rtpflood" class="headerlink" title="11.12 Rtpflood"></a>11.12 Rtpflood</h2><p>   Rtpflood可以洪水攻击RTP通话设备,实现拒绝服务的效果。</p>
+<h2 id="11-13-Inviteflood"><a href="#11-13-Inviteflood" class="headerlink" title="11.13 Inviteflood"></a>11.13 Inviteflood</h2><p>   Inviteflood通过TCP&#x2F;UDP进行泛洪攻击的SIP&#x2F;SDP会话,该工具可 以在本机产生大量的流量，因为需要在本地读取数据进行对外发送。所以 在流量监控时可能会产生40M&#x2F;s的速度。</p>
+<h2 id="11-14-SlowHTTPTest"><a href="#11-14-SlowHTTPTest" class="headerlink" title="11.14 SlowHTTPTest"></a>11.14 SlowHTTPTest</h2><p>   SlowHTTPTest是依赖HTTP协议的慢速攻击DoS攻击工具,设计的基 本原理是服务器在请求完全接收后才会进行处理，如果客户端的发送速度 缓慢或者发送不完整，服务端为其保留连接资源池占用，大量此类请求并 发将导致DoS。</p>
+<h2 id="11-15-THC-SSL-DOS"><a href="#11-15-THC-SSL-DOS" class="headerlink" title="11.15 THC-SSL-DOS"></a>11.15 THC-SSL-DOS</h2><p>   THC-SSL-DOS是一款针对SSL的压力测试工具。该工具默认会同服务 器建立400个SSL连接,并且快速进行重新协商Renegotiations,以达到 大量消耗服务器CPU资源的目的。该工具目前只针对开启重新协商功能的 服务器，所以只要关闭该功能，就可以抵御该工具的攻击。</p>
+<h1 id="12-报告工具"><a href="#12-报告工具" class="headerlink" title="12 报告工具"></a>12 报告工具</h1><h2 id="12-1-CaseFile"><a href="#12-1-CaseFile" class="headerlink" title="12.1 CaseFile"></a>12.1 CaseFile</h2><p>   CaseFile是Maltego的姊妹工具,功能非常类似于Maltego。CaseFile主要针对数据进行离线分析,缺少Maltego的数据采集功能。它可以导入各类数据,包括Maltego导出的数据。用户可以为信息添 加连接线、标签和注释,标记数据的关系。CaseFile以图形化的方式 展现数据，方便分析人员找出隐含的数据关系。</p>
+<h2 id="12-2-CherryTree"><a href="#12-2-CherryTree" class="headerlink" title="12.2 CherryTree"></a>12.2 CherryTree</h2><p>   CherryTree支持富文本编辑和代码高亮,支持Linux和Windows平台。数据采用 CherryTree是一个支持无限层级分类的笔记软件,由Python编与, sqlite或XML存储,支持密码保护。支持从NoteCase、KeepNote、Knowit、Tomboy、TuxCards、Treepad、Leo等笔记软件导入数据。</p>
+<h2 id="12-3-Dos2unix"><a href="#12-3-Dos2unix" class="headerlink" title="12.3 Dos2unix"></a>12.3 Dos2unix</h2><p>   Dos2unix命令用来将DOS格式的文本文件转换成UNIX格式的文 本。</p>
+<h2 id="12-4-Dradis"><a href="#12-4-Dradis" class="headerlink" title="12.4 Dradis"></a>12.4 Dradis</h2><p>   Dradis框架是一个开源的、用Ruby开发的协作和报告平台。可生成渗透测试报告，内容包括所提供的服务、使用的方法、发现的结 果和建议。</p>
+<h2 id="12-5-MagicTree"><a href="#12-5-MagicTree" class="headerlink" title="12.5  MagicTree"></a>12.5  MagicTree</h2><p>   MagicTree是一个面向渗透测试人员的工具,可以帮助用户轻松 直接地进行数据合并、查询、外部命令执行和报告生成，所有的数据 都会以树形结构存储，非常方便。</p>
+<h2 id="12-6-Metagoofil"><a href="#12-6-Metagoofil" class="headerlink" title="12.6 Metagoofil"></a>12.6 Metagoofil</h2><p>   Metagoofil是一款利用Google收集信息的工具,目前支持的文件类型有Word、PPT、Excel和PDF,结果可生成HTML报告文件。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dacker1993@gmail </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+	<section class="artile-comments gitalk">
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '245e5bd10b84e1893ec9',
+        clientSecret: 'e209952420f6031b8f822035983437e7b95e6848',
+        repo: 'gitalk.github.io',
+        owner: 'suzi007',
+        admin: ['suzi007'],
+        id:'gitalk_20240417152629',
+        labels: 'gitalk'.split(',').filter(l => l),
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')           
+</script>
+
+	</section>
+ 
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 suzi
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 547px;
+    }
+    .nav.fullscreen {
+        margin-left: -547px;
+    }
+    .nav-left {
+        width: 125px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
