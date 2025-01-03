@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>苏子部落阁</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="苏子部落阁">
+  <title>kali 终端提升效率神器tmux | 苏子部落阁</title>
+  <meta name="keywords" content=" 网络安全 , kaliTool ">
+  <meta name="description" content="kali 终端提升效率神器tmux | 苏子部落阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
 <meta property="og:type" content="website">
@@ -57,7 +57,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -519,18 +519,68 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-安全工具集/kali 终端提升效率神器tmux" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#My-Blog"><span class="toc-text">My Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%8B%8F%E5%AD%90%E9%83%A8%E8%90%BD%E9%98%81"><span class="toc-text">关于苏子部落阁</span></a></li></ol></li></ol>
+        <h1 class="article-title">kali 终端提升效率神器tmux</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络安全">网络安全</a> > 
+            
+            <a  data-rel="网络安全&lt;---&gt;安全工具集">安全工具集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">网络安全</a>
+            
+            <a class="color4">kaliTool</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-01-03 10:33:39'>2024-04-17 15:11</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-text">1 安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-tmux"><span class="toc-text">2 使用.tmux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.1 会话管理命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">2.2 快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">2.2.1 会话管理快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E7%AA%97%E5%8F%A3%E5%92%8C%E9%9D%A2%E6%9D%BF%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">2.2.2 窗口和面板快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%88%86%E5%B1%8F%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E5%86%85%E5%AE%B9%E5%A4%8D%E5%88%B6%E9%97%AE%E9%A2%98"><span class="toc-text">2.3 分屏状态下的内容复制问题</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -543,34 +593,186 @@
     }
 </style>
 </div>
-            <h1 id="My-Blog"><a href="#My-Blog" class="headerlink" title="My Blog"></a>My Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">安装</span><br><span class="line">apt-get install tmux</span><br><span class="line">切换默认shell</span><br><span class="line">chat /etc/shells</span><br><span class="line">chsh -s /usr/bin/tmux</span><br></pre></td></tr></table></figure>
+<h1 id="2-使用-tmux"><a href="#2-使用-tmux" class="headerlink" title="2 使用.tmux"></a>2 使用.tmux</h1><blockquote>
+<p>tmux 的工作机制可以分为三大部分：会话（Session）、窗口（Window）和面板（Pane）。每个部分都有其独特功能和作用：</p>
 </blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于苏子部落阁"><a href="#关于苏子部落阁" class="headerlink" title="关于苏子部落阁"></a>关于苏子部落阁</h2><p><strong>苏子部落阁</strong> 是阁主（苏子）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<section class="mp_profile_iframe_wrp">
-    <mp-common-profile class="js_uneditable custom_select_card mp_profile_iframe" data-pluginname="mpprofile" data-id="MzA4ODUzNjM1NA==" data-headimg="http://mmbiz.qpic.cn/mmbiz_png/4Vn4MFcsCVL8RdbKtjic0garAubTrfLv4DFAnicd8OZH1ACBbEib1iavUZv5N3T9ErTJCiao7YVYoQbic2R3m0L5f2CQ/0?wx_fmt=png" data-nickname="蜗牛网安" data-alias="" data-signature="通知、查询、消息推送。" data-from="0" data-is_biz_ban="0" data-service_type="1"></mp-common-profile>
-</section>
-## 博客平台
-这个博客通过 [Hexo](https://hexo.io/) 生成。
+<ul>
+<li>会话（Session）：一个独立的工作实例。每个会话可以包含多个窗口，且可以独立于其他会话运行。即使 SSH 连接断开，tmux 也能保持会话的完整状态，保障程序不会中断。重新连接时，只需恢复会话即可。</li>
+<li>窗口（Window）：会话中的窗口类似于多标签页，允许在同一会话中分割出不同的任务区。每个窗口可以包含多个面板，并且可以随时切换。</li>
+<li>面板（Pane）：窗口中的分屏区域，每个面板都可以执行不同的任务。你可以在一个窗口中分割出多个面板，以便在同一屏幕下查看和操作多个任务。</li>
+</ul>
+<h2 id="2-1-会话管理命令"><a href="#2-1-会话管理命令" class="headerlink" title="2.1 会话管理命令"></a>2.1 会话管理命令</h2><ul>
+<li>新建会话：<ul>
+<li>命令：tmux new -s &lt;会话名&gt; [-n 窗口名]</li>
+<li>说明：新建一个指定名称的会话，可选参数 -n 用于指定初始窗口的名称。</li>
+<li>使用场景：在终端外新建 tmux 会话，便于将不同任务组织在独立的会话中。</li>
+</ul>
+</li>
+<li>恢复会话：<ul>
+<li>命令：tmux attach -t &lt;会话名&gt; 或 tmux at -t &lt;会话名&gt;</li>
+<li>说明：恢复到已存在的会话，让你重新回到之前的工作环境。</li>
+<li>使用场景：当暂时离开会话后，通过该命令继续之前的工作，避免重新配置窗口和窗格。</li>
+</ul>
+</li>
+<li>列出所有会话：<ul>
+<li>命令：tmux ls</li>
+<li>说明：查看当前所有的会话及其状态，显示会话名、窗口数等信息。</li>
+<li>使用场景：有多个会话时，列出所有会话帮助定位特定会话的名称和状态。</li>
+</ul>
+</li>
+<li>删除会话：<ul>
+<li>命令：tmux kill-session -t &lt;会话名&gt;</li>
+<li>说明：关闭指定的会话，释放资源。</li>
+<li>使用场景：在会话任务完成后手动删除不再需要的会话。</li>
+</ul>
+</li>
+<li>关闭所有会话：<ul>
+<li>命令：tmux kill-server</li>
+<li>说明：彻底关闭 tmux 服务及所有会话。</li>
+<li>使用场景：退出 tmux 前清理所有会话，非常适合不再需要保持任何会话时使用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-快捷键"><a href="#2-2-快捷键" class="headerlink" title="2.2 快捷键"></a>2.2 快捷键</h2><h3 id="2-2-1-会话管理快捷键"><a href="#2-2-1-会话管理快捷键" class="headerlink" title="2.2.1 会话管理快捷键"></a>2.2.1 会话管理快捷键</h3><ul>
+<li>分离当前会话：Ctrl + b 后按 d 或者输入 tmux detach<ul>
+<li>将当前会话转为后台运行，允许你暂时离开而不终止会话，稍后可以通过恢复会话继续工作。</li>
+</ul>
+</li>
+<li>重命名当前会话：Ctrl + b 后按 $<ul>
+<li>弹出重命名提示，允许你为当前会话指定一个更易于识别的名称。</li>
+</ul>
+</li>
+<li>列出所有会话：Ctrl + b 后按 s<ul>
+<li>显示当前所有会话的列表，便于选择并切换到其他会话。</li>
+</ul>
+</li>
+</ul>
+<p><strong>会话内和会话外命令的区别</strong></p>
+<ul>
+<li><p>会话外命令：这些命令是在终端中直接输入 tmux 命令（如 tmux new -s &lt;会话名&gt;）来创建、恢复或删除会话。它们通常用于管理会话的整体结构和操作，适合在 tmux 之外进行会话的创建和删除。</p>
+</li>
+<li><p>会话内命令：当你已经进入 tmux 会话后，可以通过前缀键（默认是 Ctrl + b）激活命令模式。例如，按 <code>&lt;prefix&gt; + ? </code> 可以查看帮助信息。会话内命令主要用于窗口和面板的管理，例如切换窗格、重命名窗口等，便于在会话中高效操作。</p>
+</li>
+<li><p>命令模式快捷键：在 tmux 中，使用 <code>&lt;prefix&gt; + :</code> 快捷键可以迅速进入命令输入模式，这与在普通终端中直接输入 tmux 命令相同。通过这种方式，你可以在当前会话中执行各种 tmux 命令，无需退出会话，从而提升工作效率。</p>
+</li>
+</ul>
+<h3 id="2-2-2-窗口和面板快捷键"><a href="#2-2-2-窗口和面板快捷键" class="headerlink" title="2.2.2 窗口和面板快捷键"></a>2.2.2 窗口和面板快捷键</h3><p><strong>新建和管理窗口</strong></p>
+<ul>
+<li><p>新建窗口：Ctrl + b，c</p>
+<ul>
+<li>这个命令会在当前会话中创建一个新的窗口，便于开展新任务。</li>
+</ul>
+</li>
+<li><p>重命名窗口：Ctrl + b，,</p>
+<ul>
+<li>此操作允许用户为当前窗口指定一个更易于识别的名称，适合用于标记任务或项目。</li>
+</ul>
+</li>
+<li><p>删除窗口：Ctrl + b，&amp;</p>
+</li>
+<li><p>切换窗口：</p>
+<ul>
+<li>下一个窗口：Ctrl + b，n</li>
+<li>上一个窗口：Ctrl + b，p</li>
+<li>指定窗口：Ctrl + b，数字</li>
+<li>选择窗口列表：Ctrl + b，w<ul>
+<li>显示所有窗口的列表，便于选择并切换到特定窗口。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>分割窗口为面板</strong><br>虽然 Kali Linux 自带的终端也支持分屏功能，但 tmux 的分屏功能更加灵活和强大。通过分割窗口，可以在同一屏幕中显示多个任务，支持以下分割方式：</p>
+<ul>
+<li><p>水平分割：Ctrl + b ，”</p>
+</li>
+<li><p>垂直分割：Ctrl + b ， %<br>为了更方便地记忆，可以将分割命令重新绑定为更直观的快捷键（文末有完整配置文件分享哦~）：</p>
+<p>  bind | split-window -h  # 水平分割<br>  bind - split-window -v  # 垂直分割</p>
+</li>
+</ul>
+<p>只需按 Ctrl + b 后再按 | 或 -，即可快速在窗口内进行水平或垂直分割。</p>
+<p>建议布局：可以先水平分割，再进行垂直分割，根据实际工作需要灵活调整面板布局，形成符合个人操作习惯的分屏风格。</p>
+<p><strong>切换面板</strong><br>在多个面板间的切换操作简便而高效：</p>
+<ul>
+<li>方向键切换：Ctrl + b，然后使用方向键选择目标面板</li>
+<li>快速切换：Ctrl + b，o<ul>
+<li>在面板间循环切换，适合快速浏览各个面板。</li>
+</ul>
+</li>
+</ul>
+<p><strong>面板放大与恢复</strong><br>当某个面板需要更大空间进行操作时，可以将其放大为全屏，再切换回来：</p>
+<ul>
+<li>放大&#x2F;恢复面板：Ctrl + b，z<br>这个命令可以让当前面板填满整个窗口，便于专注于重要任务。</li>
+</ul>
+<p><strong>调整面板大小</strong><br>在多面板布局下，调整面板的大小以满足不同的工作需求：</p>
+<ul>
+<li>常规调节：Ctrl + b，Alt + 方向键</li>
+<li>精细调节：Ctrl + b，Ctrl + 方向键</li>
+</ul>
+<p><strong>关闭面板</strong><br>关闭面板：在目标面板中输入 exit 并回车，即可关闭当前面板。</p>
+<ul>
+<li>快速关闭当前面板：Ctrl + b，x</li>
+</ul>
+<h2 id="2-3-分屏状态下的内容复制问题"><a href="#2-3-分屏状态下的内容复制问题" class="headerlink" title="2.3 分屏状态下的内容复制问题"></a>2.3 分屏状态下的内容复制问题</h2><ul>
+<li><p>鼠标复制：按住 Shift 键并用鼠标选择内容，选中后可右键或使用 Ctrl + Shift + C 完成复制。</p>
+</li>
+<li><p>全屏复制：当窗口内存在多个面板时，复制操作可能会包括其他面板内容。为避免这种情况，可先将目标面板放大（Ctrl + b, z），执行复制后再按 Ctrl + b, z 恢复面板原状。</p>
+</li>
+</ul>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dacker1993@gmail </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+	<section class="artile-comments gitalk">
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '245e5bd10b84e1893ec9',
+        clientSecret: 'e209952420f6031b8f822035983437e7b95e6848',
+        repo: 'gitalk.github.io',
+        owner: 'suzi007',
+        admin: ['suzi007'],
+        id:'gitalk_20240417151111',
+        labels: 'gitalk'.split(',').filter(l => l),
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')           
+</script>
+
+	</section>
+ 
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -579,11 +781,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 <div class="hide_box" onclick="dashangToggle()"></div>

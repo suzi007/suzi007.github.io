@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>苏子部落阁</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="苏子部落阁">
+  <title>密评测试常用命令 | 苏子部落阁</title>
+  <meta name="keywords" content=" 密码测评 , 测评工具 ">
+  <meta name="description" content="密评测试常用命令 | 苏子部落阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
 <meta property="og:type" content="website">
@@ -57,7 +57,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -519,18 +519,68 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-密评测试常用命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#My-Blog"><span class="toc-text">My Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%8B%8F%E5%AD%90%E9%83%A8%E8%90%BD%E9%98%81"><span class="toc-text">关于苏子部落阁</span></a></li></ol></li></ol>
+        <h1 class="article-title">密评测试常用命令</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="商用密码">商用密码</a> > 
+            
+            <a  data-rel="商用密码&lt;---&gt;测评工具">测评工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">密码测评</a>
+            
+            <a class="color5">测评工具</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-01-03 10:27:50'>2024-04-17 15:11</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Linux"><span class="toc-text">1 Linux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Windows"><span class="toc-text">2 Windows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87"><span class="toc-text">3 网络设备</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-text">3.1 华为交换机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E5%8D%8E%E4%B8%89%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-text">3.2 华三交换机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E6%80%9D%E7%A7%91%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-text">3.3 思科交换机</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">4 数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-MySQL"><span class="toc-text">4.1 MySQL</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -543,34 +593,477 @@
     }
 </style>
 </div>
-            <h1 id="My-Blog"><a href="#My-Blog" class="headerlink" title="My Blog"></a>My Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于苏子部落阁"><a href="#关于苏子部落阁" class="headerlink" title="关于苏子部落阁"></a>关于苏子部落阁</h2><p><strong>苏子部落阁</strong> 是阁主（苏子）的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<section class="mp_profile_iframe_wrp">
-    <mp-common-profile class="js_uneditable custom_select_card mp_profile_iframe" data-pluginname="mpprofile" data-id="MzA4ODUzNjM1NA==" data-headimg="http://mmbiz.qpic.cn/mmbiz_png/4Vn4MFcsCVL8RdbKtjic0garAubTrfLv4DFAnicd8OZH1ACBbEib1iavUZv5N3T9ErTJCiao7YVYoQbic2R3m0L5f2CQ/0?wx_fmt=png" data-nickname="蜗牛网安" data-alias="" data-signature="通知、查询、消息推送。" data-from="0" data-is_biz_ban="0" data-service_type="1"></mp-common-profile>
-</section>
-## 博客平台
-这个博客通过 [Hexo](https://hexo.io/) 生成。
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Linux"><a href="#1-Linux" class="headerlink" title="1 Linux"></a>1 Linux</h1><table>
+<thead>
+<tr>
+<th>测评查看项</th>
+<th>测评命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>版本</td>
+<td>more &#x2F;etc&#x2F;redhat-release</td>
+</tr>
+<tr>
+<td>用户</td>
+<td>more &#x2F;etc&#x2F;shadow</td>
+</tr>
+<tr>
+<td>密码复杂度</td>
+<td>more &#x2F;etc&#x2F;pam.d&#x2F;system-auth</td>
+</tr>
+<tr>
+<td>查看密码更换周期</td>
+<td>more &#x2F;etc&#x2F;login.defs</td>
+</tr>
+<tr>
+<td>超时自动退出</td>
+<td>more &#x2F;etc&#x2F;profile</td>
+</tr>
+<tr>
+<td>查看所有端口</td>
+<td>netstat -ntlp</td>
+</tr>
+<tr>
+<td>查看备份时间</td>
+<td>more &#x2F;etc&#x2F;crontab</td>
+</tr>
+<tr>
+<td>审计是否开启</td>
+<td>systemctl status auditd.service</td>
+</tr>
+<tr>
+<td>日志是否运行</td>
+<td>systemctl status rsyslog</td>
+</tr>
+<tr>
+<td>sshd 是否运行</td>
+<td>systemctl status sshd</td>
+</tr>
+<tr>
+<td>查看 Linux 防火墙规则</td>
+<td>iptables -L</td>
+</tr>
+<tr>
+<td>看 IP 地址</td>
+<td>ifconfig</td>
+</tr>
+<tr>
+<td>看时间</td>
+<td>date</td>
+</tr>
+<tr>
+<td>查看日志</td>
+<td>tail -20 &#x2F;var&#x2F;log&#x2F;audit&#x2F;audit.log</td>
+</tr>
+<tr>
+<td>查看当前系统版本</td>
+<td>uname -a</td>
+</tr>
+<tr>
+<td>查看已安装的包</td>
+<td>yum list installed</td>
+</tr>
+<tr>
+<td>是否安装最新的补丁</td>
+<td>rpm -qa grep patch</td>
+</tr>
+</tbody></table>
+<h1 id="2-Windows"><a href="#2-Windows" class="headerlink" title="2 Windows"></a>2 Windows</h1><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>测评查看项</td>
+<td>测评命令</td>
+<td>备注</td>
+</tr>
+<tr>
+<td>用户账户</td>
+<td>netplwiz</td>
+<td>control userpasswords 2</td>
+</tr>
+<tr>
+<td>用户和用户组</td>
+<td>lusrmgr.msc</td>
+<td></td>
+</tr>
+<tr>
+<td>账户策略</td>
+<td>secpol.msc</td>
+<td></td>
+</tr>
+<tr>
+<td>远程管理</td>
+<td>gpedit.msc；mstsc</td>
+<td><strong>gpedit.msc</strong><br><br>–》管理模板–》Windows 组件–》远程桌面服务–》远程桌面会话主机–》安全</td>
+</tr>
+<tr>
+<td>日志查看</td>
+<td>eventvwr.msc</td>
+<td></td>
+</tr>
+<tr>
+<td>查看最小安装</td>
+<td>dcomcnfg</td>
+<td><strong>dcomcnfg</strong><br><br>-》组件服务-》计算机-》我的电脑</td>
+</tr>
+<tr>
+<td>多余的组件</td>
+<td>appwiz.cpl</td>
+<td></td>
+</tr>
+<tr>
+<td>系统服务</td>
+<td>services.msc</td>
+<td></td>
+</tr>
+<tr>
+<td>查看共享</td>
+<td>net share</td>
+<td></td>
+</tr>
+<tr>
+<td>查看端口</td>
+<td>netstat -an</td>
+<td></td>
+</tr>
+<tr>
+<td>查看防火墙</td>
+<td>firewall.cpl</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ipconfig &#x2F;release</td>
+<td>→ 要求服务器释放曾经记录的已经分配出去的 IP 地址</td>
+</tr>
+<tr>
+<td></td>
+<td>ipconfig &#x2F;renew</td>
+<td>→ 终端电脑再次重新获取一次 IP 地址</td>
+</tr>
+</tbody></table>
+<h1 id="3-网络设备"><a href="#3-网络设备" class="headerlink" title="3 网络设备"></a>3 网络设备</h1><h2 id="3-1-华为交换机"><a href="#3-1-华为交换机" class="headerlink" title="3.1 华为交换机"></a>3.1 华为交换机</h2><table>
+<thead>
+<tr>
+<th>测评查看项</th>
+<th>测评命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>版本</td>
+<td>dis version</td>
+</tr>
+<tr>
+<td>密码复杂度</td>
+<td>dis password-control</td>
+</tr>
+<tr>
+<td>用户</td>
+<td>dis local-user</td>
+</tr>
+<tr>
+<td>登录失败，密码周期</td>
+<td>dis local-user username admin</td>
+</tr>
+<tr>
+<td>登录超时时间</td>
+<td>dis aaa configuration</td>
+</tr>
+<tr>
+<td>查看日志</td>
+<td>dis  logbuffer</td>
+</tr>
+<tr>
+<td>查看警告</td>
+<td>dis  trapbuffer</td>
+</tr>
+<tr>
+<td>查看配置</td>
+<td>dis cur</td>
+</tr>
+<tr>
+<td>查看端口</td>
+<td>dis interface brief</td>
+</tr>
+<tr>
+<td>查看 telnet 是否开启</td>
+<td>dis telnet server status</td>
+</tr>
+<tr>
+<td>查看 ip</td>
+<td>dis ip interface</td>
+</tr>
+<tr>
+<td>查看 acl 限制</td>
+<td>dis  acl all</td>
+</tr>
+<tr>
+<td>查看冗余</td>
+<td>dis  irf</td>
+</tr>
+<tr>
+<td>查看 cpu</td>
+<td>dis cpu-usage</td>
+</tr>
+<tr>
+<td>查看内存</td>
+<td>dis  memory-usage</td>
+</tr>
+<tr>
+<td>查看补丁</td>
+<td>dis path-infomation</td>
+</tr>
+<tr>
+<td>查看审计是否开启</td>
+<td>dis  info</td>
+</tr>
+<tr>
+<td>查看 ssh</td>
+<td>dis ssh server-info</td>
+</tr>
+</tbody></table>
+<h2 id="3-2-华三交换机"><a href="#3-2-华三交换机" class="headerlink" title="3.2 华三交换机"></a>3.2 华三交换机</h2><table>
+<thead>
+<tr>
+<th>查看测评项</th>
+<th>测评命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>版本</td>
+<td>dis version</td>
+</tr>
+<tr>
+<td>查看 Log buffer、Log host 日志是否开启</td>
+<td>dis info-center</td>
+</tr>
+<tr>
+<td>查看日志</td>
+<td>dis logbuffer</td>
+</tr>
+<tr>
+<td>查看 cpu</td>
+<td>dis cpu</td>
+</tr>
+<tr>
+<td>查看内存</td>
+<td>dis memory</td>
+</tr>
+<tr>
+<td>查看端口</td>
+<td>dis interface brief</td>
+</tr>
+<tr>
+<td>查看 acl 限制</td>
+<td>dis acl all</td>
+</tr>
+<tr>
+<td>密码复杂度</td>
+<td>dis password-control</td>
+</tr>
+</tbody></table>
+<h2 id="3-3-思科交换机"><a href="#3-3-思科交换机" class="headerlink" title="3.3 思科交换机"></a>3.3 思科交换机</h2><table>
+<thead>
+<tr>
+<th>查看测评项</th>
+<th>测评命令</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>全局模式</td>
+<td>configure terminal</td>
+<td></td>
+</tr>
+<tr>
+<td>特权模式</td>
+<td>enable</td>
+<td></td>
+</tr>
+<tr>
+<td>查看 AAA</td>
+<td>show aaa all</td>
+<td></td>
+</tr>
+<tr>
+<td>查看密码复杂度要求</td>
+<td>show password-strength</td>
+<td></td>
+</tr>
+<tr>
+<td>查看登录失败处理配置</td>
+<td>show login</td>
+<td></td>
+</tr>
+<tr>
+<td>查看登录失败策略</td>
+<td>show login failures</td>
+<td></td>
+</tr>
+<tr>
+<td>登录超时</td>
+<td>show running-config</td>
+<td>include timeout</td>
+</tr>
+<tr>
+<td>查看当前账户</td>
+<td>show running-config</td>
+<td>include username</td>
+</tr>
+<tr>
+<td>查看用户名和权限</td>
+<td>show running-config</td>
+<td>include usename admin</td>
+</tr>
+<tr>
+<td>查看日志</td>
+<td>show logging last</td>
+<td></td>
+</tr>
+<tr>
+<td>查看 syslog</td>
+<td>show logging server</td>
+<td></td>
+</tr>
+<tr>
+<td>查看 AAA</td>
+<td>show aaa accounting</td>
+<td></td>
+</tr>
+<tr>
+<td>查看自动配置</td>
+<td>show schedule job-list</td>
+<td></td>
+</tr>
+<tr>
+<td>查看版本</td>
+<td>show version</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="4-数据库"><a href="#4-数据库" class="headerlink" title="4 数据库"></a>4 数据库</h1><h2 id="4-1-MySQL"><a href="#4-1-MySQL" class="headerlink" title="4.1 MySQL"></a>4.1 MySQL</h2><table>
+<thead>
+<tr>
+<th>测评查看项</th>
+<th>测评命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据库版本</td>
+<td>select version();</td>
+</tr>
+<tr>
+<td>进入数据库</td>
+<td>mysql -u root -p</td>
+</tr>
+<tr>
+<td>查看设置用户</td>
+<td>select * from mysql.user</td>
+</tr>
+<tr>
+<td>查看设置用户</td>
+<td>select host,user,plugin from mysql.user</td>
+</tr>
+<tr>
+<td>检查是否存在空口令</td>
+<td>select host,user,password,plugin from mysql.user;</td>
+</tr>
+<tr>
+<td></td>
+<td>select host,user,authentication_string,plugin from mysql.user;</td>
+</tr>
+<tr>
+<td>检查密码复杂度</td>
+<td>show variables like ‘validate_password%’;</td>
+</tr>
+<tr>
+<td>检查口令定期更换</td>
+<td>select host,user,password_lifetime from mysql.user</td>
+</tr>
+<tr>
+<td>检查是否安装登录失败处理模块</td>
+<td>select * from information_schema.Plugins where plugin_name&#x3D;‘connection_control’;</td>
+</tr>
+<tr>
+<td>检查配置登录失败处理参数</td>
+<td>show variables like ‘connction_control’;</td>
+</tr>
+<tr>
+<td>检查连接超时</td>
+<td>show variables like ‘%timeout’;</td>
+</tr>
+<tr>
+<td>检查日志模块状态</td>
+<td>show variables like ‘general_log%’;</td>
+</tr>
+<tr>
+<td>检查是否并开启 MySQL Enterprise Audit 模块</td>
+<td>select * from INFORMATION_SCHEMA.PLUGINS WHERE PLUGIN_NAME&#x3D;‘audit_log’;</td>
+</tr>
+<tr>
+<td>检查是否开启 SSL 通信</td>
+<td>show variables like ‘require_secure_transport’;</td>
+</tr>
+</tbody></table>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dacker1993@gmail </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+	<section class="artile-comments gitalk">
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '245e5bd10b84e1893ec9',
+        clientSecret: 'e209952420f6031b8f822035983437e7b95e6848',
+        repo: 'gitalk.github.io',
+        owner: 'suzi007',
+        admin: ['suzi007'],
+        id:'gitalk_20240417151111',
+        labels: 'gitalk'.split(',').filter(l => l),
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')           
+</script>
+
+	</section>
+ 
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -579,11 +1072,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 <div class="hide_box" onclick="dashangToggle()"></div>
