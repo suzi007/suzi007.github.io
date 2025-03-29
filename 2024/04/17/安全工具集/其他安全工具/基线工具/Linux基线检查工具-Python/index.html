@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Linux基线检查工具-Python | 苏子部落阁</title>
+  <meta name="keywords" content=" 网络安全工具 , 基线检查工具 ">
+  <meta name="description" content="Linux基线检查工具-Python | 苏子部落阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://suzi007.github.io/about/index.html">
+<meta property="og:site_name" content="苏子部落阁">
+<meta property="og:description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-16T07:48:15.000Z">
+<meta property="article:modified_time" content="2024-04-16T07:50:42.953Z">
+<meta property="article:author" content="苏子">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="苏子部落阁" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>苏子</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/suzi007"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/38-70-66-40"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/u014455876?type=blog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:dacker1993@gmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=510909959&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(19)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络安全">
+            <i class="fold iconfont icon-right"></i>
+            网络安全
+            <small>(14)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;安全工具集">
+            
+            安全工具集
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;代码审计">
+            
+            代码审计
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;kaliTool">
+            
+            kaliTool
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="JS逆向">
+            <i class="fold iconfont icon-right"></i>
+            JS逆向
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="JS逆向&lt;---&gt;逆向工具">
+            
+            逆向工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="爬虫防护">
+            <i class="fold iconfont icon-right"></i>
+            爬虫防护
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="爬虫防护&lt;---&gt;爬虫防护">
+            
+            爬虫防护
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="商用密码">
+            <i class="fold iconfont icon-right"></i>
+            商用密码
+            <small>(2)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="商用密码&lt;---&gt;测评工具">
+            
+            测评工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="商用密码&lt;---&gt;测评技巧">
+            
+            测评技巧
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络爬虫">
+            <i class="fold iconfont icon-right"></i>
+            网络爬虫
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络爬虫&lt;---&gt;爬虫工具">
+            
+            爬虫工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="19">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://pythondjango.cn/">大江狗</a></li>
+            
+            <li><a target="_blank" href="https://chat18.aichatos.xyz/">AIChatOS</a></li>
+            
+            <li><a target="_blank" href="https://astexplorer.net/">ASTExplorer</a></li>
+            
+            <li><a target="_blank" href="https://spiderapi.cn/">虫术</a></li>
+            
+            <li><a target="_blank" href="https://metaso.cn/">秘塔搜索</a></li>
+            
+            <li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Learn">MDN</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>测评工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>测评技巧</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>基线检查工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>密码测评</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫常用库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫程序设计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫防护</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>商用密码测评</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>源代码安全审计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AST还原</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS逆向</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>kaliTool</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 商用密码 测评技巧 "
+           href="/2025/03/17/%E5%AF%86%E8%AF%84%E5%BF%AB%E9%80%9F%E6%8F%90%E5%88%86%E6%8A%80%E5%B7%A7%E2%80%94%E2%80%94%E7%AE%A1%E7%90%86%E5%88%B6%E5%BA%A6/"
+           data-tag="商用密码测评,测评技巧"
+           data-author="" >
+            <span class="post-title" title="密评快速提分技巧——管理制度">密评快速提分技巧——管理制度</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Amass/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Amas-域名枚举工具">Amas-域名枚举工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 代码审计 "
+           href="/2025/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%9F%BA%E7%A1%80/"
+           data-tag="网络安全,源代码安全审计"
+           data-author="" >
+            <span class="post-title" title="源代码审计基础">源代码审计基础</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Ike-scan/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="IKE-scan-IPsecVPN识别工具">IKE-scan-IPsecVPN识别工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Legion/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Legion-网络渗透工具">Legion-网络渗透工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/findomain/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="findomain-域名识别工具">findomain-域名识别工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Searchsploit/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Searchsploit-渗透测试工具">Searchsploit-渗透测试工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/chainsaw/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="chainsaw-Windows日志分析工具">chainsaw-Windows日志分析工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/wfuzz/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="wfuzz-爆破工具">wfuzz-爆破工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/KaliTool/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="KaliTool">KaliTool</span>
+            <span class="post-date" title="2024-04-17 15:26:29">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 爬虫防护 爬虫防护 "
+           href="/2024/04/17/%E6%B5%85%E8%B0%88%E5%8D%8F%E8%AE%AE%E6%94%BB%E5%87%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%8E%E9%98%B2%E5%BE%A1%E6%80%A7%E6%B8%97%E9%80%8F/"
+           data-tag="爬虫防护"
+           data-author="" >
+            <span class="post-title" title="浅谈协议攻击常用方法与防御性渗透">浅谈协议攻击常用方法与防御性渗透</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 商用密码 测评工具 "
+           href="/2024/04/17/%E5%AF%86%E8%AF%84%E6%B5%8B%E8%AF%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="密码测评,测评工具"
+           data-author="" >
+            <span class="post-title" title="密评测试常用命令">密评测试常用命令</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All JS逆向 逆向工具 "
+           href="/2024/04/17/AST%E8%BF%98%E5%8E%9F/"
+           data-tag="JS逆向,AST还原"
+           data-author="" >
+            <span class="post-title" title="AST还原">AST还原</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"
+           data-tag="网络安全工具"
+           data-author="" >
+            <span class="post-title" title="远程管理控制工具集">远程管理控制工具集</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/kali%20%E7%BB%88%E7%AB%AF%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87%E7%A5%9E%E5%99%A8tmux/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="kali 终端提升效率神器tmux">kali 终端提升效率神器tmux</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/Linux%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7-Python/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="Linux基线检查工具-Python">Linux基线检查工具-Python</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/Windows%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7-PowerShell/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="Windows基线检查工具">Windows基线检查工具</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%BA%93Mysql%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="数据库基线检查工具">数据库基线检查工具</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络爬虫 爬虫工具 "
+           href="/2024/04/14/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/"
+           data-tag="爬虫程序设计,爬虫常用库"
+           data-author="" >
+            <span class="post-title" title="爬虫常用库">爬虫常用库</span>
+            <span class="post-date" title="2024-04-14 21:43:02">2024/04/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-安全工具集/其他安全工具/基线工具/Linux基线检查工具-Python" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Linux基线检查工具-Python</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络安全">网络安全</a> > 
+            
+            <a  data-rel="网络安全&lt;---&gt;安全工具集">安全工具集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">网络安全工具</a>
+            
+            <a class="color2">基线检查工具</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-30 00:30:16'>2024-04-17 15:11</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>aqjxpz 工具是基于 python 语言开发的工具，主要针对 Linux 进行进行基线检测。主要针对 Linux 6&#x2F;7 的操作系统做基线检查和配置，其他版本系统可能部分检测无效。</p>
+</blockquote>
+<blockquote>
+<p>主要功能包括如下：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;1、账号管理&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line">NO1.1、【配置要求】：删除或锁定无关的系统用户和用户组；</span><br><span class="line">基线符合性判断依据:判断是否为常规用户，具体系统无关用户，根据运维人员确定(脚本通过匹配系统用户和运维用户字典,对无关用户进行锁定。)</span><br><span class="line">       </span><br><span class="line">NO1.2、【配置要求】：检查是否存在除root之外UID为0的用户</span><br><span class="line">基线符合性判断依据:执行命令awk -F &#x27;:&#x27;  &#x27;$3==0 &#123; print $1 &#125;&#x27; /etc/passwd 根据检查结果判断是否存在除root之外UID为0的用户，如存在锁定该用户passwd –l &lt;username&gt;    #锁定该用户</span><br><span class="line">       </span><br><span class="line">NO1.3、【配置要求】：登录超时设置</span><br><span class="line">基线符合性判断依据：判断是否配置&quot;TMOUT=&quot;,建议配置TMOUT=300,并且值不大于600</span><br><span class="line">       </span><br><span class="line">NO1.4、【配置要求】：限制管理员root远程登录</span><br><span class="line">基线符合性判断依据：设置/etc/ssh/sshd_config文件中，第一次出现PermitRootLogin no为准; 如存在PermitRootLogin yes改为PermitRootLogin no，并且检查/etc/ssh/sshd_config，是否存在：</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;2、口令管理配置要求说明&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line">NO2.1、【配置要求】：密码复杂度要求</span><br><span class="line">    1）采用数字、字母、符号的无规律混排方式；</span><br><span class="line">    2）口令的长度至少为8位，并且每90天至少更换1次</span><br><span class="line">    3）如果系统长度不支持上述口令复杂度要求，应使用所支持的最长长度并适当缩小更换周期；也可以使用动态密码卡等一次性口令认证方式。</span><br><span class="line">    4)修改操作系统账户的默认口令，系统无法实现的除外。</span><br><span class="line">基线符合性判断依据：执行命令cat /etc/pam.d/system-auth|grep  &quot;password requisite pam_cracklib.so difok=3 minlen=8 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1&quot;是否存在。</span><br><span class="line"></span><br><span class="line">NO2.2、【配置要求】：禁止空口令登录</span><br><span class="line">检查方法：awk -F &#x27;:&#x27; &#x27;length($2)==0 &#123; print $1 &#125;&#x27; /etc/shadow；[空]:表示无空口令登录的用户,否则存在空口令用户将它锁住或删除。</span><br><span class="line"></span><br><span class="line">NO2.3、【配置要求】：检查是否设置口令最小长度[标准值10,建议配置12及以上]</span><br><span class="line">检查方法：查看文件/etc/login.defs中设置 PASS_MIN_LEN 不小于标准值（10）     </span><br><span class="line">NO2.4、【配置要求】密码更新周期和口令更改最小天数要求</span><br><span class="line">检查方法：检查/etc/login.defs参数， </span><br><span class="line">PASS_MAX_DAYS 90</span><br><span class="line">PASS_WARN_AGE 30</span><br><span class="line">PASS_MIN_DAYS 6</span><br><span class="line">[检查最长期限是否生效]passwd -S [USERNAME]|awk  &#x27;&#123; print $5 &#125;&#x27;</span><br><span class="line">[检查警告期限是否生效]passwd -S [USERNAME]|awk  &#x27;&#123; print $6&#125;&#x27;</span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;3、访问控制及认证授权&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line"></span><br><span class="line">NO3.1、【配置要求】：用户缺省访问权限</span><br><span class="line">控制用户缺省访问权限，当在创建新文件或目录时应屏蔽掉新文件或目录不应有的访问允许权限。防止同属于该组的其它用户及别的组的用户修改该用户的文件或更高限制。</span><br><span class="line">基线符合性判断依据：</span><br><span class="line">    1）执行：more /etc/profile检查是否包含 umask 值且 umask=027(同理/etc/csh.login、/etc/csh.cshrc、/etc/bashrc中查看umask 077)</span><br><span class="line">    2）如果没有执行：echo &quot;umask 027&quot; &gt;&gt; /etc/profile 或 echo &quot;umask 077&quot; &gt;&gt; /etc/csh.login等</span><br><span class="line">    </span><br><span class="line">NO3.2、【配置要求】：授权账户SSH访问控制</span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;对于使用IP 协议进行远程维护的系统，应配置使用SSH 等加密协议，并安全配置SSHD 的设置。</span></span><br><span class="line">检查方法：在/etc/ssh/sshd_config配置文件中确认如下配置是否存在：</span><br><span class="line">    Protocol 2</span><br><span class="line">    LogLevel INFO</span><br><span class="line">    MaxAuthTries 5</span><br><span class="line">    IgnoreRhosts yes</span><br><span class="line">    RhostsAuthentication no</span><br><span class="line">    RhostsRSAAuthentication no</span><br><span class="line">    HostbasedAuthentication no</span><br><span class="line">    PermitEmptyPasswords no</span><br><span class="line">    PermitUserEnvironment no</span><br><span class="line">    ClientAliveInterval 60</span><br><span class="line">    ClientAliveCountMax 3</span><br><span class="line">    LoginGraceTime 60</span><br><span class="line">    X11Forwarding yes</span><br><span class="line">    配置之后,重启服务：service sshd restart</span><br><span class="line">    </span><br><span class="line">NO3.3、【配置要求】:允许和限制SSH远程访问主机</span><br><span class="line"><span class="meta prompt_"> &gt;</span><span class="language-bash">&gt;对物理主机/虚拟机进行IP地址访问限制，防止异常陌生IP地址访问攻击。</span></span><br><span class="line">    1）第一种方法（废弃）：</span><br><span class="line">    配置 /etc/hosts.deny 与 /etc/hosts.allow文件</span><br><span class="line">    配置 /etc/hosts.deny 文件</span><br><span class="line">    # no sshd </span><br><span class="line">    sshd:ALL  //禁止所有IP地址ssh访问</span><br><span class="line">    配置 /etc/hosts.allow 文件</span><br><span class="line">    根据业务需求配置相关IP地址</span><br><span class="line">    例如：sshd:192.168.220.   //允许192.168.220.0  IP段访问</span><br><span class="line">    2）第二种方法（推荐）:</span><br><span class="line">    /etc/ssh/sshd_config</span><br><span class="line">    allowusers [username]@[IP或IP段]</span><br><span class="line">    特殊说明：第一种方法不一定完全生效，脚本只对第二种配置进行检查，第一种配置是不符合规范的。</span><br><span class="line">                   </span><br><span class="line">NO3.4、【配置要求】登录失败处理功能策略(不做检查，此方法存在争议)</span><br><span class="line">设置登录失败功能，建议设置5次，防止恶意攻击者可以对系统口令进行反复暴力破解(设置登录失败功能策略，通过PAM限制用户登录失败次数，如果次数达到设置的阈值，则锁定用户)</span><br><span class="line">检查方法：</span><br><span class="line">    1)vim /etc/pam.d/sshd （远程ssh）</span><br><span class="line">    在文件首行#%PAM-1.0下增加：</span><br><span class="line">    auth required pam_tally2.so deny=5 unlock_time=600 even_deny_root root_unlock_time=600</span><br><span class="line">    2)vim /etc/pam.d/login （终端）</span><br><span class="line">    在文件首行#%PAM-1.0下增加：</span><br><span class="line">    auth required pam_tally2.so deny=5 unlock_time=600 even_deny_root root_unlock_time=600</span><br><span class="line">    3)vim /etc/pam.d/system-auth (服务器终端)</span><br><span class="line">    在文件首行#%PAM-1.0下增加：</span><br><span class="line">    auth required pam_tally2.so onerr=fail deny=5 unlock_time=600 even_deny_root root_unlock_time=600</span><br><span class="line">    </span><br><span class="line">NO3.5、【配置要求】检查是否使用PAM认证模块禁止wheel组之外的用户su为root</span><br><span class="line">为了安全性，只允许部分普通用户能切换到root，其他用户做限制不能切换</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;4、重要目录和文件权限设置&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line"> </span><br><span class="line">NO4.1、【配置要求】：配置重要目录和文件的权限</span><br><span class="line">    控制用户对有敏感标记重要信息资源的操作。</span><br><span class="line">    检查方法：</span><br><span class="line">    ls –l /etc/  [不做检查，配置之后存在异常]</span><br><span class="line">    ls -l /etc/passwd</span><br><span class="line">    ls -l /etc/group </span><br><span class="line">    ls -l /etc/shadow </span><br><span class="line">    ls -l /etc/services </span><br><span class="line">    ls -l /etc/security </span><br><span class="line">    ls -l /etc/rc*.d/ </span><br><span class="line">    ls -l /etc/rc.d/init.d/</span><br><span class="line">    按照如下建议修改</span><br><span class="line">    chmod 750 /etc  #(由于会影响普通用户家目录[chmod 755 /etc/])</span><br><span class="line">    chmod 750 /tmp  #(如果安装图形界面 chmod 777 /tmp，否则会报错&quot;服务器有错/usr/libexec/gconf-sanity-check-2的退出状态为256)</span><br><span class="line">    chmod 750 /etc/rc.d/init.d</span><br><span class="line">    chmod 644 /etc/passwd</span><br><span class="line">    chmod 644 /etc/group </span><br><span class="line">    chmod 400 /etc/shadow </span><br><span class="line">    chmod 644 /etc/services </span><br><span class="line">    chmod 600 /etc/security </span><br><span class="line">    chmod 750 /etc/rc*.d/ </span><br><span class="line">    chmod 750 /etc/rc.d/init.d</span><br><span class="line">    对于重要目录，建议执行如下类似操作：chmod  750 /etc/rc.d/init.d/*；只有 root 可以读、写和执行这个目录下的脚本</span><br><span class="line">    </span><br><span class="line">NO4.2、【配置要求】：检查重要文件是否存在suid和sgid权限</span><br><span class="line">为降低风险，防止未授权用户通过sudo执行相关重要文件命令</span><br><span class="line">检查方法：</span><br><span class="line">执行命令: </span><br><span class="line">find /usr/bin/chage /usr/bin/gpasswd /usr/bin/wall /usr/bin/chfn /usr/bin/chsh /usr/bin/newgrp /usr/bin/write /usr/sbin/usernetctl /usr/sbin/traceroute /bin/mount /bin/umount /bin/ping /sbin/netreport -type f -perm +6000 2&gt;/dev/null </span><br><span class="line">如果存在输出结果，则使用chmod 755 文件名 命令修改文件的权限。 </span><br><span class="line">例如：chmod a-s /usr/bin/chage</span><br><span class="line">       </span><br><span class="line">NO4.3、【配置要求】：检查系统引导器配置文件权限</span><br><span class="line">    为降低风险，检查系统引导器配置文件权限</span><br><span class="line">    检查方法：</span><br><span class="line">    查看如下文件权限是否为600</span><br><span class="line">    #Linux6</span><br><span class="line">    chmod 600 /etc/grub.conf [非链接文件]</span><br><span class="line">    chmod 600 /boot/grub/grub.conf</span><br><span class="line">    chmod 600 /etc/lilo.conf</span><br><span class="line">    #Linux7</span><br><span class="line">    chmod 600 /etc/grub2.cfg [非链接文件]</span><br><span class="line">    chmod 600 /boot/grub2/grub.cfg</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;5、日志审核&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line"></span><br><span class="line">NO5.1、【配置要求】：开启系统日志记录</span><br><span class="line">应开启主机操作系统审核功能，审核内容包括但不限于运行状态日志、系统事件、账户管理、登录事件、操作事件、配置文件的修改，日志保存期限至少6个月。</span><br><span class="line">检查方法：</span><br><span class="line">    1)查看日志服务是否安装并且进程是否已启动：</span><br><span class="line">    rpm -qa|grep rsyslog</span><br><span class="line">    ps -elf |grep rsyslogd</span><br><span class="line">    2)开启日志审核：</span><br><span class="line">    /etc/init.d/rsyslog start</span><br><span class="line">    或service rsyslog start</span><br><span class="line">    3)日志加固，确保已配置rsyslog默认文件权限：</span><br><span class="line">    vim /etc/rsyslog.conf</span><br><span class="line">    在#### GLOBAL DIRECTIVES ####段中添加：</span><br><span class="line">    $FileCreateMode 0640</span><br><span class="line">    </span><br><span class="line">NO5.2、【配置要求】：开启操作日志记录，记录用户的操作日志。</span><br><span class="line">应开启主机操作系统审核功能，审核内容包括但不限于运行状态日志、系统事件、账户管理、登录事件、操作事件、配置文件的修改，日志保存期限至少6个月。</span><br><span class="line">检查方法：在/etc/profile中检查是否存在如下配置</span><br><span class="line">	</span><br><span class="line">NO5.3、【配置要求】：检查日志文件权限设置</span><br><span class="line">设备应配置权限，控制对日志文件读取、修改和删除等操作(权限小于等于775)</span><br><span class="line">［检查方法］</span><br><span class="line">    %s 文件权限权限小于等于775,建议设置600</span><br><span class="line">    [加固建议]</span><br><span class="line">    chmod 600 /var/log/cron </span><br><span class="line">    chmod 600 /var/log/secure </span><br><span class="line">    chmod 600 /var/log/messages </span><br><span class="line">    chmod 600 /var/log/maillog </span><br><span class="line">    chmod 600 /var/log/boot.log </span><br><span class="line">    chmod 600 /var/log/mail </span><br><span class="line">    chmod 600 /var/log/localmessages </span><br><span class="line">    chmod 600 /var/log/spooler </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;6、安全管理&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line"></span><br><span class="line">NO6.1、【配置要求】：关闭不必要的服务和端口</span><br><span class="line">关闭telnet、autofs、acpid、cpus、ipsec、ip6tables、rpcbind、postfix等服务</span><br><span class="line">检查方法：</span><br><span class="line">    chkconfig --list |grep 3:on 查看哪些正运行的服务</span><br><span class="line">    Linux6:</span><br><span class="line">    使用下面命令关闭无关的服务：</span><br><span class="line">        chkconfig --level 12345 autofs off</span><br><span class="line">        chkconfig --level 12345 acpid off</span><br><span class="line">        chkconfig --level 12345 cups off </span><br><span class="line">        chkconfig --level 12345 cups-config-daemon off</span><br><span class="line">        chkconfig --level 12345 ipsec off</span><br><span class="line">        chkconfig --level 12345 ip6tables off</span><br><span class="line">        chkconfig --level 12345 rpcbind off</span><br><span class="line">        chkconfig --level 12345 postfix off</span><br><span class="line">        chkconfig --level 12345 pppoe-server off</span><br><span class="line">        chkconfig --level 12345 sendmail off</span><br><span class="line">        chkconfig --level 12345 isdn off</span><br><span class="line">        chkconfig --level 12345 mdmonitor off</span><br><span class="line">        chkconfig --level 12345 rhnsd off</span><br><span class="line">        chkconfig --level 12345 smartd off</span><br><span class="line">        chkconfig --level 12345 gpm off</span><br><span class="line">        chkconfig --level 12345 telnet off</span><br><span class="line">        chkconfig --level 12345 nfslock off</span><br><span class="line">    Linux7:</span><br><span class="line">        systemctl list-unit-files|grep enabled|awk -F &#x27;.&#x27; &#x27;&#123; print $1&#125;&#x27;</span><br><span class="line">    关闭以上服务 systemctl disable [服务名称]</span><br><span class="line">    </span><br><span class="line">NO6.2、【配置要求】：互联网DMZ区服务器开启iptables服务</span><br><span class="line">对于检查互联网服务器IP为%s进行防火墙状态和规则检查</span><br><span class="line">检查方法：</span><br><span class="line">    1)检查iptables是否安装或firewalld服务状态。</span><br><span class="line">    rpm –qa|grep iptables 或 rpm –qa|grep firewalld</span><br><span class="line">    2)安装完成后查询iptables或firewalld服务是否运行：</span><br><span class="line">    service iptables status  或 systemctl status firewalld          </span><br><span class="line">NO6.3、【配置要求】：按安全组检查安全狗软件是否安装</span><br><span class="line">对操作系统操作审计。</span><br><span class="line">检查方法：</span><br><span class="line">    1)检查safedog服务状态。</span><br><span class="line">    service safedog status</span><br><span class="line">    2)查看到控制中心端口80端口是否能通：</span><br><span class="line">    telnet 10.116.124.65 80 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;7、系统优化与运维管理&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line"></span><br><span class="line">NO7.1、【配置要求】：swappiness配置优化</span><br><span class="line">[检查方法]</span><br><span class="line">    cat /proc/sys/vm/swappiness值是否&lt;=10，建议配置为10。</span><br><span class="line">[加固建议]</span><br><span class="line">    echo &quot;vm.swappiness=10&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">    sysctl -p</span><br><span class="line">    cat /proc/sys/vm/swappiness</span><br><span class="line">NO7.2、【配置要求】：建立系统维护账号和建立互信</span><br><span class="line">	用于普通用户或root无法登录出现异常时候，通过此账号进行维护处理。</span><br><span class="line">[检查方法]</span><br><span class="line">	检查是否存在xtyw账号，过期时间是否设置为永不过期，互信密钥是否添加，sudoer配置文件是否添加</span><br><span class="line">    检查用户是否存在：id xtyw</span><br><span class="line">    检查用户是否设置密码：passwd -S xtyw|awk &#x27;&#123; print $2 &#125;&#x27;&quot; [P或PS:正常状态,L或LK：为锁定状态,NP:用户密码未空的状态]</span><br><span class="line">    检查是否设置为永不过期：passwd -S xtyw</span><br><span class="line">    检查是否设置为互信：首先判断：/home/xtyw/.ssh/authorized_keys文件是否存在，然后检查cat /home/xtyw/.ssh/authorized_keys|grep &#x27;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1wYTh7cw1lUBcgr5kMKtLilh3CwbxhCJDITgZfYDlbNtPiURtrvpamBMHMYz9EuuBmXyXSF9D18oD/HmFiIXzgqobTGw2asNxwbpoPBY1YxvHJAZUV99ml/GrqdIFbLW2lgDsojIkXA0rnxZ1G/uHOaZBPuKKnvlaXyhtMV4NdZFK3UuzDyz82Bx8FLGVo+clkkZ9BeOWyOrTi5ihk/6ime24WdiSue2XwXxjrGCSu4oKBDNj778ytl31HSUz14gBrH4em1nLM22+P6ddVhrKp4oJgvY7IqAG1ibhuxUNXWkf3Q5EM5ZKdchK9TCKdKhiFqwGgiCmQAonjRD8Cx9H xtyw@hxq-poller21&#x27;</span><br><span class="line">    检查是否设置sudoers：grep -iE &#x27;xtyw    ALL=\(ALL\)  NOPASSWD:ALL&#x27; /etc/sudoers</span><br><span class="line">[加固建议]</span><br><span class="line">    useradd  xtyw</span><br><span class="line">    echo `&lt; /dev/urandom tr -dc 0-9-A-Z-a-z-/|head -c $&#123;1:-16&#125;;echo`|passwd --stdin xtyw</span><br><span class="line">    chage -M 99999 xtyw</span><br><span class="line">    mkdir /home/xtyw/.ssh</span><br><span class="line">    chmod  700 /home/xtyw/.ssh</span><br><span class="line">    echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1wYTh7cw1lUBcgr5kMKtLilh3CwbxhCJDITgZfYDlbNtPiURtrvpamBMHMYz9EuuBmXyXSF9D18oD/HmFiIXzgqobTGw2asNxwbpoPBY1YxvHJAZUV99ml/GrqdIFbLW2lgDsojIkXA0rnxZ1G/uHOaZBPuKKnvlaXyhtMV4NdZFK3UuzDyz82Bx8FLGVo+clkkZ9BeOWyOrTi5ihk/6ime24WdiSue2XwXxjrGCSu4oKBDNj778ytl31HSUz14gBrH4em1nLM22+P6ddVhrKp4oJgvY7IqAG1ibhuxUNXWkf3Q5EM5ZKdchK9TCKdKhiFqwGgiCmQAonjRD8Cx9H xtyw@hxq-poller21&quot; &gt;&gt;/home/xtyw/.ssh/authorized_keys</span><br><span class="line">    chmod 600 /home/xtyw/.ssh/authorized_keys</span><br><span class="line">    chown -R xtyw:xtyw /home/xtyw/.ssh</span><br><span class="line">    chmod u+w /etc/sudoers</span><br><span class="line">    sed -i &#x27;/^root/a xtyw    ALL=(ALL)  NOPASSWD:ALL&#x27;  /etc/sudoers</span><br><span class="line">               chmod u-w /etc/sudoers </span><br><span class="line"></span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;8、其他配置要求&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></span><br><span class="line"></span><br><span class="line">NO8.1、【配置要求】：检查是否设置ssh登录前警告Banner</span><br><span class="line">SSH登录时显示警告信息，在登录成功前不泄漏服务器信息。</span><br><span class="line">［检查方法］</span><br><span class="line">    查看文件/etc/ssh/sshd_config，检查是否存在如下配置:banner &lt;file_path&gt;，且&lt;file_path&gt;内容不为空</span><br><span class="line">［加固方法］</span><br><span class="line">   touch /etc/ssh_banner</span><br><span class="line">　　chown bin:bin /etc/ssh_banner</span><br><span class="line">　　chmod 644 /etc/ssh_banner</span><br><span class="line">　　echo &quot; Authorized only. All activity will be monitored and reported &quot; &gt; /etc/ssh_banner</span><br><span class="line">　　echo &quot;Banner /etc/ssh_banner&quot; &gt;&gt; /etc/ssh/sshd_config</span><br><span class="line">　　service sshd restart</span><br><span class="line">　　</span><br><span class="line">NO8.2、【配置要求】：检查是否修改SNMP默认团体字.</span><br><span class="line">SNMP服务未开启或者修改了默认的团体名则合规,否则不合规。</span><br><span class="line">［检查方法］</span><br><span class="line">　　1）查看snmpd进程是否存在。</span><br><span class="line"><span class="meta prompt_">　　#</span><span class="language-bash">ps -ef|grep <span class="string">&quot;snmpd&quot;</span>|grep -v <span class="string">&quot;grep&quot;</span></span></span><br><span class="line">　　2）查看文件/etc/snmp/snmpd.conf,检查SNMP团体名配置。</span><br><span class="line">［加固建议］</span><br><span class="line">	１）修改snmp配置文件/etc/snmp/snmpd.conf找到类似如下配置,修改默认团体名public为其他用户自己可识别的字符串。</span><br><span class="line">	com2sec notConfigUser  default  public   #&lt;notConfigUser&gt;为连接snmp的用户名 &lt;default&gt;为可以连接snmp的地址范围 &lt;public&gt;为团体名</span><br><span class="line">	２）、重启snmp服务</span><br><span class="line"><span class="meta prompt_">	#</span><span class="language-bash">service snmpd restart</span></span><br><span class="line">	</span><br><span class="line">NO8.3、【配置要求】：检查系统是否禁用Ctrl+Alt+Delete组合键</span><br><span class="line">    禁止Ctrl+Alt+Delete，防止非法重新启动服务器。禁用了使用组合键Ctrl+Alt+Delete重启系统则合规,否则不合规</span><br><span class="line">［检查方法］</span><br><span class="line">Linux７：</span><br><span class="line">　　检查是否存在这个文件/usr/lib/systemd/system/ctrl-alt-del.target</span><br><span class="line">Linux６</span><br><span class="line">　　查看文件/etc/init/control-alt-delete.conf,是否存在使用组合键control+alt+delete控制系统重启的配置。</span><br><span class="line">	exec /sbin/shutdown -r now &quot;Control-Alt-Delete pressed&quot;</span><br><span class="line">Linux5</span><br><span class="line">    查看/etc/inittab文件  </span><br><span class="line">    ca::ctrlaltdel:/sbin/shutdown -t3 -r now   //默认为启用，在前面加上#号进行关闭</span><br><span class="line">［加固建议］</span><br><span class="line">　Linux７：</span><br><span class="line">	　ｍｖ　/usr/lib/systemd/system/ctrl-alt-del.target /usr/lib/systemd/system/ctrl-alt-del.target.bak</span><br><span class="line">	　init　q　重新加载配置文件使配置生效或注释掉/usr/lib/systemd/system/ctrl-alt-del.target所有内容</span><br><span class="line">Linux 6</span><br><span class="line">　　编辑文件/etc/init/control-alt-delete.conf,将如下行删除或注释:</span><br><span class="line">　　exec /sbin/shutdown -r now &quot;Control-Alt-Delete pressed&quot;</span><br><span class="line">Linux 5</span><br><span class="line">　　编辑文件cat /etc/inittab,将如下行删除或注释:</span><br><span class="line">　　ca::ctrlaltdel:/sbin/shutdown -t3 -r now</span><br><span class="line">　　</span><br><span class="line">NO8.4、【配置要求】：主机须启用时钟同步</span><br><span class="line">对应区域配置对应NTP时间源：｛%s｝</span><br><span class="line">［检查方法］</span><br><span class="line">　　 1.确认是否安装NTP组件</span><br><span class="line">    rpm -qa|grep -E  &#x27;ntp-&#x27;</span><br><span class="line">    2.检查是否配置对应区域的时间源</span><br><span class="line">    server XXX.XXX.XXX.XXX</span><br><span class="line">    3、是否运行，然后是否自动启动</span><br><span class="line">    ps -fe|grep ntpd</span><br><span class="line">    Linux6</span><br><span class="line">    chkconfig --list ntpd </span><br><span class="line">    Linux7 </span><br><span class="line">    systemctl list-unit-files|grep enabled|awk -F &#x27;.&#x27; &#x27;&#123; print $1&#125;&#x27;|grep ntpd是否存在</span><br><span class="line">[加固建议]</span><br><span class="line">编辑/etc/ntp.conf文件，对NTP服务进行配置，可在文件中加一行：</span><br><span class="line">server XXX.XXX.XXX.XXX     #将时钟源指定为已设好的时钟同步服务器</span><br><span class="line">service ntpd start        #启用服务</span><br><span class="line">chkconfig ntpd on          #设置自动运行</span><br><span class="line"></span><br><span class="line">NO8.5、【配置要求】：禁用core dump </span><br><span class="line">core dump 中可能包括系统信息，易被入侵者利用。</span><br><span class="line">［检查方法］</span><br><span class="line">　　　1)执行：more /etc/security/limits.conf 检查是否包含下列项：</span><br><span class="line">     * soft core 0</span><br><span class="line">     * hard core 0</span><br><span class="line">     2)若没有，执行：vi /etc/security/limits.conf 添加</span><br><span class="line">     * soft core 0</span><br><span class="line">     * hard core 0 </span><br><span class="line">     [加固建议]</span><br><span class="line">     echo &quot;* soft core 0&quot; &gt;&gt; /etc/security/limits.conf</span><br><span class="line">     echo &quot;* hard core 0&quot; &gt;&gt; /etc/security/limits.conf</span><br><span class="line">     </span><br><span class="line">NO8.6、【配置要求】：用户使用最大进程数及文件打开数配置</span><br><span class="line">建议根据业务需求对单个用户使用的进程数、文件打开数等进行设置。</span><br><span class="line">［检查方法］</span><br><span class="line">    脚本通过检查操作系统是否存在%s,对用户是否全部配置 /etc/security/limits.conf进行检查。</span><br><span class="line">[加固建议]</span><br><span class="line">    vi /etc/security/limits.conf 添加</span><br><span class="line">    *   soft    nproc     65535(后面值根据业务情设定)</span><br><span class="line">    *   hard    nproc     65535</span><br><span class="line">    *   soft    nofile    65535</span><br><span class="line">    *   hard    nofile    65535 </span><br><span class="line">    重新ssh连接建立会话ulimit -a检查是否生效。</span><br><span class="line">    </span><br><span class="line">NO8.7、【配置要求】：系统服务优先级配置</span><br><span class="line">当系统服务水平降低时，通过renice命令修改已经存在进程的NI值</span><br><span class="line">［检查方法］</span><br><span class="line">    检查/etc/sudoers中是否存在[%s]  ALL=(ALL) NOPASSWD:/usr/bin/renice </span><br><span class="line">    检查方式：cat /etc/sudoers|grep -v &#x27;^#&#x27;|grep &#x27;NOPASSWD:/usr/bin/renice&#x27;</span><br><span class="line">[加固建议]</span><br><span class="line">    1)、配置以weblogic用户为例能够sudo执行renice 命令，在/etc/sudoers 文件中添加</span><br><span class="line">    例如：weblogic  ALL=(ALL) NOPASSWD:/usr/bin/renice</span><br><span class="line">                    </span><br><span class="line">    2)、用top和ps aux 命令查看存在进程的NI值和进程号 </span><br><span class="line">    3)、手动修改已经存在进程的NI值</span><br><span class="line">        renice -n -15  -p &#123;weblogic pid&#125;  -n后面是优先级的值，-p后面是进程号</span><br><span class="line">        </span><br><span class="line">NO8.8、【配置要求】：检查/etc/aliases是否禁用不必要的别名</span><br><span class="line">　　　　　　　　检查/etc/aliases是否禁用不必要的别名</span><br><span class="line">　　　     　　［检查方法］</span><br><span class="line">                编辑别名文件vi /etc/aliases，删除或注释掉下面的行</span><br><span class="line">                #games: root</span><br><span class="line">                #ingres: root</span><br><span class="line">                #system: root</span><br><span class="line">                #toor: root</span><br><span class="line">                #uucp: root</span><br><span class="line">                #manager: root</span><br><span class="line">                #dumper: root</span><br><span class="line">                #operator: root</span><br><span class="line">                #decode: root</span><br><span class="line">                #root: marc</span><br><span class="line">                补充操作说明</span><br><span class="line">                更新后运行/usr/bin/newaliases，使改变生效 </span><br><span class="line">                [加固建议]</span><br><span class="line">                sed  -i &#x27;/^games/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^ingres/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^system/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^toor/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^uucp/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^manager/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^dumper/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^operator/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^decode/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                sed  -i &#x27;/^root/s/^/#/g&#x27; /etc/aliases</span><br><span class="line">                /usr/bin/newaliases </span><br><span class="line">                    </span><br><span class="line">NO8.9、【配置要求】：检查是否配置定时自动屏幕锁定（适用于具备图形界面的设备）</span><br><span class="line">检查是否配置定时自动屏幕锁定（只对安装了图形界面系统生效）</span><br><span class="line">［检查方法］</span><br><span class="line">    检查是否安装GConf2</span><br><span class="line">    rpm -qa|grep GConf2</span><br><span class="line"></span><br><span class="line">NO8.10、【配置要求】：检查密码重复使用次数限制</span><br><span class="line">对于采用静态口令认证技术的设备，应配置设备，使用户不能重复使用最近5次（含5次）内已使用的口令。</span><br><span class="line">［检查方法］</span><br><span class="line">    检查/etc/pam.d/system-auth中是否存在password sufficient pam_unix.so md5 shadow nullok try_first_pass use_authtok remember=5</span><br><span class="line">[加固建议]</span><br><span class="line">    sed -i &#x27;/try_first_pass use_authtok/s/sha512/md5/g&#x27; /etc/pam.d/system-auth</span><br><span class="line">    sed -i &#x27;/try_first_pass use_authtok/s/$/ remember=5/g&#x27; /etc/pam.d/system-auth</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">NO8.11、【配置要求】：检查系统内核参数配置</span><br><span class="line">检查系统内核参数配置</span><br><span class="line">[检查方法]</span><br><span class="line">    检查是否禁止icmp源路由(0):cat /proc/sys/net/ipv4/conf/all/accept_source_route</span><br><span class="line">    检查是否禁止icmp重定向报文(0):cat /proc/sys/net/ipv4/conf/all/accept_redirects</span><br><span class="line">    检查send_redirects配置(0):cat /proc/sys/net/ipv4/conf/all/send_redirects</span><br><span class="line">    检查icmp_echo_ignore_broadcasts配置(1):cat /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts</span><br><span class="line">    检查ip_forward配置(0):cat /proc/sys/net/ipv4/ip_forward</span><br><span class="line">[加固建议]</span><br><span class="line">    echo &quot;net.ipv4.conf.all.accept_source_route=0&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">    echo &quot;net.ipv4.conf.all.accept_redirects=0&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">    echo &quot;net.ipv4.conf.all.send_redirects=0&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">    echo &quot;net.ipv4.icmp_echo_ignore_broadcasts=1&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">    echo &quot;net.ipv4.ip_forward=0&quot; &gt;&gt; /etc/sysctl.conf</span><br><span class="line">    sysctl -p</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用举例：<br>    检查 Linux 基线：python %s ‘PWD’ –check<br>    配置 Linux 基线：python %s ‘PWD’ –config<br>    不检查防火墙基线检查： python %s ‘PWD’ –check  –skipiptables  </p>
+</blockquote>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dacker1993@gmail </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+	<section class="artile-comments gitalk">
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '245e5bd10b84e1893ec9',
+        clientSecret: 'e209952420f6031b8f822035983437e7b95e6848',
+        repo: 'gitalk.github.io',
+        owner: 'suzi007',
+        admin: ['suzi007'],
+        id:'gitalk_20240417151111',
+        labels: 'gitalk'.split(',').filter(l => l),
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')           
+</script>
+
+	</section>
+ 
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 suzi
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 547px;
+    }
+    .nav.fullscreen {
+        margin-left: -547px;
+    }
+    .nav-left {
+        width: 125px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

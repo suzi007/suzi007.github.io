@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Windows基线检查工具 | 苏子部落阁</title>
+  <meta name="keywords" content=" 网络安全工具 , 基线检查工具 ">
+  <meta name="description" content="Windows基线检查工具 | 苏子部落阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://suzi007.github.io/about/index.html">
+<meta property="og:site_name" content="苏子部落阁">
+<meta property="og:description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-16T07:48:15.000Z">
+<meta property="article:modified_time" content="2024-04-16T07:50:42.953Z">
+<meta property="article:author" content="苏子">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="苏子部落阁" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>苏子</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/suzi007"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/38-70-66-40"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/u014455876?type=blog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:dacker1993@gmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=510909959&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(19)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络安全">
+            <i class="fold iconfont icon-right"></i>
+            网络安全
+            <small>(14)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;安全工具集">
+            
+            安全工具集
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;代码审计">
+            
+            代码审计
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;kaliTool">
+            
+            kaliTool
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="JS逆向">
+            <i class="fold iconfont icon-right"></i>
+            JS逆向
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="JS逆向&lt;---&gt;逆向工具">
+            
+            逆向工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="爬虫防护">
+            <i class="fold iconfont icon-right"></i>
+            爬虫防护
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="爬虫防护&lt;---&gt;爬虫防护">
+            
+            爬虫防护
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="商用密码">
+            <i class="fold iconfont icon-right"></i>
+            商用密码
+            <small>(2)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="商用密码&lt;---&gt;测评工具">
+            
+            测评工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="商用密码&lt;---&gt;测评技巧">
+            
+            测评技巧
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络爬虫">
+            <i class="fold iconfont icon-right"></i>
+            网络爬虫
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络爬虫&lt;---&gt;爬虫工具">
+            
+            爬虫工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="19">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://pythondjango.cn/">大江狗</a></li>
+            
+            <li><a target="_blank" href="https://chat18.aichatos.xyz/">AIChatOS</a></li>
+            
+            <li><a target="_blank" href="https://astexplorer.net/">ASTExplorer</a></li>
+            
+            <li><a target="_blank" href="https://spiderapi.cn/">虫术</a></li>
+            
+            <li><a target="_blank" href="https://metaso.cn/">秘塔搜索</a></li>
+            
+            <li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Learn">MDN</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>测评工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>测评技巧</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>基线检查工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>密码测评</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫常用库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫程序设计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫防护</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>商用密码测评</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>源代码安全审计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AST还原</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS逆向</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>kaliTool</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 商用密码 测评技巧 "
+           href="/2025/03/17/%E5%AF%86%E8%AF%84%E5%BF%AB%E9%80%9F%E6%8F%90%E5%88%86%E6%8A%80%E5%B7%A7%E2%80%94%E2%80%94%E7%AE%A1%E7%90%86%E5%88%B6%E5%BA%A6/"
+           data-tag="商用密码测评,测评技巧"
+           data-author="" >
+            <span class="post-title" title="密评快速提分技巧——管理制度">密评快速提分技巧——管理制度</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Amass/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Amas-域名枚举工具">Amas-域名枚举工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 代码审计 "
+           href="/2025/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%9F%BA%E7%A1%80/"
+           data-tag="网络安全,源代码安全审计"
+           data-author="" >
+            <span class="post-title" title="源代码审计基础">源代码审计基础</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Ike-scan/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="IKE-scan-IPsecVPN识别工具">IKE-scan-IPsecVPN识别工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Legion/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Legion-网络渗透工具">Legion-网络渗透工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/findomain/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="findomain-域名识别工具">findomain-域名识别工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Searchsploit/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Searchsploit-渗透测试工具">Searchsploit-渗透测试工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/chainsaw/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="chainsaw-Windows日志分析工具">chainsaw-Windows日志分析工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/wfuzz/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="wfuzz-爆破工具">wfuzz-爆破工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/KaliTool/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="KaliTool">KaliTool</span>
+            <span class="post-date" title="2024-04-17 15:26:29">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 爬虫防护 爬虫防护 "
+           href="/2024/04/17/%E6%B5%85%E8%B0%88%E5%8D%8F%E8%AE%AE%E6%94%BB%E5%87%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%8E%E9%98%B2%E5%BE%A1%E6%80%A7%E6%B8%97%E9%80%8F/"
+           data-tag="爬虫防护"
+           data-author="" >
+            <span class="post-title" title="浅谈协议攻击常用方法与防御性渗透">浅谈协议攻击常用方法与防御性渗透</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 商用密码 测评工具 "
+           href="/2024/04/17/%E5%AF%86%E8%AF%84%E6%B5%8B%E8%AF%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="密码测评,测评工具"
+           data-author="" >
+            <span class="post-title" title="密评测试常用命令">密评测试常用命令</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All JS逆向 逆向工具 "
+           href="/2024/04/17/AST%E8%BF%98%E5%8E%9F/"
+           data-tag="JS逆向,AST还原"
+           data-author="" >
+            <span class="post-title" title="AST还原">AST还原</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"
+           data-tag="网络安全工具"
+           data-author="" >
+            <span class="post-title" title="远程管理控制工具集">远程管理控制工具集</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/kali%20%E7%BB%88%E7%AB%AF%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87%E7%A5%9E%E5%99%A8tmux/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="kali 终端提升效率神器tmux">kali 终端提升效率神器tmux</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/Linux%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7-Python/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="Linux基线检查工具-Python">Linux基线检查工具-Python</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/Windows%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7-PowerShell/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="Windows基线检查工具">Windows基线检查工具</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%BA%93Mysql%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="数据库基线检查工具">数据库基线检查工具</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络爬虫 爬虫工具 "
+           href="/2024/04/14/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/"
+           data-tag="爬虫程序设计,爬虫常用库"
+           data-author="" >
+            <span class="post-title" title="爬虫常用库">爬虫常用库</span>
+            <span class="post-date" title="2024-04-14 21:43:02">2024/04/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-安全工具集/其他安全工具/基线工具/Windows基线检查工具-PowerShell" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Windows基线检查工具</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络安全">网络安全</a> > 
+            
+            <a  data-rel="网络安全&lt;---&gt;安全工具集">安全工具集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">网络安全工具</a>
+            
+            <a class="color2">基线检查工具</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-30 00:30:27'>2024-04-17 15:11</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Baseline-check"><span class="toc-text">1 Baseline-check</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Baseline-check"><span class="toc-text">2 -Baseline-check</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Baseline-check"><a href="#1-Baseline-check" class="headerlink" title="1 Baseline-check"></a>1 Baseline-check</h1><blockquote>
+<p>Baseline-check 工具是基于 Windows 平台的基线检测工具。<br>使用方式：<br>    使用 powershell 运行 <code>.\windowsBaselineCheck.ps1</code></p>
+</blockquote>
+<blockquote>
+<p>检测内容包括：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">windows 基线检查脚本,检测内容包括：</span><br><span class="line">	导出安全策略</span><br><span class="line">	账户检查</span><br><span class="line">	IP检查</span><br><span class="line">	获取所有网络适配器</span><br><span class="line">	系统信息检查</span><br><span class="line">	读取安全策略配置文件并检测</span><br><span class="line">	检查密码最长使用期限策略</span><br><span class="line">	检查密码长度最小值策略</span><br><span class="line">	检查密码复杂性策略</span><br><span class="line">	检查强制密码历史个数</span><br><span class="line">	检查账户锁定阀值策略</span><br><span class="line">	检查*下次登录必须更改密码策略</span><br><span class="line">	检查*强制过期策略</span><br><span class="line">	检查管理员名称</span><br><span class="line">	检查来宾用户命名</span><br><span class="line">	检查Administartor账户停用策略</span><br><span class="line">	检查guest账户停用策略 </span><br><span class="line">	检查是否开启策略更改审核</span><br><span class="line">	检查是否开启登录事件审核</span><br><span class="line">	审核对象访问</span><br><span class="line">	审核特权使用</span><br><span class="line">	审核特权更改</span><br><span class="line">	审核账户管理</span><br><span class="line">	审核进程跟踪</span><br><span class="line">	审核目录服务访问</span><br><span class="line">	审核账户登录事件</span><br><span class="line">	从网络访问此计算机策略</span><br><span class="line">	操作系统远程关机策略安全</span><br><span class="line">	操作系统本地关机策略安全 检查可关闭系统的帐户和组</span><br><span class="line">	取得文件或其他对象的所有权限策略</span><br><span class="line">	检查可远程访问的注册表路径和子路径</span><br><span class="line">	检查是否已限制SAM匿名用户连接</span><br><span class="line">	检查系统日志文件达到最大大小时的动作的序号</span><br><span class="line">	应用日志查看器大小设置  </span><br><span class="line">	系统日志查看器大小设置</span><br><span class="line">	安全日志查看器大小设置</span><br><span class="line">	检查是否已开启Windows防火墙</span><br><span class="line">	检查是否已启用SYN攻击保护</span><br><span class="line">	检查TCP连接请求阈值</span><br><span class="line">	检查取消尝试响应 SYN 请求之前要重新传输 SYN-ACK 的次数</span><br><span class="line">	检查处于SYN_RCVD 状态下的 TCP 连接阈值</span><br><span class="line">	检查处于SYN_RCVD 状态下,且至少已经进行了一次重新传输的TCP连接阈值</span><br><span class="line">	检查是否已启用并正确配置ICMP攻击保护</span><br><span class="line">	检查是否已禁用失效网关检测</span><br><span class="line">	检查是否已正确配置重传单独数据片段的次数</span><br><span class="line">	检查是否已禁用路由发现功能</span><br><span class="line">	检查是否已正确配置TCP连接存活时间</span><br><span class="line">	检查是否已启用并正确配置TCP碎片攻击保护</span><br><span class="line">	检查是否已启用&quot;不显示最后的用户名&quot;策略</span><br><span class="line">	检查是否已正确配置&quot;提示用户在密码过期之前进行更改&quot;策略</span><br><span class="line">	检查锁定会话时显示用户信息  </span><br><span class="line">	检查是否已禁用Windows硬盘默认共享</span><br><span class="line">	屏幕自动保护程序</span><br><span class="line">	屏幕保护程序启动时间</span><br><span class="line">	屏幕恢复时使用密码保护</span><br><span class="line">	是否启用NTP服务同步时钟</span><br><span class="line">	检查关闭默认共享盘  </span><br><span class="line">	禁止全部驱动器自动播放</span><br><span class="line">	检查是否正确配置服务器在暂停会话前所需的空闲时间量</span><br><span class="line">	检查是否已启用&quot;当登录时间用完时自动注销用户&quot;策略</span><br><span class="line">	检查是否已禁用&quot;登录时无须按 Ctrl+Alt+Del&quot;策略</span><br><span class="line">	检查是否已禁止Windows自动登录</span><br><span class="line">	域环境：检查是否已正确配置&quot;可被缓存保存的登录的个数&quot;策略</span><br></pre></td></tr></table></figure>
+<h1 id="2-Baseline-check"><a href="#2-Baseline-check" class="headerlink" title="2 -Baseline-check"></a>2 -Baseline-check</h1><blockquote>
+<p>Windows 和 linux 基线检查，配套自动化检查脚本。检测完成后会输出结果文件。</p>
+</blockquote>
+<blockquote>
+<p>基线配置文档： 本文规定了 LINUX 操作系统主机应当遵循的操作系统安全性设置标准，本文档旨在指导系统管理人员或安全检查人员进行 LINUX 操作系统的安全合规性检查和配置。 服务器安全基线是指为满足安全规范要求，考虑到信息安全管理的三+四个特性：保密性、完整性、可用性、可审计性、可靠性、抗抵赖性。服务器安全配置必须达到的标准，一般通过检查安全配置参数是否符合安全标准或公司标准来度量。主要包括了账号配置安全、口令配置安全、授权配置、日志配置、IP 通信配置等方面内容，这些安全配置直接反映了系统自身的安全脆弱性。</p>
+</blockquote>
+<blockquote>
+<p>Windows 检测规则如下：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>第 3 章 账号口令</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3.1 检查是否已正确配置密码最短使用期限</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3.2 检查是否已正确配置密码长度最小值</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3.3 检查是否已正确配置“强制密码历史”</td>
+<td>7</td>
+</tr>
+<tr>
+<td>3.4 检查是否已正确配置帐户锁定时间</td>
+<td>7</td>
+</tr>
+<tr>
+<td>3.5 检查是否已正确配置帐户锁定阈值</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3.6 检查是否已正确配置“复位帐户锁定计数器”时间</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3.7 检查是否按照权限、责任创建、使用用户账号</td>
+<td>8</td>
+</tr>
+<tr>
+<td>3.8 检查是否已更改管理员帐户名称</td>
+<td>9</td>
+</tr>
+<tr>
+<td>第 4 章 认证授权</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4.1 检查是否已删除可远程访问的注册表路径和子路径</td>
+<td>9</td>
+</tr>
+<tr>
+<td>4.2 检查是否已限制匿名用户连接</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4.3 检查是否已限制可关闭系统的帐户和组</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4.4 检查是否已限制可从远端关闭系统的帐户和组</td>
+<td>11</td>
+</tr>
+<tr>
+<td>4.5 检查是否已限制“取得文件或其它对象的所有权”的帐户和组</td>
+<td>11</td>
+</tr>
+<tr>
+<td>4.6 检查是否已正确配置“允许本地登录”策略</td>
+<td>12</td>
+</tr>
+<tr>
+<td>4.7 检查是否已正确配置“从网络访问此计算机”策略</td>
+<td>12</td>
+</tr>
+<tr>
+<td>4.8 检查是否已删除可匿名访问的共享和命名管道</td>
+<td>13</td>
+</tr>
+<tr>
+<td>第 5 章 日志审计</td>
+<td>13</td>
+</tr>
+<tr>
+<td>5.1 检查是否已正确配置审核(日志记录)策略</td>
+<td>13</td>
+</tr>
+<tr>
+<td>5.2 检查是否已正确配置应用程序日志</td>
+<td>14</td>
+</tr>
+<tr>
+<td>5.3 检查是否已正确配置系统日志</td>
+<td>14</td>
+</tr>
+<tr>
+<td>5.4 检查是否已正确配置安全日志</td>
+<td>15</td>
+</tr>
+<tr>
+<td>第 6 章 协议安全</td>
+<td>15</td>
+</tr>
+<tr>
+<td>6.1 检查是否已修改默认的远程桌面(RDP)服务端口</td>
+<td>15</td>
+</tr>
+<tr>
+<td>6.2 检查是否已启用并正确配置源路由攻击保护</td>
+<td>16</td>
+</tr>
+<tr>
+<td>6.3 检查是否已开启 Windows 防火墙</td>
+<td>16</td>
+</tr>
+<tr>
+<td>6.4 检查是否已启用并正确配置 SYN 攻击保护</td>
+<td>17</td>
+</tr>
+<tr>
+<td>6.5 检查是否已启用并正确配置 ICMP 攻击保护</td>
+<td>18</td>
+</tr>
+<tr>
+<td>6.6 检查是否已禁用失效网关检测</td>
+<td>18</td>
+</tr>
+<tr>
+<td>6.7 检查是否已正确配置重传单独数据片段的次数</td>
+<td>19</td>
+</tr>
+<tr>
+<td>6.8 检查是否已禁用路由发现功能</td>
+<td>19</td>
+</tr>
+<tr>
+<td>6.9 检查是否已正确配置 TCP“连接存活时间”</td>
+<td>20</td>
+</tr>
+<tr>
+<td>6.10 检查是否已启用并正确配置 TCP 碎片攻击保护</td>
+<td>20</td>
+</tr>
+<tr>
+<td>6.11 检查是否已启用 TCP&#x2F;IP 筛选功能</td>
+<td>21</td>
+</tr>
+<tr>
+<td>6.12 检查是否已删除 SNMP 服务的默认 public 团体</td>
+<td>21</td>
+</tr>
+<tr>
+<td>第 7 章 其他配置操作</td>
+<td>22</td>
+</tr>
+<tr>
+<td>7.1 检查是否已安装防病毒软件</td>
+<td>22</td>
+</tr>
+<tr>
+<td>7.2 检查是否已启用并正确配置 Windows 自动更新</td>
+<td>22</td>
+</tr>
+<tr>
+<td>7.3 检查是否已启用“不显示最后的用户名”策略</td>
+<td>23</td>
+</tr>
+<tr>
+<td>7.4 检查是否已正确配置“提示用户在密码过期之前进行更改”策略</td>
+<td>23</td>
+</tr>
+<tr>
+<td>7.5 检查是否已正确配置“锁定会话时显示用户信息”策略</td>
+<td>24</td>
+</tr>
+<tr>
+<td>7.6 检查是否已禁用 Windows 硬盘默认共享</td>
+<td>24</td>
+</tr>
+<tr>
+<td>7.7 检查是否已启用并正确配置屏幕保护程序</td>
+<td>25</td>
+</tr>
+<tr>
+<td>7.8 检查是否已启用并正确配置 Windows 网络时间同步服务(NTP)</td>
+<td>25</td>
+</tr>
+<tr>
+<td>7.9 检查是否已关闭 Windows 自动播放</td>
+<td>26</td>
+</tr>
+<tr>
+<td>7.10 检查是否已关闭不必要的服务-DHCP Client</td>
+<td>26</td>
+</tr>
+<tr>
+<td>7.11 检查系统是否已安装最新补丁包和补丁</td>
+<td>26</td>
+</tr>
+<tr>
+<td>7.12 检查所有磁盘分区的文件系统格式</td>
+<td>27</td>
+</tr>
+<tr>
+<td>7.13 检查是否已正确配置服务器在暂停会话前所需的空闲时间量</td>
+<td>27</td>
+</tr>
+<tr>
+<td>7.14 检查是否已启用“当登录时间用完时自动注销用户”策略</td>
+<td>28</td>
+</tr>
+<tr>
+<td>7.15 域环境：检查是否已启用“需要域控制器身份验证以解锁工作站”策略</td>
+<td>28</td>
+</tr>
+<tr>
+<td>7.16 检查是否已禁用“登录时无须按 Ctrl+Alt+Del”策略</td>
+<td>29</td>
+</tr>
+<tr>
+<td>7.17 域环境：检查是否已正确配置“可被缓存保存的登录的个数”策略</td>
+<td>29</td>
+</tr>
+<tr>
+<td>7.18 域环境：检查是否已正确配置域环境下安全通道数据的安全设置</td>
+<td>30</td>
+</tr>
+<tr>
+<td>7.19 域环境：检查是否已启用“域环境下需要强会话密钥”策略</td>
+<td>30</td>
+</tr>
+<tr>
+<td>7.20 检查共享文件夹的权限设置是否安全</td>
+<td>31</td>
+</tr>
+<tr>
+<td>7.21 检查是否已启用 Windows 数据执行保护(DEP)</td>
+<td>31</td>
+</tr>
+<tr>
+<td>7.22 检查是否已创建多个磁盘分区</td>
+<td>31</td>
+</tr>
+<tr>
+<td>7.23 检查是否已禁止 Windows 自动登录</td>
+<td>32</td>
+</tr>
+<tr>
+<td>7.24 检查是否已关闭不必要的服务-Simple TCP&#x2F;IP Services</td>
+<td>32</td>
+</tr>
+<tr>
+<td>7.25 检查是否已关闭不必要的服务-Simple Mail Transport Protocol (SMTP)</td>
+<td>33</td>
+</tr>
+<tr>
+<td>7.26 检查是否已关闭不必要的服务-Windows Internet Name Service (WINS)</td>
+<td>33</td>
+</tr>
+<tr>
+<td>7.27 检查是否已关闭不必要的服务-DHCP Server</td>
+<td>34</td>
+</tr>
+<tr>
+<td>7.28 检查是否已关闭不必要的服务-Remote Access Connection Manager</td>
+<td>34</td>
+</tr>
+<tr>
+<td>7.29 检查是否已关闭不必要的服务-Message Queuing</td>
+<td>34</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Linux 检测规则</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>第 2 章</th>
+<th>账号口令</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2.1</td>
+<td>检查是否已设置口令生存周期</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>检查口令最小长度</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>检查是否设置口令过期警告天数</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>检查设备密码复杂度策略</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2.5</td>
+<td>检查是否存在空口令账号</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2.6</td>
+<td>检查是否设置除 root 之外 UID 为 0 的用户</td>
+<td>6</td>
+</tr>
+<tr>
+<td>第 3 章</td>
+<td>认证授权</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td>检查用户 umask 设置</td>
+<td>6</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>检查重要目录或文件权限设置</td>
+<td>7</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>检查重要文件属性设置-需重启</td>
+<td>9</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>检查用户目录缺省访问权限设置</td>
+<td>11</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>检查是否设置 ssh 登录前警告 Banner</td>
+<td>11</td>
+</tr>
+<tr>
+<td>第 4 章</td>
+<td>日志审计</td>
+<td>12</td>
+</tr>
+<tr>
+<td>4.1</td>
+<td>检查是否配置远程日志功能</td>
+<td>12</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>检查安全事件日志配置</td>
+<td>13</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>检查日志文件是否非全局可写</td>
+<td>14</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>检查是否对登录进行日志记录</td>
+<td>15</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td>检查是否配置 su 命令使用情况记录</td>
+<td>16</td>
+</tr>
+<tr>
+<td>第 5 章</td>
+<td>协议安全</td>
+<td>17</td>
+</tr>
+<tr>
+<td>5.1</td>
+<td>检查系统 openssh 安全配置</td>
+<td>17</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>检查是否已修改 snmp 默认团体字</td>
+<td>17</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>检查使用 ip 协议远程维护的设备是否配置 ssh 协议，禁用 telnet 协议</td>
+<td>18</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>检查是否禁止 root 用户登录 ftp</td>
+<td>18</td>
+</tr>
+<tr>
+<td>5.5</td>
+<td>检查是否禁止匿名用户登录 FTP</td>
+<td>19</td>
+</tr>
+<tr>
+<td>第 6 章</td>
+<td>其他配置操作</td>
+<td>20</td>
+</tr>
+<tr>
+<td>6.1</td>
+<td>检查是否设置命令行界面超时退出-需重启</td>
+<td>20</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>检查是否设置系统引导管理器密码</td>
+<td>20</td>
+</tr>
+<tr>
+<td>6.3</td>
+<td>检查系统 core dump 设置</td>
+<td>21</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>检查历史命令设置</td>
+<td>21</td>
+</tr>
+<tr>
+<td>6.5</td>
+<td>检查是否使用 PAM 认证模块禁止 wheel 组之外的用户 su 为 root</td>
+<td>22</td>
+</tr>
+<tr>
+<td>6.6</td>
+<td>检查是否对系统账户进行登录限制</td>
+<td>22</td>
+</tr>
+<tr>
+<td>6.7</td>
+<td>检查密码重复使用次数限制</td>
+<td>23</td>
+</tr>
+<tr>
+<td>6.8</td>
+<td>检查用户认证失败次数限制</td>
+<td>24</td>
+</tr>
+<tr>
+<td>6.9</td>
+<td>检查是否关闭绑定多 ip 功能</td>
+<td>25</td>
+</tr>
+<tr>
+<td>6.10</td>
+<td>检查是否限制远程登录 ip 范围</td>
+<td>25</td>
+</tr>
+<tr>
+<td>6.11</td>
+<td>检查别名文件&#x2F;etc&#x2F;aliases(或&#x2F;etc&#x2F;mail&#x2F;aliases)配置</td>
+<td>26</td>
+</tr>
+<tr>
+<td>6.12</td>
+<td>检查拥有 suid 和 sgid 权限的文件</td>
+<td>28</td>
+</tr>
+<tr>
+<td>6.13</td>
+<td>检查是否配置定时自动屏幕锁定（适用于具备图形界面的设备）</td>
+<td>28</td>
+</tr>
+<tr>
+<td>6.14</td>
+<td>检查系统内核参数配置</td>
+<td>30</td>
+</tr>
+<tr>
+<td>6.15</td>
+<td>检查是否按组进行账号管理</td>
+<td>31</td>
+</tr>
+<tr>
+<td>6.16</td>
+<td>检查是否按用户分配账号</td>
+<td>32</td>
+</tr>
+<tr>
+<td>6.17</td>
+<td>检查 root 用户的 path 环境变量</td>
+<td>32</td>
+</tr>
+<tr>
+<td>6.18</td>
+<td>检查系统是否禁用 ctrl+alt+del 组合键-需重启</td>
+<td>33</td>
+</tr>
+<tr>
+<td>6.19</td>
+<td>检查是否关闭系统信任机制</td>
+<td>33</td>
+</tr>
+<tr>
+<td>6.20</td>
+<td>检查系统磁盘分区使用率</td>
+<td>34</td>
+</tr>
+<tr>
+<td>6.21</td>
+<td>检查是否删除了潜在危险文件</td>
+<td>34</td>
+</tr>
+<tr>
+<td>6.22</td>
+<td>检查是否删除与设备运行，维护等工作无关的账号</td>
+<td>35</td>
+</tr>
+<tr>
+<td>6.23</td>
+<td>检查是否配置用户所需最小权限</td>
+<td>36</td>
+</tr>
+<tr>
+<td>6.24</td>
+<td>检查是否关闭数据包转发功能（适用于不做路由功能的系统）-对于集群系统或者需要数据包转发的系统不做该配置</td>
+<td>37</td>
+</tr>
+<tr>
+<td>6.25</td>
+<td>检查是否禁用不必要的系统服务</td>
+<td>37</td>
+</tr>
+<tr>
+<td>6.26</td>
+<td>检查是否使用 NTP（网络时间协议）保持时间同步</td>
+<td>38</td>
+</tr>
+<tr>
+<td>6.27</td>
+<td>检查 NFS（网络文件系统）服务设置</td>
+<td>39</td>
+</tr>
+<tr>
+<td>6.28</td>
+<td>检查是否安装 OS 补丁</td>
+<td>39</td>
+</tr>
+<tr>
+<td>6.29</td>
+<td>检查是否设置 ssh 成功登陆后 Banner</td>
+<td>40</td>
+</tr>
+<tr>
+<td>6.30</td>
+<td>检查 FTP 用户上传的文件所具有的权限</td>
+<td>40</td>
+</tr>
+<tr>
+<td>6.31</td>
+<td>检查 FTP Banner 设置</td>
+<td>41</td>
+</tr>
+<tr>
+<td>6.32</td>
+<td>检查&#x2F;usr&#x2F;bin&#x2F;目录下可执行文件的拥有者属性</td>
+<td>42</td>
+</tr>
+<tr>
+<td>6.33</td>
+<td>检查 telnet Banner 设置</td>
+<td>42</td>
+</tr>
+<tr>
+<td>6.34</td>
+<td>检查是否限制 FTP 用户登录后能访问的目录</td>
+<td>43</td>
+</tr>
+<tr>
+<td>6.35</td>
+<td>检查是否关闭不必要的服务和端口-需重启</td>
+<td>44</td>
+</tr>
+</tbody></table>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dacker1993@gmail </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+	<section class="artile-comments gitalk">
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '245e5bd10b84e1893ec9',
+        clientSecret: 'e209952420f6031b8f822035983437e7b95e6848',
+        repo: 'gitalk.github.io',
+        owner: 'suzi007',
+        admin: ['suzi007'],
+        id:'gitalk_20240417151111',
+        labels: 'gitalk'.split(',').filter(l => l),
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')           
+</script>
+
+	</section>
+ 
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 suzi
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 547px;
+    }
+    .nav.fullscreen {
+        margin-left: -547px;
+    }
+    .nav-left {
+        width: 125px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

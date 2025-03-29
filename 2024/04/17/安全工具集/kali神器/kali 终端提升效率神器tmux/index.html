@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>kali 终端提升效率神器tmux | 苏子部落阁</title>
+  <meta name="keywords" content=" 网络安全工具 , kaliTool ">
+  <meta name="description" content="kali 终端提升效率神器tmux | 苏子部落阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://suzi007.github.io/about/index.html">
+<meta property="og:site_name" content="苏子部落阁">
+<meta property="og:description" content="这是搭建的个人博客，平时会根据个人兴趣更新一些网络安全、密码学、网络爬虫相关的学习总结，欢迎大家一起交流学习，我的QQ：510909959">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-16T07:48:15.000Z">
+<meta property="article:modified_time" content="2024-04-16T07:50:42.953Z">
+<meta property="article:author" content="苏子">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="苏子部落阁" type="application/atom+xml">
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>苏子</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/suzi007"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/38-70-66-40"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/u014455876?type=blog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:dacker1993@gmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=510909959&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(19)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络安全">
+            <i class="fold iconfont icon-right"></i>
+            网络安全
+            <small>(14)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;安全工具集">
+            
+            安全工具集
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;代码审计">
+            
+            代码审计
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="网络安全&lt;---&gt;kaliTool">
+            
+            kaliTool
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="JS逆向">
+            <i class="fold iconfont icon-right"></i>
+            JS逆向
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="JS逆向&lt;---&gt;逆向工具">
+            
+            逆向工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="爬虫防护">
+            <i class="fold iconfont icon-right"></i>
+            爬虫防护
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="爬虫防护&lt;---&gt;爬虫防护">
+            
+            爬虫防护
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="商用密码">
+            <i class="fold iconfont icon-right"></i>
+            商用密码
+            <small>(2)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="商用密码&lt;---&gt;测评工具">
+            
+            测评工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="商用密码&lt;---&gt;测评技巧">
+            
+            测评技巧
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="网络爬虫">
+            <i class="fold iconfont icon-right"></i>
+            网络爬虫
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="网络爬虫&lt;---&gt;爬虫工具">
+            
+            爬虫工具
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="19">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://pythondjango.cn/">大江狗</a></li>
+            
+            <li><a target="_blank" href="https://chat18.aichatos.xyz/">AIChatOS</a></li>
+            
+            <li><a target="_blank" href="https://astexplorer.net/">ASTExplorer</a></li>
+            
+            <li><a target="_blank" href="https://spiderapi.cn/">虫术</a></li>
+            
+            <li><a target="_blank" href="https://metaso.cn/">秘塔搜索</a></li>
+            
+            <li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Learn">MDN</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>测评工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>测评技巧</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>基线检查工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>密码测评</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫常用库</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫程序设计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫防护</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>商用密码测评</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网络安全工具</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>源代码安全审计</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>AST还原</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS逆向</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>kaliTool</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 商用密码 测评技巧 "
+           href="/2025/03/17/%E5%AF%86%E8%AF%84%E5%BF%AB%E9%80%9F%E6%8F%90%E5%88%86%E6%8A%80%E5%B7%A7%E2%80%94%E2%80%94%E7%AE%A1%E7%90%86%E5%88%B6%E5%BA%A6/"
+           data-tag="商用密码测评,测评技巧"
+           data-author="" >
+            <span class="post-title" title="密评快速提分技巧——管理制度">密评快速提分技巧——管理制度</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Amass/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Amas-域名枚举工具">Amas-域名枚举工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 代码审计 "
+           href="/2025/03/17/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/%E6%BA%90%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E5%9F%BA%E7%A1%80/"
+           data-tag="网络安全,源代码安全审计"
+           data-author="" >
+            <span class="post-title" title="源代码审计基础">源代码审计基础</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Ike-scan/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="IKE-scan-IPsecVPN识别工具">IKE-scan-IPsecVPN识别工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Legion/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Legion-网络渗透工具">Legion-网络渗透工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/findomain/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="findomain-域名识别工具">findomain-域名识别工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/Searchsploit/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="Searchsploit-渗透测试工具">Searchsploit-渗透测试工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/chainsaw/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="chainsaw-Windows日志分析工具">chainsaw-Windows日志分析工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2025/03/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/wfuzz/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="wfuzz-爆破工具">wfuzz-爆破工具</span>
+            <span class="post-date" title="2025-03-17 15:11:11">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/KaliTool/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="KaliTool">KaliTool</span>
+            <span class="post-date" title="2024-04-17 15:26:29">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 爬虫防护 爬虫防护 "
+           href="/2024/04/17/%E6%B5%85%E8%B0%88%E5%8D%8F%E8%AE%AE%E6%94%BB%E5%87%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E4%B8%8E%E9%98%B2%E5%BE%A1%E6%80%A7%E6%B8%97%E9%80%8F/"
+           data-tag="爬虫防护"
+           data-author="" >
+            <span class="post-title" title="浅谈协议攻击常用方法与防御性渗透">浅谈协议攻击常用方法与防御性渗透</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 商用密码 测评工具 "
+           href="/2024/04/17/%E5%AF%86%E8%AF%84%E6%B5%8B%E8%AF%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag="密码测评,测评工具"
+           data-author="" >
+            <span class="post-title" title="密评测试常用命令">密评测试常用命令</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All JS逆向 逆向工具 "
+           href="/2024/04/17/AST%E8%BF%98%E5%8E%9F/"
+           data-tag="JS逆向,AST还原"
+           data-author="" >
+            <span class="post-title" title="AST还原">AST还原</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7%E9%9B%86%E5%90%88/"
+           data-tag="网络安全工具"
+           data-author="" >
+            <span class="post-title" title="远程管理控制工具集">远程管理控制工具集</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 kaliTool "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/kali%E7%A5%9E%E5%99%A8/kali%20%E7%BB%88%E7%AB%AF%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87%E7%A5%9E%E5%99%A8tmux/"
+           data-tag="网络安全工具,kaliTool"
+           data-author="" >
+            <span class="post-title" title="kali 终端提升效率神器tmux">kali 终端提升效率神器tmux</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/Linux%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7-Python/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="Linux基线检查工具-Python">Linux基线检查工具-Python</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/Windows%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7-PowerShell/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="Windows基线检查工具">Windows基线检查工具</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络安全 安全工具集 "
+           href="/2024/04/17/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E9%9B%86/%E5%85%B6%E4%BB%96%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/%E5%9F%BA%E7%BA%BF%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%BA%93Mysql%E5%9F%BA%E7%BA%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E5%85%B7/"
+           data-tag="网络安全工具,基线检查工具"
+           data-author="" >
+            <span class="post-title" title="数据库基线检查工具">数据库基线检查工具</span>
+            <span class="post-date" title="2024-04-17 15:11:11">2024/04/17</span>
+        </a>
+        
+        
+        <a  class="All 网络爬虫 爬虫工具 "
+           href="/2024/04/14/%E7%88%AC%E8%99%AB%E5%B8%B8%E7%94%A8%E5%BA%93/"
+           data-tag="爬虫程序设计,爬虫常用库"
+           data-author="" >
+            <span class="post-title" title="爬虫常用库">爬虫常用库</span>
+            <span class="post-date" title="2024-04-14 21:43:02">2024/04/14</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-安全工具集/kali神器/kali 终端提升效率神器tmux" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">kali 终端提升效率神器tmux</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络安全">网络安全</a> > 
+            
+            <a  data-rel="网络安全&lt;---&gt;kaliTool">kaliTool</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">网络安全工具</a>
+            
+            <a class="color4">kaliTool</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-29 23:56:23'>2024-04-17 15:11</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-text">1 安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-tmux"><span class="toc-text">2 使用.tmux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.1 会话管理命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">2.2 快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E4%BC%9A%E8%AF%9D%E7%AE%A1%E7%90%86%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">2.2.1 会话管理快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E7%AA%97%E5%8F%A3%E5%92%8C%E9%9D%A2%E6%9D%BF%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">2.2.2 窗口和面板快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%88%86%E5%B1%8F%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E5%86%85%E5%AE%B9%E5%A4%8D%E5%88%B6%E9%97%AE%E9%A2%98"><span class="toc-text">2.3 分屏状态下的内容复制问题</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">安装</span><br><span class="line">apt-get install tmux</span><br><span class="line">切换默认shell</span><br><span class="line">chat /etc/shells</span><br><span class="line">chsh -s /usr/bin/tmux</span><br></pre></td></tr></table></figure>
+<h1 id="2-使用-tmux"><a href="#2-使用-tmux" class="headerlink" title="2 使用.tmux"></a>2 使用.tmux</h1><blockquote>
+<p>tmux 的工作机制可以分为三大部分：会话（Session）、窗口（Window）和面板（Pane）。每个部分都有其独特功能和作用：</p>
+</blockquote>
+<ul>
+<li>会话（Session）：一个独立的工作实例。每个会话可以包含多个窗口，且可以独立于其他会话运行。即使 SSH 连接断开，tmux 也能保持会话的完整状态，保障程序不会中断。重新连接时，只需恢复会话即可。</li>
+<li>窗口（Window）：会话中的窗口类似于多标签页，允许在同一会话中分割出不同的任务区。每个窗口可以包含多个面板，并且可以随时切换。</li>
+<li>面板（Pane）：窗口中的分屏区域，每个面板都可以执行不同的任务。你可以在一个窗口中分割出多个面板，以便在同一屏幕下查看和操作多个任务。</li>
+</ul>
+<h2 id="2-1-会话管理命令"><a href="#2-1-会话管理命令" class="headerlink" title="2.1 会话管理命令"></a>2.1 会话管理命令</h2><ul>
+<li>新建会话：<ul>
+<li>命令：tmux new -s &lt;会话名&gt; [-n 窗口名]</li>
+<li>说明：新建一个指定名称的会话，可选参数 -n 用于指定初始窗口的名称。</li>
+<li>使用场景：在终端外新建 tmux 会话，便于将不同任务组织在独立的会话中。</li>
+</ul>
+</li>
+<li>恢复会话：<ul>
+<li>命令：tmux attach -t &lt;会话名&gt; 或 tmux at -t &lt;会话名&gt;</li>
+<li>说明：恢复到已存在的会话，让你重新回到之前的工作环境。</li>
+<li>使用场景：当暂时离开会话后，通过该命令继续之前的工作，避免重新配置窗口和窗格。</li>
+</ul>
+</li>
+<li>列出所有会话：<ul>
+<li>命令：tmux ls</li>
+<li>说明：查看当前所有的会话及其状态，显示会话名、窗口数等信息。</li>
+<li>使用场景：有多个会话时，列出所有会话帮助定位特定会话的名称和状态。</li>
+</ul>
+</li>
+<li>删除会话：<ul>
+<li>命令：tmux kill-session -t &lt;会话名&gt;</li>
+<li>说明：关闭指定的会话，释放资源。</li>
+<li>使用场景：在会话任务完成后手动删除不再需要的会话。</li>
+</ul>
+</li>
+<li>关闭所有会话：<ul>
+<li>命令：tmux kill-server</li>
+<li>说明：彻底关闭 tmux 服务及所有会话。</li>
+<li>使用场景：退出 tmux 前清理所有会话，非常适合不再需要保持任何会话时使用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-快捷键"><a href="#2-2-快捷键" class="headerlink" title="2.2 快捷键"></a>2.2 快捷键</h2><h3 id="2-2-1-会话管理快捷键"><a href="#2-2-1-会话管理快捷键" class="headerlink" title="2.2.1 会话管理快捷键"></a>2.2.1 会话管理快捷键</h3><ul>
+<li>分离当前会话：Ctrl + b 后按 d 或者输入 tmux detach<ul>
+<li>将当前会话转为后台运行，允许你暂时离开而不终止会话，稍后可以通过恢复会话继续工作。</li>
+</ul>
+</li>
+<li>重命名当前会话：Ctrl + b 后按 $<ul>
+<li>弹出重命名提示，允许你为当前会话指定一个更易于识别的名称。</li>
+</ul>
+</li>
+<li>列出所有会话：Ctrl + b 后按 s<ul>
+<li>显示当前所有会话的列表，便于选择并切换到其他会话。</li>
+</ul>
+</li>
+</ul>
+<p><strong>会话内和会话外命令的区别</strong></p>
+<ul>
+<li><p>会话外命令：这些命令是在终端中直接输入 tmux 命令（如 tmux new -s &lt;会话名&gt;）来创建、恢复或删除会话。它们通常用于管理会话的整体结构和操作，适合在 tmux 之外进行会话的创建和删除。</p>
+</li>
+<li><p>会话内命令：当你已经进入 tmux 会话后，可以通过前缀键（默认是 Ctrl + b）激活命令模式。例如，按 <code>&lt;prefix&gt; + ? </code> 可以查看帮助信息。会话内命令主要用于窗口和面板的管理，例如切换窗格、重命名窗口等，便于在会话中高效操作。</p>
+</li>
+<li><p>命令模式快捷键：在 tmux 中，使用 <code>&lt;prefix&gt; + :</code> 快捷键可以迅速进入命令输入模式，这与在普通终端中直接输入 tmux 命令相同。通过这种方式，你可以在当前会话中执行各种 tmux 命令，无需退出会话，从而提升工作效率。</p>
+</li>
+</ul>
+<h3 id="2-2-2-窗口和面板快捷键"><a href="#2-2-2-窗口和面板快捷键" class="headerlink" title="2.2.2 窗口和面板快捷键"></a>2.2.2 窗口和面板快捷键</h3><p><strong>新建和管理窗口</strong></p>
+<ul>
+<li><p>新建窗口：Ctrl + b，c</p>
+<ul>
+<li>这个命令会在当前会话中创建一个新的窗口，便于开展新任务。</li>
+</ul>
+</li>
+<li><p>重命名窗口：Ctrl + b，,</p>
+<ul>
+<li>此操作允许用户为当前窗口指定一个更易于识别的名称，适合用于标记任务或项目。</li>
+</ul>
+</li>
+<li><p>删除窗口：Ctrl + b，&amp;</p>
+</li>
+<li><p>切换窗口：</p>
+<ul>
+<li>下一个窗口：Ctrl + b，n</li>
+<li>上一个窗口：Ctrl + b，p</li>
+<li>指定窗口：Ctrl + b，数字</li>
+<li>选择窗口列表：Ctrl + b，w<ul>
+<li>显示所有窗口的列表，便于选择并切换到特定窗口。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>分割窗口为面板</strong><br>虽然 Kali Linux 自带的终端也支持分屏功能，但 tmux 的分屏功能更加灵活和强大。通过分割窗口，可以在同一屏幕中显示多个任务，支持以下分割方式：</p>
+<ul>
+<li><p>水平分割：Ctrl + b ，”</p>
+</li>
+<li><p>垂直分割：Ctrl + b ， %<br>为了更方便地记忆，可以将分割命令重新绑定为更直观的快捷键（文末有完整配置文件分享哦~）：</p>
+<p>  bind | split-window -h  # 水平分割<br>  bind - split-window -v  # 垂直分割</p>
+</li>
+</ul>
+<p>只需按 Ctrl + b 后再按 | 或 -，即可快速在窗口内进行水平或垂直分割。</p>
+<p>建议布局：可以先水平分割，再进行垂直分割，根据实际工作需要灵活调整面板布局，形成符合个人操作习惯的分屏风格。</p>
+<p><strong>切换面板</strong><br>在多个面板间的切换操作简便而高效：</p>
+<ul>
+<li>方向键切换：Ctrl + b，然后使用方向键选择目标面板</li>
+<li>快速切换：Ctrl + b，o<ul>
+<li>在面板间循环切换，适合快速浏览各个面板。</li>
+</ul>
+</li>
+</ul>
+<p><strong>面板放大与恢复</strong><br>当某个面板需要更大空间进行操作时，可以将其放大为全屏，再切换回来：</p>
+<ul>
+<li>放大&#x2F;恢复面板：Ctrl + b，z<br>这个命令可以让当前面板填满整个窗口，便于专注于重要任务。</li>
+</ul>
+<p><strong>调整面板大小</strong><br>在多面板布局下，调整面板的大小以满足不同的工作需求：</p>
+<ul>
+<li>常规调节：Ctrl + b，Alt + 方向键</li>
+<li>精细调节：Ctrl + b，Ctrl + 方向键</li>
+</ul>
+<p><strong>关闭面板</strong><br>关闭面板：在目标面板中输入 exit 并回车，即可关闭当前面板。</p>
+<ul>
+<li>快速关闭当前面板：Ctrl + b，x</li>
+</ul>
+<h2 id="2-3-分屏状态下的内容复制问题"><a href="#2-3-分屏状态下的内容复制问题" class="headerlink" title="2.3 分屏状态下的内容复制问题"></a>2.3 分屏状态下的内容复制问题</h2><ul>
+<li><p>鼠标复制：按住 Shift 键并用鼠标选择内容，选中后可右键或使用 Ctrl + Shift + C 完成复制。</p>
+</li>
+<li><p>全屏复制：当窗口内存在多个面板时，复制操作可能会包括其他面板内容。为避免这种情况，可先将目标面板放大（Ctrl + b, z），执行复制后再按 Ctrl + b, z 恢复面板原状。</p>
+</li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 dacker1993@gmail </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+	<section class="artile-comments gitalk">
+		<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '245e5bd10b84e1893ec9',
+        clientSecret: 'e209952420f6031b8f822035983437e7b95e6848',
+        repo: 'gitalk.github.io',
+        owner: 'suzi007',
+        admin: ['suzi007'],
+        id:'gitalk_20240417151111',
+        labels: 'gitalk'.split(',').filter(l => l),
+        perPage: 10,
+        pagerDirection: 'last',
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')           
+</script>
+
+	</section>
+ 
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 suzi
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 547px;
+    }
+    .nav.fullscreen {
+        margin-left: -547px;
+    }
+    .nav-left {
+        width: 125px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
